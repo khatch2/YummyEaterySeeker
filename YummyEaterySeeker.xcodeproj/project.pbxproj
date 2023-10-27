@@ -14,6 +14,7 @@
 		119CC2662AEBD7570088C0D5 /* YummyEaterySeekerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119CC2652AEBD7570088C0D5 /* YummyEaterySeekerTests.swift */; };
 		119CC2702AEBD7570088C0D5 /* YummyEaterySeekerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119CC26F2AEBD7570088C0D5 /* YummyEaterySeekerUITests.swift */; };
 		119CC2722AEBD7570088C0D5 /* YummyEaterySeekerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119CC2712AEBD7570088C0D5 /* YummyEaterySeekerUITestsLaunchTests.swift */; };
+		119CC2812AEBDF940088C0D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 119CC2802AEBDF940088C0D5 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		119CC26B2AEBD7570088C0D5 /* YummyEaterySeekerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YummyEaterySeekerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		119CC26F2AEBD7570088C0D5 /* YummyEaterySeekerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummyEaterySeekerUITests.swift; sourceTree = "<group>"; };
 		119CC2712AEBD7570088C0D5 /* YummyEaterySeekerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummyEaterySeekerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		119CC2802AEBDF940088C0D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		119CC2532AEBD7550088C0D5 /* YummyEaterySeeker */ = {
 			isa = PBXGroup;
 			children = (
+				119CC2802AEBDF940088C0D5 /* GoogleService-Info.plist */,
 				119CC2542AEBD7550088C0D5 /* YummyEaterySeekerApp.swift */,
 				119CC2562AEBD7550088C0D5 /* ContentView.swift */,
 				119CC2582AEBD7560088C0D5 /* Assets.xcassets */,
@@ -233,6 +236,7 @@
 			files = (
 				119CC25C2AEBD7560088C0D5 /* Preview Assets.xcassets in Resources */,
 				119CC2592AEBD7560088C0D5 /* Assets.xcassets in Resources */,
+				119CC2812AEBDF940088C0D5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
