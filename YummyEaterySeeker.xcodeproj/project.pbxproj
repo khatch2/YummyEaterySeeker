@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1190DA2F2AEC1E88002CA42E /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1190DA2E2AEC1E88002CA42E /* SplashScreenView.swift */; };
 		119CC2552AEBD7550088C0D5 /* YummyEaterySeekerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119CC2542AEBD7550088C0D5 /* YummyEaterySeekerApp.swift */; };
 		119CC2572AEBD7550088C0D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119CC2562AEBD7550088C0D5 /* ContentView.swift */; };
 		119CC2592AEBD7560088C0D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 119CC2582AEBD7560088C0D5 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1190DA2E2AEC1E88002CA42E /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		119CC2512AEBD7550088C0D5 /* YummyEaterySeeker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YummyEaterySeeker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		119CC2542AEBD7550088C0D5 /* YummyEaterySeekerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummyEaterySeekerApp.swift; sourceTree = "<group>"; };
 		119CC2562AEBD7550088C0D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1190DA2D2AEC1E58002CA42E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1190DA2E2AEC1E88002CA42E /* SplashScreenView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		119CC2482AEBD7550088C0D5 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +122,7 @@
 		119CC2532AEBD7550088C0D5 /* YummyEaterySeeker */ = {
 			isa = PBXGroup;
 			children = (
+				1190DA2D2AEC1E58002CA42E /* Views */,
 				119CC2802AEBDF940088C0D5 /* GoogleService-Info.plist */,
 				119CC2542AEBD7550088C0D5 /* YummyEaterySeekerApp.swift */,
 				119CC2562AEBD7550088C0D5 /* ContentView.swift */,
@@ -292,6 +303,7 @@
 			files = (
 				119CC2572AEBD7550088C0D5 /* ContentView.swift in Sources */,
 				119CC2552AEBD7550088C0D5 /* YummyEaterySeekerApp.swift in Sources */,
+				1190DA2F2AEC1E88002CA42E /* SplashScreenView.swift in Sources */,
 				119CC2902AEBF55B0088C0D5 /* Restaurant.swift in Sources */,
 				119CC2922AEC16B10088C0D5 /* AddRestaurantView.swift in Sources */,
 			);
