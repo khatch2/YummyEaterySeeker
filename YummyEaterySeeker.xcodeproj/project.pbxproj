@@ -22,6 +22,7 @@
 		119CC28C2AEBE35A0088C0D5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 119CC28B2AEBE35A0088C0D5 /* FirebaseStorage */; };
 		119CC28E2AEBE35A0088C0D5 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 119CC28D2AEBE35A0088C0D5 /* FirebaseStorageCombine-Community */; };
 		119CC2902AEBF55B0088C0D5 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119CC28F2AEBF55B0088C0D5 /* Restaurant.swift */; };
+		119CC2922AEC16B10088C0D5 /* AddRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119CC2912AEC16B10088C0D5 /* AddRestaurantView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		119CC2712AEBD7570088C0D5 /* YummyEaterySeekerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummyEaterySeekerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		119CC2802AEBDF940088C0D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		119CC28F2AEBF55B0088C0D5 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		119CC2912AEC16B10088C0D5 /* AddRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestaurantView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				119CC2582AEBD7560088C0D5 /* Assets.xcassets */,
 				119CC25A2AEBD7560088C0D5 /* Preview Content */,
 				119CC28F2AEBF55B0088C0D5 /* Restaurant.swift */,
+				119CC2912AEC16B10088C0D5 /* AddRestaurantView.swift */,
 			);
 			path = YummyEaterySeeker;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				119CC2572AEBD7550088C0D5 /* ContentView.swift in Sources */,
 				119CC2552AEBD7550088C0D5 /* YummyEaterySeekerApp.swift in Sources */,
 				119CC2902AEBF55B0088C0D5 /* Restaurant.swift in Sources */,
+				119CC2922AEC16B10088C0D5 /* AddRestaurantView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
