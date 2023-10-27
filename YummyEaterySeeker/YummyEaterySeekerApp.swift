@@ -27,7 +27,10 @@ struct YummyEaterySeekerApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                ContentView()
+                
+//                ContentView()
+                
+                SplashScreenView()
             }
         }
     }

@@ -16,41 +16,46 @@ struct AddRestaurantView: View {
     
     var body: some View {
         
-        VStack {
-            Text("Lägg till en restaurang").padding()
-            
-            TextField("Ange restaurangens namn", text: $restaurantName).textFieldStyle(.roundedBorder).padding()
-            
-            Button(action: {
-                
-                if !restaurantName.isEmpty {
+        GeometryReader { geometry in
+            VStack {
+                VStack {
+                    Text("Lägg till en restaurang").padding()
                     
-                    let newRestaurant = Restaurant(name: restaurantName, isActive: true)
+                    TextField("Ange restaurangens namn", text: $restaurantName).textFieldStyle(.roundedBorder).padding()
                     
-                    if let db = db {
-                        do {
+                    Button(action: {
+                        
+                        if !restaurantName.isEmpty {
                             
-                            let doc = try db.collection("restaurants").addDocument(from: newRestaurant)
+                            let newRestaurant = Restaurant(name: restaurantName, isActive: true)
                             
-                            print("Created document with id: \(doc.documentID)")
+                            if let db = db {
+                                do {
+                                    
+                                    let doc = try db.collection("restaurants").addDocument(from: newRestaurant)
+                                    
+                                    print("Created document with id: \(doc.documentID)")
+                                    
+                                } catch let error {
+                                    print(error.localizedDescription)
+                                }
+
+                                //db.collection("restaurants").document("ahmad").setData(["name": restaurantName])
+                            }
                             
-                        } catch let error {
-                            print(error.localizedDescription)
+                            
                         }
+                        
 
-                        //db.collection("restaurants").document("ahmad").setData(["name": restaurantName])
-                    }
-                    
-                    
-                }
-                
-
-                
-            }, label: {
-                Text("Skapa").bold()
-            })
+                        
+                    }, label: {
+                        Text("Skapa").bold()
+                    })
+                }.background(Color.orange).padding()
+            }.background(Color.yellow).padding()
         }
-        .padding()
+        
+        
     }
     
 }

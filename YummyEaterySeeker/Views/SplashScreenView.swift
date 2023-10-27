@@ -21,6 +21,8 @@ struct SplashScreenView: View {
 
 //            DBContentView()
             
+            AddRestaurantView()
+            
         } else {
             GeometryReader { geometry in
                 VStack {

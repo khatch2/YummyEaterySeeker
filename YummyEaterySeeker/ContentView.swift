@@ -27,9 +27,9 @@ struct ContentView: View {
             Button(action: {
                 if (!restaurantName.isEmpty) {
                     
-                    var newRestaurant = Restaurant(name: restaurantName, isActive: true)
+                    _ = Restaurant(name: restaurantName, isActive: true)
                     
-                    var againRestaurant = Restaurant(name: "tryRestaurant2", isActive: true)
+                    let againRestaurant = Restaurant(name: "tryRestaurant2", isActive: true)
                     
                     dbFirestore.collection("Created_Restaurants").document("New_Restaurant").setData(["name": restaurantName])
                     
