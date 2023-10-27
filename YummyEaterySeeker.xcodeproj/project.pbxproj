@@ -21,6 +21,7 @@
 		119CC28A2AEBE35A0088C0D5 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 119CC2892AEBE35A0088C0D5 /* FirebaseFirestoreSwift */; };
 		119CC28C2AEBE35A0088C0D5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 119CC28B2AEBE35A0088C0D5 /* FirebaseStorage */; };
 		119CC28E2AEBE35A0088C0D5 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 119CC28D2AEBE35A0088C0D5 /* FirebaseStorageCombine-Community */; };
+		119CC2902AEBF55B0088C0D5 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119CC28F2AEBF55B0088C0D5 /* Restaurant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		119CC26F2AEBD7570088C0D5 /* YummyEaterySeekerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummyEaterySeekerUITests.swift; sourceTree = "<group>"; };
 		119CC2712AEBD7570088C0D5 /* YummyEaterySeekerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummyEaterySeekerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		119CC2802AEBDF940088C0D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		119CC28F2AEBF55B0088C0D5 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				119CC2562AEBD7550088C0D5 /* ContentView.swift */,
 				119CC2582AEBD7560088C0D5 /* Assets.xcassets */,
 				119CC25A2AEBD7560088C0D5 /* Preview Content */,
+				119CC28F2AEBF55B0088C0D5 /* Restaurant.swift */,
 			);
 			path = YummyEaterySeeker;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			files = (
 				119CC2572AEBD7550088C0D5 /* ContentView.swift in Sources */,
 				119CC2552AEBD7550088C0D5 /* YummyEaterySeekerApp.swift in Sources */,
+				119CC2902AEBF55B0088C0D5 /* Restaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
