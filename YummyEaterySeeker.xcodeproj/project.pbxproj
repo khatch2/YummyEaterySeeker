@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		119CC2552AEBD7550088C0D5 /* YummyEaterySeekerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119CC2542AEBD7550088C0D5 /* YummyEaterySeekerApp.swift */; };
+		119CC2572AEBD7550088C0D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119CC2562AEBD7550088C0D5 /* ContentView.swift */; };
+		119CC2592AEBD7560088C0D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 119CC2582AEBD7560088C0D5 /* Assets.xcassets */; };
+		119CC25C2AEBD7560088C0D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 119CC25B2AEBD7560088C0D5 /* Preview Assets.xcassets */; };
+		119CC2662AEBD7570088C0D5 /* YummyEaterySeekerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119CC2652AEBD7570088C0D5 /* YummyEaterySeekerTests.swift */; };
+		119CC2702AEBD7570088C0D5 /* YummyEaterySeekerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119CC26F2AEBD7570088C0D5 /* YummyEaterySeekerUITests.swift */; };
+		119CC2722AEBD7570088C0D5 /* YummyEaterySeekerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119CC2712AEBD7570088C0D5 /* YummyEaterySeekerUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		119CC2622AEBD7570088C0D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 119CC2492AEBD7550088C0D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 119CC2502AEBD7550088C0D5;
+			remoteInfo = YummyEaterySeeker;
+		};
+		119CC26C2AEBD7570088C0D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 119CC2492AEBD7550088C0D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 119CC2502AEBD7550088C0D5;
+			remoteInfo = YummyEaterySeeker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		119CC2512AEBD7550088C0D5 /* YummyEaterySeeker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YummyEaterySeeker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		119CC2542AEBD7550088C0D5 /* YummyEaterySeekerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummyEaterySeekerApp.swift; sourceTree = "<group>"; };
+		119CC2562AEBD7550088C0D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		119CC2582AEBD7560088C0D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		119CC25B2AEBD7560088C0D5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		119CC2612AEBD7570088C0D5 /* YummyEaterySeekerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YummyEaterySeekerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		119CC2652AEBD7570088C0D5 /* YummyEaterySeekerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummyEaterySeekerTests.swift; sourceTree = "<group>"; };
+		119CC26B2AEBD7570088C0D5 /* YummyEaterySeekerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YummyEaterySeekerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		119CC26F2AEBD7570088C0D5 /* YummyEaterySeekerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummyEaterySeekerUITests.swift; sourceTree = "<group>"; };
+		119CC2712AEBD7570088C0D5 /* YummyEaterySeekerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummyEaterySeekerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		119CC24E2AEBD7550088C0D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		119CC25E2AEBD7570088C0D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		119CC2682AEBD7570088C0D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		119CC2482AEBD7550088C0D5 = {
+			isa = PBXGroup;
+			children = (
+				119CC2532AEBD7550088C0D5 /* YummyEaterySeeker */,
+				119CC2642AEBD7570088C0D5 /* YummyEaterySeekerTests */,
+				119CC26E2AEBD7570088C0D5 /* YummyEaterySeekerUITests */,
+				119CC2522AEBD7550088C0D5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		119CC2522AEBD7550088C0D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				119CC2512AEBD7550088C0D5 /* YummyEaterySeeker.app */,
+				119CC2612AEBD7570088C0D5 /* YummyEaterySeekerTests.xctest */,
+				119CC26B2AEBD7570088C0D5 /* YummyEaterySeekerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		119CC2532AEBD7550088C0D5 /* YummyEaterySeeker */ = {
+			isa = PBXGroup;
+			children = (
+				119CC2542AEBD7550088C0D5 /* YummyEaterySeekerApp.swift */,
+				119CC2562AEBD7550088C0D5 /* ContentView.swift */,
+				119CC2582AEBD7560088C0D5 /* Assets.xcassets */,
+				119CC25A2AEBD7560088C0D5 /* Preview Content */,
+			);
+			path = YummyEaterySeeker;
+			sourceTree = "<group>";
+		};
+		119CC25A2AEBD7560088C0D5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				119CC25B2AEBD7560088C0D5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		119CC2642AEBD7570088C0D5 /* YummyEaterySeekerTests */ = {
+			isa = PBXGroup;
+			children = (
+				119CC2652AEBD7570088C0D5 /* YummyEaterySeekerTests.swift */,
+			);
+			path = YummyEaterySeekerTests;
+			sourceTree = "<group>";
+		};
+		119CC26E2AEBD7570088C0D5 /* YummyEaterySeekerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				119CC26F2AEBD7570088C0D5 /* YummyEaterySeekerUITests.swift */,
+				119CC2712AEBD7570088C0D5 /* YummyEaterySeekerUITestsLaunchTests.swift */,
+			);
+			path = YummyEaterySeekerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		119CC2502AEBD7550088C0D5 /* YummyEaterySeeker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 119CC2752AEBD7570088C0D5 /* Build configuration list for PBXNativeTarget "YummyEaterySeeker" */;
+			buildPhases = (
+				119CC24D2AEBD7550088C0D5 /* Sources */,
+				119CC24E2AEBD7550088C0D5 /* Frameworks */,
+				119CC24F2AEBD7550088C0D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YummyEaterySeeker;
+			productName = YummyEaterySeeker;
+			productReference = 119CC2512AEBD7550088C0D5 /* YummyEaterySeeker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		119CC2602AEBD7570088C0D5 /* YummyEaterySeekerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 119CC2782AEBD7570088C0D5 /* Build configuration list for PBXNativeTarget "YummyEaterySeekerTests" */;
+			buildPhases = (
+				119CC25D2AEBD7570088C0D5 /* Sources */,
+				119CC25E2AEBD7570088C0D5 /* Frameworks */,
+				119CC25F2AEBD7570088C0D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				119CC2632AEBD7570088C0D5 /* PBXTargetDependency */,
+			);
+			name = YummyEaterySeekerTests;
+			productName = YummyEaterySeekerTests;
+			productReference = 119CC2612AEBD7570088C0D5 /* YummyEaterySeekerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		119CC26A2AEBD7570088C0D5 /* YummyEaterySeekerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 119CC27B2AEBD7570088C0D5 /* Build configuration list for PBXNativeTarget "YummyEaterySeekerUITests" */;
+			buildPhases = (
+				119CC2672AEBD7570088C0D5 /* Sources */,
+				119CC2682AEBD7570088C0D5 /* Frameworks */,
+				119CC2692AEBD7570088C0D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				119CC26D2AEBD7570088C0D5 /* PBXTargetDependency */,
+			);
+			name = YummyEaterySeekerUITests;
+			productName = YummyEaterySeekerUITests;
+			productReference = 119CC26B2AEBD7570088C0D5 /* YummyEaterySeekerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		119CC2492AEBD7550088C0D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					119CC2502AEBD7550088C0D5 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					119CC2602AEBD7570088C0D5 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 119CC2502AEBD7550088C0D5;
+					};
+					119CC26A2AEBD7570088C0D5 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 119CC2502AEBD7550088C0D5;
+					};
+				};
+			};
+			buildConfigurationList = 119CC24C2AEBD7550088C0D5 /* Build configuration list for PBXProject "YummyEaterySeeker" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 119CC2482AEBD7550088C0D5;
+			productRefGroup = 119CC2522AEBD7550088C0D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				119CC2502AEBD7550088C0D5 /* YummyEaterySeeker */,
+				119CC2602AEBD7570088C0D5 /* YummyEaterySeekerTests */,
+				119CC26A2AEBD7570088C0D5 /* YummyEaterySeekerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		119CC24F2AEBD7550088C0D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				119CC25C2AEBD7560088C0D5 /* Preview Assets.xcassets in Resources */,
+				119CC2592AEBD7560088C0D5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		119CC25F2AEBD7570088C0D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		119CC2692AEBD7570088C0D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		119CC24D2AEBD7550088C0D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				119CC2572AEBD7550088C0D5 /* ContentView.swift in Sources */,
+				119CC2552AEBD7550088C0D5 /* YummyEaterySeekerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		119CC25D2AEBD7570088C0D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				119CC2662AEBD7570088C0D5 /* YummyEaterySeekerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		119CC2672AEBD7570088C0D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				119CC2702AEBD7570088C0D5 /* YummyEaterySeekerUITests.swift in Sources */,
+				119CC2722AEBD7570088C0D5 /* YummyEaterySeekerUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		119CC2632AEBD7570088C0D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 119CC2502AEBD7550088C0D5 /* YummyEaterySeeker */;
+			targetProxy = 119CC2622AEBD7570088C0D5 /* PBXContainerItemProxy */;
+		};
+		119CC26D2AEBD7570088C0D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 119CC2502AEBD7550088C0D5 /* YummyEaterySeeker */;
+			targetProxy = 119CC26C2AEBD7570088C0D5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		119CC2732AEBD7570088C0D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		119CC2742AEBD7570088C0D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		119CC2762AEBD7570088C0D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"YummyEaterySeeker/Preview Content\"";
+				DEVELOPMENT_TEAM = 6GLTGAY9BW;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.khatch.shah.home.YummyEaterySeeker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		119CC2772AEBD7570088C0D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"YummyEaterySeeker/Preview Content\"";
+				DEVELOPMENT_TEAM = 6GLTGAY9BW;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.khatch.shah.home.YummyEaterySeeker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		119CC2792AEBD7570088C0D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6GLTGAY9BW;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.khatch.shah.home.YummyEaterySeekerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YummyEaterySeeker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/YummyEaterySeeker";
+			};
+			name = Debug;
+		};
+		119CC27A2AEBD7570088C0D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6GLTGAY9BW;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.khatch.shah.home.YummyEaterySeekerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YummyEaterySeeker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/YummyEaterySeeker";
+			};
+			name = Release;
+		};
+		119CC27C2AEBD7570088C0D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6GLTGAY9BW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.khatch.shah.home.YummyEaterySeekerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YummyEaterySeeker;
+			};
+			name = Debug;
+		};
+		119CC27D2AEBD7570088C0D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6GLTGAY9BW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.khatch.shah.home.YummyEaterySeekerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YummyEaterySeeker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		119CC24C2AEBD7550088C0D5 /* Build configuration list for PBXProject "YummyEaterySeeker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				119CC2732AEBD7570088C0D5 /* Debug */,
+				119CC2742AEBD7570088C0D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		119CC2752AEBD7570088C0D5 /* Build configuration list for PBXNativeTarget "YummyEaterySeeker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				119CC2762AEBD7570088C0D5 /* Debug */,
+				119CC2772AEBD7570088C0D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		119CC2782AEBD7570088C0D5 /* Build configuration list for PBXNativeTarget "YummyEaterySeekerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				119CC2792AEBD7570088C0D5 /* Debug */,
+				119CC27A2AEBD7570088C0D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		119CC27B2AEBD7570088C0D5 /* Build configuration list for PBXNativeTarget "YummyEaterySeekerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				119CC27C2AEBD7570088C0D5 /* Debug */,
+				119CC27D2AEBD7570088C0D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 119CC2492AEBD7550088C0D5 /* Project object */;
+}
