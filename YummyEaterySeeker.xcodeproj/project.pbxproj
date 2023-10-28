@@ -16,6 +16,7 @@
 		1196353A2AED343B00DC7032 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119635392AED343B00DC7032 /* RegisterView.swift */; };
 		1196353D2AED356500DC7032 /* AddRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1196353C2AED356500DC7032 /* AddRestaurantView.swift */; };
 		1196353F2AED360100DC7032 /* ListRestaurantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1196353E2AED360100DC7032 /* ListRestaurantsView.swift */; };
+		119635422AED918600DC7032 /* YummyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119635412AED918600DC7032 /* YummyVM.swift */; };
 		119CC2552AEBD7550088C0D5 /* YummyEaterySeekerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119CC2542AEBD7550088C0D5 /* YummyEaterySeekerApp.swift */; };
 		119CC2592AEBD7560088C0D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 119CC2582AEBD7560088C0D5 /* Assets.xcassets */; };
 		119CC25C2AEBD7560088C0D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 119CC25B2AEBD7560088C0D5 /* Preview Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		119635392AED343B00DC7032 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		1196353C2AED356500DC7032 /* AddRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestaurantView.swift; sourceTree = "<group>"; };
 		1196353E2AED360100DC7032 /* ListRestaurantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRestaurantsView.swift; sourceTree = "<group>"; };
+		119635412AED918600DC7032 /* YummyVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummyVM.swift; sourceTree = "<group>"; };
 		119CC2512AEBD7550088C0D5 /* YummyEaterySeeker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YummyEaterySeeker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		119CC2542AEBD7550088C0D5 /* YummyEaterySeekerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummyEaterySeekerApp.swift; sourceTree = "<group>"; };
 		119CC2582AEBD7560088C0D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,6 +149,14 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		119635402AED913100DC7032 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				119635412AED918600DC7032 /* YummyVM.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		119CC2482AEBD7550088C0D5 = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +180,7 @@
 		119CC2532AEBD7550088C0D5 /* YummyEaterySeeker */ = {
 			isa = PBXGroup;
 			children = (
+				119635402AED913100DC7032 /* ViewModels */,
 				1196352E2AED328D00DC7032 /* Model */,
 				1190DA2D2AEC1E58002CA42E /* Views */,
 				119CC2802AEBDF940088C0D5 /* GoogleService-Info.plist */,
@@ -351,6 +362,7 @@
 				1196353A2AED343B00DC7032 /* RegisterView.swift in Sources */,
 				119CC2552AEBD7550088C0D5 /* YummyEaterySeekerApp.swift in Sources */,
 				1196352D2AED322A00DC7032 /* ContentView.swift in Sources */,
+				119635422AED918600DC7032 /* YummyVM.swift in Sources */,
 				1196353D2AED356500DC7032 /* AddRestaurantView.swift in Sources */,
 				119635322AED334D00DC7032 /* UserData.swift in Sources */,
 				1190DA2F2AEC1E88002CA42E /* SplashScreenView.swift in Sources */,
