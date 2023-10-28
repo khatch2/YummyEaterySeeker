@@ -5,14 +5,6 @@
 //  Created by Khatch Shah on 2023-10-28.
 //
 
-//import SwiftUI
-//
-//struct RegisterView: View {
-//    var body: some View {
-//        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-//    }
-//}
-
 import Foundation
 import SwiftUI
 
@@ -27,54 +19,60 @@ struct RegisterView: View {
     
     var body: some View {
         
-        VStack(spacing: 30) {
-            Text("Register an account").bold().font(.title).padding()
+        VStack {
             
-            VStack(spacing: 20) {
-                TextField("Email address", text: $email)
-                    .textFieldStyle(.roundedBorder)
-                    .keyboardType(.emailAddress)
-                    .textInputAutocapitalization(.never)
+            VStack(spacing: 30) {
                 
-                SecureField("Password", text: $password).textFieldStyle(.roundedBorder)
-                SecureField("Confirm password", text: $confirmPassword).textFieldStyle(.roundedBorder)
+                Text(" Register an account ")
+                    .bold()
+                    .font(.custom("Chalkduster", size: 20))
+                    .padding()
                 
-                DatePicker(selection: $birthdate, label: {
-                    Text("Birthdate")
-                })
-            }.padding()
-            
-            Button(action: {
-                
-                if !email.isEmpty && !password.isEmpty && password == confirmPassword {
+                VStack(spacing: 20) {
+                    TextField("Email address", text: $email)
+                        .textFieldStyle(.roundedBorder)
+                        .keyboardType(.emailAddress)
+                        .textInputAutocapitalization(.never)
                     
-                    let isSuccess = db.RegisterUser(email: email, password: password, birthdate: birthdate)
+                    SecureField("Password", text: $password).textFieldStyle(.roundedBorder)
+                    SecureField("Confirm password", text: $confirmPassword).textFieldStyle(.roundedBorder)
                     
-                    if !isSuccess {
-                        print("Failed to create account")
+                    DatePicker(
+                        selection: $birthdate,
+                        label: {
+                            
+                            Text("Birthdate")
+                            .font(.custom("times", size: 10))
+                    })
+                }.padding()
+                
+                Button(action: {
+                    
+                    if !email.isEmpty && !password.isEmpty && password == confirmPassword {
+                        
+                        let isSuccess = db.RegisterUser(email: email, password: password, birthdate: birthdate)
+                        
+                        if !isSuccess {
+                            print("Failed to create account")
+                        }
+                        
                     }
                     
-                }
-                
-            }, label: {
-                Text("Register")
-                    .bold()
-                    .padding()
-                    .foregroundColor(.white)
-                    .background(.black)
-                    .cornerRadius(9)
-            })
-        }
-        
+                }, label: {
+                    
+                    Text("Register")
+                        .bold()
+                        .font(.custom("times", size: 18))
+                        .padding()
+                        .foregroundColor(.blue)
+                        .background(.mint)
+                        .cornerRadius(12)
+                })
+            }.background(Color.yellow).padding()
+            
+        }.background(Color.orange)
     }
 }
-
-//struct RegisterView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RegisterView(db: DbConnection())
-//    }
-//}
-
 
 #Preview {
     RegisterView(db: DbConnection())

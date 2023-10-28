@@ -10,7 +10,9 @@ import SwiftUI
 struct SplashScreenView: View {
     
     @State var isActive: Bool = false
+    
     @State private var size = 0.8
+    
     @State private var opacity = 0.5
     
     // I customised my SplashScreen here
@@ -21,7 +23,9 @@ struct SplashScreenView: View {
 
 //            DBContentView()
             
-            AddRestaurantView(db: DbConnection())
+//            AddRestaurantView(db: DbConnection())
+            
+            LoginView(db: DbConnection())
             
         } else {
             GeometryReader { geometry in
@@ -31,7 +35,7 @@ struct SplashScreenView: View {
                             
                             Image("SplashScreenSet").resizable().frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.5, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).background(Color.orange).colorInvert()
                             
-                            Text("Online Tic tac toe").font(Font.custom("Times New Roman", size: 26)).foregroundColor(.black.opacity(0.50)).bold()
+                            Text(" Yummy Eatery Seeker ").font(Font.custom("Times New Roman", size: 26)).foregroundColor(.black.opacity(0.50)).bold()
                         }.scaleEffect(size).opacity(opacity).onAppear{
                             withAnimation(.easeIn(duration: 3.2)) {
                                 self.size = 0.9
@@ -39,6 +43,7 @@ struct SplashScreenView: View {
                             }
                         }
                     }.onAppear {
+                        
                         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0 /* 5 seconds */) {
                             withAnimation {
                                 self.isActive = true
@@ -48,10 +53,7 @@ struct SplashScreenView: View {
                 }.position(x: geometry.size.width * 0.5, y: geometry.size.height * 0.5).background(Color.yellow)
                 
             }
-            
         }
-        
-        
     }
 }
 

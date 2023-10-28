@@ -5,13 +5,6 @@
 //  Created by Khatch Shah on 2023-10-28.
 //
 
-//import SwiftUI
-//
-//struct ListRestaurantsView: View {
-//    var body: some View {
-//        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-//    }
-//}
 
 import Foundation
 import SwiftUI
@@ -23,8 +16,10 @@ struct ListRestaurantsView: View {
     
     var body: some View {
         NavigationStack {
+            
             VStack {
-                Text("Restauranger").font(.title).bold().padding()
+                
+                Text(" Restaurangs / Yummies ").font(.custom("times", size: 28)).bold().padding()
                 
                 if let userData = db.currentUserData {
                     
@@ -38,27 +33,27 @@ struct ListRestaurantsView: View {
                         }
                     }
 
-                    
                 } else {
                     
                     Text("Unexpected error, please contact your administrator.")
+                        .font(.custom("times", size: 20))
                     
                 }
             
                 NavigationLink(destination: AddRestaurantView(db: db), label: {
-                    Text("Add Restaurant").bold().padding().foregroundColor(.white).background(.black).cornerRadius(9)
-                })
-            }
-        }
+                    
+                    Text(" Add a new Yummy? ")
+                        .bold()
+                        .font(.custom("times", size: 24))
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(.black)
+                        .cornerRadius(15)
+                }).background(Color.cyan)
+            }.background(Color.orange)
+        }.background(Color.yellow)
     }
 }
-
-//struct ListRestaurantsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ListRestaurantsView(db: DbConnection())
-//    }
-//}
-
 
 #Preview {
     ListRestaurantsView(db: DbConnection())

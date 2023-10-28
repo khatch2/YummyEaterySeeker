@@ -5,22 +5,14 @@
 //  Created by Khatch Shah on 2023-10-28.
 //
 
-//import SwiftUI
-//
-//struct LoginView: View {
-//    var body: some View {
-//        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-//    }
-//}
-
 import Foundation
 import SwiftUI
 
 /*
  
- Varje view har en koordinatsystem. Om vi har en view med storleken 100 with och 100 height, så skulle koordinaten x: 50, y: 50 motsvara mittpunkten i den viewn.
+ Each view has a coordinate system. If I have a view with the size 100 with and 100 height, then the coordinate x: 50, y: 50 would correspond to the center point of that view.
  
- När vi sätter .position på en komponent som befinner sig inom våran view (alltså child-komponent), så anger vi komponentens mittpunkt inom parent viewn's koordinatsystem.
+ When I set .position to a component that is within our view (i.e. child component), I specify the component's center point within the parent view's coordinate system.
  
  */
 
@@ -28,8 +20,8 @@ struct LoginView: View {
     
     @ObservedObject var db: DbConnection
     
-    
     @State var email = ""
+    
     @State var password = ""
     
     var body: some View {
@@ -39,26 +31,29 @@ struct LoginView: View {
             
                 Image("restaurant-logo").resizable().frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.28, alignment: .center).padding()
             
-            Text("Welcome to Restaurant Finder!")
+            Text("Welcome to Yummy Seeker!")
                 .bold()
-                .font(.system(size: 24)).padding(.bottom, geometry.size.height * 0.02)
+                .font(.system(size: 24, design: .serif)).italic().padding(.bottom, geometry.size.height * 0.02)
                 
                 VStack(alignment: .leading) {
-                    Text("Enter your credentials").font(.title3).bold()
+                    Text(" Enter your credentials? ").font(.system(size: 20, design: .serif)).bold().italic()
                     
                     TextField("Email address", text: $email)
                         .textFieldStyle(.roundedBorder)
+                        .font(.custom("times", size: 14))
                         .keyboardType(.emailAddress)
                         .textInputAutocapitalization(.never)
                     
-                    SecureField("Password", text: $password).textFieldStyle(.roundedBorder)
+                    SecureField("Password", text: $password)
+                        .textFieldStyle(.roundedBorder)
+                        .font(.custom("times", size: 14))
                     
-                }.padding()
+                }.background(Color.orange).padding()
                 
                 Button(action: {
                     
                     if !email.isEmpty && !password.isEmpty {
-                        // Logga in användaren
+                        // Log in the user
                     }
                     
                 }, label: {
@@ -73,20 +68,12 @@ struct LoginView: View {
                 NavigationLink(destination: RegisterView(db: db), label: {
                     Text("Register account").bold().padding().foregroundColor(.black)
                 })
-            
-            
+                
         }
-        .frame(width: geometry.size.width, height: geometry.size.height)
+            .frame(width: geometry.size.width, height: geometry.size.height).background(Color.gray)
         }
-        
     }
 }
-
-//struct LoginView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LoginView(db: DbConnection())
-//    }
-//}
 
 #Preview {
     LoginView(db: DbConnection())
