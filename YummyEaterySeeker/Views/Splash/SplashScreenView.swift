@@ -21,7 +21,7 @@ struct SplashScreenView: View {
 
 //            DBContentView()
             
-            AddRestaurantView()
+            AddRestaurantView(db: DbConnection())
             
         } else {
             GeometryReader { geometry in
