@@ -17,6 +17,7 @@
 		1196353D2AED356500DC7032 /* AddRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1196353C2AED356500DC7032 /* AddRestaurantView.swift */; };
 		1196353F2AED360100DC7032 /* ListRestaurantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1196353E2AED360100DC7032 /* ListRestaurantsView.swift */; };
 		119635422AED918600DC7032 /* YummyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119635412AED918600DC7032 /* YummyVM.swift */; };
+		119635452AED94D300DC7032 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 119635442AED94D300DC7032 /* KeychainSwift */; };
 		119CC2552AEBD7550088C0D5 /* YummyEaterySeekerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119CC2542AEBD7550088C0D5 /* YummyEaterySeekerApp.swift */; };
 		119CC2592AEBD7560088C0D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 119CC2582AEBD7560088C0D5 /* Assets.xcassets */; };
 		119CC25C2AEBD7560088C0D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 119CC25B2AEBD7560088C0D5 /* Preview Assets.xcassets */; };
@@ -80,6 +81,7 @@
 				119CC2882AEBE35A0088C0D5 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				119CC2842AEBE35A0088C0D5 /* FirebaseAuth in Frameworks */,
 				119CC2862AEBE35A0088C0D5 /* FirebaseFirestore in Frameworks */,
+				119635452AED94D300DC7032 /* KeychainSwift in Frameworks */,
 				119CC28C2AEBE35A0088C0D5 /* FirebaseStorage in Frameworks */,
 				119CC28E2AEBE35A0088C0D5 /* FirebaseStorageCombine-Community in Frameworks */,
 				119CC28A2AEBE35A0088C0D5 /* FirebaseFirestoreSwift in Frameworks */,
@@ -240,6 +242,7 @@
 				119CC2892AEBE35A0088C0D5 /* FirebaseFirestoreSwift */,
 				119CC28B2AEBE35A0088C0D5 /* FirebaseStorage */,
 				119CC28D2AEBE35A0088C0D5 /* FirebaseStorageCombine-Community */,
+				119635442AED94D300DC7032 /* KeychainSwift */,
 			);
 			productName = YummyEaterySeeker;
 			productReference = 119CC2512AEBD7550088C0D5 /* YummyEaterySeeker.app */;
@@ -315,6 +318,7 @@
 			mainGroup = 119CC2482AEBD7550088C0D5;
 			packageReferences = (
 				119CC2822AEBE3590088C0D5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				119635432AED94D300DC7032 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 119CC2522AEBD7550088C0D5 /* Products */;
 			projectDirPath = "";
@@ -701,6 +705,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		119635432AED94D300DC7032 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 20.0.0;
+			};
+		};
 		119CC2822AEBE3590088C0D5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -712,6 +724,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		119635442AED94D300DC7032 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 119635432AED94D300DC7032 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
 		119CC2832AEBE35A0088C0D5 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 119CC2822AEBE3590088C0D5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
