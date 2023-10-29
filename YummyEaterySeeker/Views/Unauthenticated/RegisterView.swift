@@ -10,6 +10,8 @@ import SwiftUI
 
 struct RegisterView: View {
     
+    @Environment(\.dismiss) private var dismiss
+    
     @ObservedObject var db: DbConnection
     
     @StateObject var viewModel = RegisterViewViewModel()
@@ -74,6 +76,9 @@ struct RegisterView: View {
                                 var lookReturnedValueAddrestaurantView = AddRestaurantView(db: DbConnection())
                                 
                                 print(" lookReturnedValueAddrestaurantView = ", lookReturnedValueAddrestaurantView)
+                                
+                                dismiss() // TODO : It didn't work here as I expected it, why?
+()
                             }
                             
                         }
