@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SplashScreenView: View {
     
+    @ObservedObject var db: DbConnection
+    
     @State var isActive: Bool = false
     
     @State private var size = 0.8
@@ -59,5 +61,5 @@ struct SplashScreenView: View {
 
 
 #Preview {
-    SplashScreenView()
+    SplashScreenView(db: DbConnection())
 }

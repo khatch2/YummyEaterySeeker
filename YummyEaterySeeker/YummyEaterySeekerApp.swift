@@ -57,7 +57,7 @@ struct YummyEaterySeekerApp: App {
                 
 //                ContentView()
                 
-                SplashScreenView()
+                SplashScreenView(db: DbConnection())
             }
         }
     }

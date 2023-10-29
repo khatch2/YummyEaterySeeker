@@ -53,7 +53,12 @@ struct LoginView: View {
                 Button(action: {
                     
                     if !email.isEmpty && !password.isEmpty {
+                        
                         // Log in the user
+                        
+                        var look2 = ListRestaurantsView(db: DbConnection())
+                        
+                        print("look2 = " , look2.db.USER_DATA_COLLECTION.description)
                     }
                     
                 }, label: {
@@ -63,6 +68,20 @@ struct LoginView: View {
                         .foregroundColor(.white)
                         .background(.black)
                         .cornerRadius(9)
+                })
+                
+                Button(action: {
+                    do {
+                        
+                        try db.auth.signOut()
+                        
+                    } catch let signOutError as NSError {
+                        
+                        print(" Error signing out: %@ ", signOutError)
+                    }
+                    
+                }, label: {
+                    Text("Log me out").bold().padding().foregroundColor(.white).background(.black).cornerRadius(9)
                 })
                 
                 NavigationLink(destination: RegisterView(db: db), label: {

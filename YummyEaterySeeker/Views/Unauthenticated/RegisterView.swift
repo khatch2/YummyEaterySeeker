@@ -12,10 +12,13 @@ struct RegisterView: View {
     
     @ObservedObject var db: DbConnection
     
+    @StateObject var viewModel = RegisterViewViewModel()
+    
     @State var email = ""
     @State var password = ""
     @State var confirmPassword = ""
     @State var birthdate = Date()
+    @State var name = ""
     
     var body: some View {
         
@@ -35,23 +38,28 @@ struct RegisterView: View {
                             .textFieldStyle(.roundedBorder)
                             .keyboardType(.emailAddress)
                             .textInputAutocapitalization(.never)
+                            .padding()
                         
-                        SecureField("Password", text: $password).textFieldStyle(.roundedBorder)
-                        SecureField("Confirm password", text: $confirmPassword).textFieldStyle(.roundedBorder)
+                        SecureField("Password", text: $password).textFieldStyle(.roundedBorder).padding()
+                        
+                        SecureField("Confirm password", text: $confirmPassword).textFieldStyle(.roundedBorder).padding()
+                        
+                        TextField("User's name?", text: $name)
+                            .textFieldStyle(.roundedBorder).autocorrectionDisabled().padding()
                         
                         DatePicker(
                             selection: $birthdate,
                             label: {
                                 
                                 Text("Birthdate")
-                                .font(.custom("times", size: 14))
+                                    .font(.custom("times", size: 18)).background(Color.cyan)
                         })
                     }.padding()
                     
                     Button(action: {
                         
                         if !email.isEmpty && !password.isEmpty && password == confirmPassword {
-                            
+                                                        
                             let isSuccess = db.RegisterUser(email: email, password: password, birthdate: birthdate)
                             
                             if !isSuccess {
@@ -59,6 +67,13 @@ struct RegisterView: View {
                                 print("Failed to create account")
                                 
                                 print(" db = ", db)
+                            }
+                            
+                            if (isSuccess == true) {
+                                
+                                var lookReturnedValueAddrestaurantView = AddRestaurantView(db: DbConnection())
+                                
+                                print(" lookReturnedValueAddrestaurantView = ", lookReturnedValueAddrestaurantView)
                             }
                             
                         }
