@@ -33,7 +33,7 @@ struct SplashScreenView: View {
                     VStack {
                         VStack {
                             
-                            Image("SplashScreenSet").resizable().frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.5, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).background(Color.orange).colorInvert()
+                            Image("SplashScreenSet").resizable().frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.5, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).background(Color.blue)
                             
                             Text(" Yummy Eatery Seeker ").font(Font.custom("Times New Roman", size: 26)).foregroundColor(.black.opacity(0.50)).bold()
                         }.scaleEffect(size).opacity(opacity).onAppear{

@@ -14,9 +14,10 @@ class DbConnection: ObservableObject {
     var db = Firestore.firestore()
     var auth = Auth.auth()
     
-    let USER_DATA_COLLECTION = "user_data"
+    let USER_DATA_COLLECTION = "user_data_dbconnection"
 
     @Published var currentUserData: UserData?
+    
     @Published var currentUser: User?
     
     var dbListener: ListenerRegistration?
@@ -31,6 +32,7 @@ class DbConnection: ObservableObject {
                 // A user has just logged in
                 print("A user has logged in with email: \(user.email ?? "No Email")")
                 
+//                self.currentUser = user
                 self.currentUser = user
                 
                 self.startListeningToDb()

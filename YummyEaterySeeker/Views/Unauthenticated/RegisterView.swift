@@ -19,58 +19,67 @@ struct RegisterView: View {
     
     var body: some View {
         
-        VStack {
+        GeometryReader { geometry in
             
-            VStack(spacing: 30) {
+            VStack {
                 
-                Text(" Register an account ")
-                    .bold()
-                    .font(.custom("Chalkduster", size: 20))
-                    .padding()
-                
-                VStack(spacing: 20) {
-                    TextField("Email address", text: $email)
-                        .textFieldStyle(.roundedBorder)
-                        .keyboardType(.emailAddress)
-                        .textInputAutocapitalization(.never)
+                VStack(spacing: 30) {
                     
-                    SecureField("Password", text: $password).textFieldStyle(.roundedBorder)
-                    SecureField("Confirm password", text: $confirmPassword).textFieldStyle(.roundedBorder)
+                    Text(" Register an account ")
+                        .bold()
+                        .font(.custom("Chalkduster", size: 20))
+                        .padding()
                     
-                    DatePicker(
-                        selection: $birthdate,
-                        label: {
+                    VStack(spacing: 20) {
+                        TextField("Email address", text: $email)
+                            .textFieldStyle(.roundedBorder)
+                            .keyboardType(.emailAddress)
+                            .textInputAutocapitalization(.never)
+                        
+                        SecureField("Password", text: $password).textFieldStyle(.roundedBorder)
+                        SecureField("Confirm password", text: $confirmPassword).textFieldStyle(.roundedBorder)
+                        
+                        DatePicker(
+                            selection: $birthdate,
+                            label: {
+                                
+                                Text("Birthdate")
+                                .font(.custom("times", size: 14))
+                        })
+                    }.padding()
+                    
+                    Button(action: {
+                        
+                        if !email.isEmpty && !password.isEmpty && password == confirmPassword {
                             
-                            Text("Birthdate")
-                            .font(.custom("times", size: 10))
-                    })
-                }.padding()
-                
-                Button(action: {
-                    
-                    if !email.isEmpty && !password.isEmpty && password == confirmPassword {
-                        
-                        let isSuccess = db.RegisterUser(email: email, password: password, birthdate: birthdate)
-                        
-                        if !isSuccess {
-                            print("Failed to create account")
+                            let isSuccess = db.RegisterUser(email: email, password: password, birthdate: birthdate)
+                            
+                            if !isSuccess {
+                                
+                                print("Failed to create account")
+                                
+                                print(" db = ", db)
+                            }
+                            
                         }
                         
-                    }
-                    
-                }, label: {
-                    
-                    Text("Register")
-                        .bold()
-                        .font(.custom("times", size: 18))
-                        .padding()
-                        .foregroundColor(.blue)
-                        .background(.mint)
-                        .cornerRadius(12)
-                })
-            }.background(Color.yellow).padding()
+                    }, label: {
+                        
+                        Text("Register")
+                            .bold()
+                            .font(.custom("times", size: 18))
+                            .padding()
+                            .foregroundColor(.blue)
+                            .background(.mint)
+                            .cornerRadius(12)
+                    })
+                }.background(Color.yellow).padding()
+                
+            }.background(Color.orange)
+
             
-        }.background(Color.orange)
+        }
+        
     }
 }
 
