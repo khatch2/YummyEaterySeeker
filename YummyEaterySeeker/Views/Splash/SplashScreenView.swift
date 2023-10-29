@@ -23,11 +23,11 @@ struct SplashScreenView: View {
         
         if (isActive == true) {
 
-//            DBContentView()
+            DBContentView()
             
 //            AddRestaurantView(db: DbConnection())
             
-            LoginView(db: DbConnection())
+//            LoginView(db: DbConnection())
             
         } else {
             GeometryReader { geometry in

@@ -8,7 +8,7 @@
 /*
 Approved:
 • Your app must work in accordance with the app idea you decided from the beginning
-• Your project is posted on GitHub
+• (DONE) Your project is posted on GitHub
 • The app uses a database to save its data
 • User system with user-specific data stored in the database
 • In your presentation, you must justify why your app looks and functions as it does based on one

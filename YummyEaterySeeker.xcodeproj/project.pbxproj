@@ -33,6 +33,8 @@
 		119CC28A2AEBE35A0088C0D5 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 119CC2892AEBE35A0088C0D5 /* FirebaseFirestoreSwift */; };
 		119CC28C2AEBE35A0088C0D5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 119CC28B2AEBE35A0088C0D5 /* FirebaseStorage */; };
 		119CC28E2AEBE35A0088C0D5 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 119CC28D2AEBE35A0088C0D5 /* FirebaseStorageCombine-Community */; };
+		11DC44DD2AEEC0FC00AD26EE /* DBContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC44DC2AEEC0FC00AD26EE /* DBContentView.swift */; };
+		11DC44DF2AEEC1DF00AD26EE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC44DE2AEEC1DF00AD26EE /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		119CC26F2AEBD7570088C0D5 /* YummyEaterySeekerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummyEaterySeekerUITests.swift; sourceTree = "<group>"; };
 		119CC2712AEBD7570088C0D5 /* YummyEaterySeekerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummyEaterySeekerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		119CC2802AEBDF940088C0D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		11DC44DC2AEEC0FC00AD26EE /* DBContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBContentView.swift; sourceTree = "<group>"; };
+		11DC44DE2AEEC1DF00AD26EE /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 				1196353B2AED346000DC7032 /* Splash */,
 				119635362AED341100DC7032 /* Unauthenticated */,
 				119635352AED33FF00DC7032 /* Authenticated */,
+				11DC44DC2AEEC0FC00AD26EE /* DBContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 				119635312AED334D00DC7032 /* UserData.swift */,
 				119635332AED33A200DC7032 /* Restaurant.swift */,
 				119635482AEDA89000DC7032 /* UserMe.swift */,
+				11DC44DE2AEEC1DF00AD26EE /* Player.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -369,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11DC44DD2AEEC0FC00AD26EE /* DBContentView.swift in Sources */,
 				119635492AEDA89000DC7032 /* UserMe.swift in Sources */,
 				1196353A2AED343B00DC7032 /* RegisterView.swift in Sources */,
 				119CC2552AEBD7550088C0D5 /* YummyEaterySeekerApp.swift in Sources */,
@@ -381,6 +388,7 @@
 				119635342AED33A200DC7032 /* Restaurant.swift in Sources */,
 				1196353F2AED360100DC7032 /* ListRestaurantsView.swift in Sources */,
 				119635382AED342700DC7032 /* LoginView.swift in Sources */,
+				11DC44DF2AEEC1DF00AD26EE /* Player.swift in Sources */,
 				119635302AED32AC00DC7032 /* DbConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
