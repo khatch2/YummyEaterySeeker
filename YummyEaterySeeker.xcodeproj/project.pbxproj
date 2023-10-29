@@ -35,6 +35,7 @@
 		119CC28E2AEBE35A0088C0D5 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 119CC28D2AEBE35A0088C0D5 /* FirebaseStorageCombine-Community */; };
 		11DC44DD2AEEC0FC00AD26EE /* DBContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC44DC2AEEC0FC00AD26EE /* DBContentView.swift */; };
 		11DC44DF2AEEC1DF00AD26EE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC44DE2AEEC1DF00AD26EE /* Player.swift */; };
+		11DC44E12AEEDAE900AD26EE /* WantedRestaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC44E02AEEDAE900AD26EE /* WantedRestaurants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		119CC2802AEBDF940088C0D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		11DC44DC2AEEC0FC00AD26EE /* DBContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBContentView.swift; sourceTree = "<group>"; };
 		11DC44DE2AEEC1DF00AD26EE /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		11DC44E02AEEDAE900AD26EE /* WantedRestaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantedRestaurants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				119635332AED33A200DC7032 /* Restaurant.swift */,
 				119635482AEDA89000DC7032 /* UserMe.swift */,
 				11DC44DE2AEEC1DF00AD26EE /* Player.swift */,
+				11DC44E02AEEDAE900AD26EE /* WantedRestaurants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11DC44DD2AEEC0FC00AD26EE /* DBContentView.swift in Sources */,
+				11DC44E12AEEDAE900AD26EE /* WantedRestaurants.swift in Sources */,
 				119635492AEDA89000DC7032 /* UserMe.swift in Sources */,
 				1196353A2AED343B00DC7032 /* RegisterView.swift in Sources */,
 				119CC2552AEBD7550088C0D5 /* YummyEaterySeekerApp.swift in Sources */,
