@@ -9,7 +9,20 @@ import SwiftUI
 
 struct ListViewRestaurants: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        GeometryReader { geometry in
+            VStack(alignment: .leading) {
+                
+                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                
+                List() {
+                    ForEach(theRestaurantStations) { item in
+                        Text(item.url?.absoluteString ?? "N/A")
+                    }
+                }
+
+            }
+        }
     }
 }
 

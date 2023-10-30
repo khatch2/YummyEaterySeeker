@@ -21,12 +21,12 @@ import SwiftUI
 
 var myDesiredRestaurants : [MKPointOfInterestCategory] = [.restaurant]
 
+/** TODO : Change it here to declare theRestaurantStations globally BUT WITHOUT inititilise it with "Chamsin Grill" */
 var theRestaurantStations: [RestaurantStation] = [RestaurantStation(name: "Chamsin Grill - Libanesisk Restaurang Stockholm", latitude: 59.31303080041355, longitude: 18.027991342255227)]
 
 
 func populateNearByPlaces(theRegion: MKCoordinateRegion, theCookingChefs: [CookingChef]) -> String {
     
-//    var theRestaurantStations: [RestaurantStation] = [RestaurantStation(name: "Chamsin Grill - Libanesisk Restaurang Stockholm", latitude: 59.31303080041355, longitude: 18.027991342255227)]
     
     var wantedRequest = MKLocalSearch.Request()
     

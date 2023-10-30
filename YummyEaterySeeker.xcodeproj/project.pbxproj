@@ -142,7 +142,6 @@
 				119635332AED33A200DC7032 /* Restaurant.swift */,
 				119635482AEDA89000DC7032 /* UserMe.swift */,
 				11DC44DE2AEEC1DF00AD26EE /* Player.swift */,
-				11DC44E02AEEDAE900AD26EE /* WantedRestaurants.swift */,
 				11DC44E22AEEDDF100AD26EE /* CookingChef.swift */,
 				11DC44E42AEEDE4D00AD26EE /* RestaurantStation.swift */,
 				11DC44E62AEEE28100AD26EE /* LocationManager.swift */,
@@ -153,9 +152,10 @@
 		119635352AED33FF00DC7032 /* Authenticated */ = {
 			isa = PBXGroup;
 			children = (
+				11DC44E82AF03A4200AD26EE /* ListViewRestaurants.swift */,
+				11DC44E02AEEDAE900AD26EE /* WantedRestaurants.swift */,
 				1196353C2AED356500DC7032 /* AddRestaurantView.swift */,
 				1196353E2AED360100DC7032 /* ListRestaurantsView.swift */,
-				11DC44E82AF03A4200AD26EE /* ListViewRestaurants.swift */,
 			);
 			path = Authenticated;
 			sourceTree = "<group>";
