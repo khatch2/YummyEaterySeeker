@@ -8,6 +8,7 @@
 import Foundation
 
 import CoreLocation
+import MapKit
 
 struct RestaurantStation: Identifiable {
     
@@ -15,9 +16,9 @@ struct RestaurantStation: Identifiable {
     var name: String
     
     var phoneNumber: String?
-    var placemark: String?
-    var timeZone: String?
-    var url: String?
+    var placemark: MKPlacemark?
+    var timeZone: TimeZone?
+    var url: URL?
     
     var latitude: Double
     var longitude: Double

@@ -7,9 +7,17 @@
 
 import Foundation
 import MapKit
-
 import SwiftUI
 
+
+/**
+ TODO : 
+ 
+ En app där man kan skapa konto och logga in. Man kan se restauranger antingen i en lista eller i en kartvy. Man kan klicka på en restaurang, och läsa mer om den. Man kan se andra användare's reviews och rating över appen, och själv lämna en review
+ 
+ An app where you can create an account and log in. You can see restaurants either in a list or in a map view. You can click on a restaurant and read more about it. You can see other users' reviews and ratings of the app, and leave a review yourself
+ 
+ */
 
 var myDesiredRestaurants : [MKPointOfInterestCategory] = [.restaurant]
 
@@ -52,7 +60,9 @@ func populateNearByPlaces(theRegion: MKCoordinateRegion, theCookingChefs: [Cooki
             
             print(" theRestaurantStations.count = ", theRestaurantStations.count)
            
-            theRestaurantStations.append(RestaurantStation(name: item.name ?? "default value", latitude: item.placemark.coordinate.latitude, longitude: item.placemark.coordinate.longitude))
+//            theRestaurantStations.append(RestaurantStation(name: item.name ?? "default value", latitude: item.placemark.coordinate.latitude, longitude: item.placemark.coordinate.longitude))
+            
+            theRestaurantStations.append(RestaurantStation(name: item.name ?? "N/A", phoneNumber: item.phoneNumber, placemark: item.placemark, timeZone: item.timeZone, url: item.url, latitude: item.placemark.coordinate.latitude, longitude: item.placemark.coordinate.longitude))
             
             print("theRestaurantStations.count = " , theRestaurantStations.count)
             
@@ -113,11 +123,28 @@ struct WantedRestaurants: View {
                 VStack {
                     
                     ZStack {
-                        Circle().fill(.red).frame(width: 40, height: 40, alignment: .center)
+                        Circle().fill(.gray).frame(width: 40, height: 40, alignment: .center)
                         Image(systemName: "fork.knife.circle")
                     }
                     
-                    Text(myRestarantsStation.name ?? "N/A").bold()
+                    VStack {
+                        
+                        Text(myRestarantsStation.name )
+                            .font(.title).foregroundStyle(.red)
+                        + Text("\n") + Text(myRestarantsStation.phoneNumber ?? "N/A").font(.title2).foregroundStyle(.green)
+                        + Text("\n") +  Text(myRestarantsStation.url?.absoluteString ?? "N/A").font(.title3).foregroundStyle(.blue)
+                        
+//                        Text(myRestarantsStation.phoneNumber ?? "N/A").padding().foregroundColor(.green).background(Color.white).cornerRadius(9)
+
+
+//                        Text(myRestarantsStation.url?.absoluteString ?? "N/A").padding().foregroundColor(.blue).background(Color.white).cornerRadius(9)
+                        
+                    }.background(.white)
+                    
+                    
+                    
+//                    Label("Lightning", systemImage: "bolt" )
+                    
                 }
             }
         )
@@ -125,7 +152,7 @@ struct WantedRestaurants: View {
         
         VStack {
             
-            Spacer()
+//            Spacer()
             
             Button(action: {
                 locationManager.askPermission()
