@@ -13,9 +13,12 @@ import SwiftUI
 
 var myDesiredRestaurants : [MKPointOfInterestCategory] = [.restaurant]
 
+var theRestaurantStations: [RestaurantStation] = [RestaurantStation(name: "Chamsin Grill - Libanesisk Restaurang Stockholm", latitude: 59.31303080041355, longitude: 18.027991342255227)]
+
+
 func populateNearByPlaces(theRegion: MKCoordinateRegion, theCookingChefs: [CookingChef]) -> String {
     
-    var theRestaurantStations: [RestaurantStation] = [RestaurantStation(name: "Chamsin Grill - Libanesisk Restaurang Stockholm", latitude: 59.31303080041355, longitude: 18.027991342255227)]
+//    var theRestaurantStations: [RestaurantStation] = [RestaurantStation(name: "Chamsin Grill - Libanesisk Restaurang Stockholm", latitude: 59.31303080041355, longitude: 18.027991342255227)]
     
     var wantedRequest = MKLocalSearch.Request()
     
@@ -74,7 +77,7 @@ func populateNearByPlaces(theRegion: MKCoordinateRegion, theCookingChefs: [Cooki
 
 struct WantedRestaurants: View {
     
-    var location = LocationManager()
+    var locationManager = LocationManager()
     
     /* Sti yrkeshögskolan = 59.310230470905275, 18.021426935241518 */
         @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 59.310230470905275, longitude: 18.021426935241518), span: MKCoordinateSpan(latitudeDelta: 0.009, longitudeDelta: 0.009))
@@ -98,16 +101,15 @@ struct WantedRestaurants: View {
                         
             
         }, label: {
-            Text("myButton").bold().background(Color.yellow)
+            Text("Seek eatries now").bold().background(Color.yellow)
         })
         
-        // TODO : Change it from cookingChefsPersons to theRestaurantsStations
+        // DONE : Change it from cookingChefsPersons to theRestaurantStations
         
-        Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.follow), annotationItems: cookingChefsPersons) { myCooking in
+        Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.follow), annotationItems: theRestaurantStations) { myRestarantsStation in
             
-//            MapMarker(coordinate: myCookingChef.coordinates)
         
-            MapAnnotation(coordinate: myCooking.coordinates, content: {
+            MapAnnotation(coordinate: myRestarantsStation.coordinates, content: {
                 VStack {
                     
                     ZStack {
@@ -115,19 +117,26 @@ struct WantedRestaurants: View {
                         Image(systemName: "fork.knife.circle")
                     }
                     
-                    Text(myCooking.name ?? "N/A").bold()
+                    Text(myRestarantsStation.name ?? "N/A").bold()
                 }
             }
         )
-
-
+        }.ignoresSafeArea()
+        
+        VStack {
+            
+            Spacer()
+            
+            Button(action: {
+                locationManager.askPermission()
+            }, label: {
+                Text("Get my location").bold().padding().foregroundColor(.white).background(.black).cornerRadius(9)
+            })
+            
         }
+
         
-        
-        
-        
-    }
-    
+}
 }
 
 #Preview {
