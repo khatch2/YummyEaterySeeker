@@ -102,68 +102,84 @@ struct WantedRestaurants: View {
     
     var body: some View {
         
-        Text("Restaurants' Finder").bold().padding()
-        
-        Button(action: {
+        NavigationStack {
             
+            Text("Restaurants' Finder").bold().padding()
             
-            var look93 = populateNearByPlaces(theRegion: region, theCookingChefs: cookingChefsPersons)
-                        
-            
-        }, label: {
-            Text("Seek eatries now").bold().background(Color.yellow)
-        })
-        
-        // DONE : Change it from cookingChefsPersons to theRestaurantStations
-        
-        Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.follow), annotationItems: theRestaurantStations) { myRestarantsStation in
-            
-        
-            MapAnnotation(coordinate: myRestarantsStation.coordinates, content: {
-                VStack {
+            HStack (alignment: .center) {
+                
+                Button(action: {
                     
-                    ZStack {
-                        Circle().fill(.gray).frame(width: 40, height: 40, alignment: .center)
-                        Image(systemName: "fork.knife.circle")
-                    }
                     
+                    var look93 = populateNearByPlaces(theRegion: region, theCookingChefs: cookingChefsPersons)
+                                
+                    
+                }, label: {
+                    Text("Seek eatries now").bold().background(Color.yellow)
+                })
+                
+                NavigationLink(destination: ListViewRestaurants(), label: {
+                    Text("btnForEach").bold().padding().foregroundColor(.white).background(Color.black).cornerRadius(9)
+                })
+                
+            }
+            
+            
+            
+            // DONE : Change it from cookingChefsPersons to theRestaurantStations
+            
+            Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.follow), annotationItems: theRestaurantStations) { myRestarantsStation in
+                
+            
+                MapAnnotation(coordinate: myRestarantsStation.coordinates, content: {
                     VStack {
                         
-                        Text(myRestarantsStation.name )
-                            .font(.title).foregroundStyle(.red)
-                        + Text("\n") + Text(myRestarantsStation.phoneNumber ?? "N/A").font(.title2).foregroundStyle(.green)
-                        + Text("\n") +  Text(myRestarantsStation.url?.absoluteString ?? "N/A").font(.title3).foregroundStyle(.blue)
+                        ZStack {
+                            Circle().fill(.gray).frame(width: 40, height: 40, alignment: .center)
+                            Image(systemName: "fork.knife.circle")
+                        }
                         
-//                        Text(myRestarantsStation.phoneNumber ?? "N/A").padding().foregroundColor(.green).background(Color.white).cornerRadius(9)
+                        VStack {
+                            
+                            Text(myRestarantsStation.name )
+                                .font(.title).foregroundStyle(.red)
+                            + Text("\n") + Text(myRestarantsStation.phoneNumber ?? "N/A").font(.title2).foregroundStyle(.green)
+                            + Text("\n") +  Text(myRestarantsStation.url?.absoluteString ?? "N/A").font(.title3).foregroundStyle(.blue)
+                            
+    //                        Text(myRestarantsStation.phoneNumber ?? "N/A").padding().foregroundColor(.green).background(Color.white).cornerRadius(9)
 
 
-//                        Text(myRestarantsStation.url?.absoluteString ?? "N/A").padding().foregroundColor(.blue).background(Color.white).cornerRadius(9)
+    //                        Text(myRestarantsStation.url?.absoluteString ?? "N/A").padding().foregroundColor(.blue).background(Color.white).cornerRadius(9)
+                            
+                        }.background(.white)
                         
-                    }.background(.white)
-                    
-                    
-                    
-//                    Label("Lightning", systemImage: "bolt" )
-                    
+                        
+                        
+    //                    Label("Lightning", systemImage: "bolt" )
+                        
+                    }
                 }
+            )
+            }.ignoresSafeArea()
+            
+            VStack {
+                
+    //            Spacer()
+                
+                Button(action: {
+                    locationManager.askPermission()
+                }, label: {
+                    Text("Get my location").bold().padding().foregroundColor(.white).background(.black).cornerRadius(9)
+                })
+                
             }
-        )
-        }.ignoresSafeArea()
-        
-        VStack {
-            
-//            Spacer()
-            
-            Button(action: {
-                locationManager.askPermission()
-            }, label: {
-                Text("Get my location").bold().padding().foregroundColor(.white).background(.black).cornerRadius(9)
-            })
-            
-        }
 
+        }
         
-}
+        }
+        
+        
+    
 }
 
 #Preview {

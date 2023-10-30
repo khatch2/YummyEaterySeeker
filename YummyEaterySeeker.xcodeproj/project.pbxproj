@@ -39,6 +39,7 @@
 		11DC44E32AEEDDF100AD26EE /* CookingChef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC44E22AEEDDF100AD26EE /* CookingChef.swift */; };
 		11DC44E52AEEDE4D00AD26EE /* RestaurantStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC44E42AEEDE4D00AD26EE /* RestaurantStation.swift */; };
 		11DC44E72AEEE28100AD26EE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC44E62AEEE28100AD26EE /* LocationManager.swift */; };
+		11DC44E92AF03A4200AD26EE /* ListViewRestaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC44E82AF03A4200AD26EE /* ListViewRestaurants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		11DC44E22AEEDDF100AD26EE /* CookingChef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingChef.swift; sourceTree = "<group>"; };
 		11DC44E42AEEDE4D00AD26EE /* RestaurantStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantStation.swift; sourceTree = "<group>"; };
 		11DC44E62AEEE28100AD26EE /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		11DC44E82AF03A4200AD26EE /* ListViewRestaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewRestaurants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			children = (
 				1196353C2AED356500DC7032 /* AddRestaurantView.swift */,
 				1196353E2AED360100DC7032 /* ListRestaurantsView.swift */,
+				11DC44E82AF03A4200AD26EE /* ListViewRestaurants.swift */,
 			);
 			path = Authenticated;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				11DC44DF2AEEC1DF00AD26EE /* Player.swift in Sources */,
 				11DC44E72AEEE28100AD26EE /* LocationManager.swift in Sources */,
 				119635302AED32AC00DC7032 /* DbConnection.swift in Sources */,
+				11DC44E92AF03A4200AD26EE /* ListViewRestaurants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
