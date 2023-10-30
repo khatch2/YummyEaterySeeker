@@ -24,26 +24,33 @@ func populateNearByPlaces(theRegion: MKCoordinateRegion, theCookingChefs: [Cooki
     wantedRequest.region = theRegion
     
     print()
-    print("wantedRequest = " , wantedRequest)
+//    print("wantedRequest = " , wantedRequest)
     print()
     
     var wantedSearch = MKLocalSearch(request: wantedRequest)
     
     print()
-    print("wantedSearch = " , wantedSearch)
+//    print("wantedSearch = " , wantedSearch)
     print()
     
     wantedSearch.start() { (response, error) in
         
         guard let response = response else {return}
         
+        print("response is = ", response.self.mapItems.first?.url ?? "N/A")
+        
+        print("error = ", error)
+        
         for item in response.mapItems {
             
-            print(" item = ", item.placemark.coordinate.latitude)
+            print()
+            print(" item.placemark = ", item.placemark)
             print("typeof item is: ", type(of: item))
             
             print(" theRestaurantStations.count = ", theRestaurantStations.count)
+           
             theRestaurantStations.append(RestaurantStation(name: item.name ?? "default value", latitude: item.placemark.coordinate.latitude, longitude: item.placemark.coordinate.longitude))
+            
             print("theRestaurantStations.count = " , theRestaurantStations.count)
             
             print("<><><><><><><>")
@@ -85,18 +92,37 @@ struct WantedRestaurants: View {
         Text("Restaurants' Finder").bold().padding()
         
         Button(action: {
-            print("myDesiredRestaurants.first?.rawValue", myDesiredRestaurants.first?.rawValue)
+            
+            
+            var look93 = populateNearByPlaces(theRegion: region, theCookingChefs: cookingChefsPersons)
+                        
+            
         }, label: {
             Text("myButton").bold().background(Color.yellow)
         })
         
-        // TODO : Fix the following peice of code?
+        // TODO : Change it from cookingChefsPersons to theRestaurantsStations
         
-//        Map(coordinateRegion: $region, annotationItems: $cookingChefsPersons) { myCookingChef in
-//            
+        Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.follow), annotationItems: cookingChefsPersons) { myCooking in
+            
 //            MapMarker(coordinate: myCookingChef.coordinates)
-//            
-//        }
+        
+            MapAnnotation(coordinate: myCooking.coordinates, content: {
+                VStack {
+                    
+                    ZStack {
+                        Circle().fill(.red).frame(width: 40, height: 40, alignment: .center)
+                        Image(systemName: "fork.knife.circle")
+                    }
+                    
+                    Text(myCooking.name ?? "N/A").bold()
+                }
+            }
+        )
+
+
+        }
+        
         
         
         
