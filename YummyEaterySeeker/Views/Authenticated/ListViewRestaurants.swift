@@ -13,11 +13,11 @@ struct ListViewRestaurants: View {
         GeometryReader { geometry in
             VStack(alignment: .leading) {
                 
-                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+//                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
                 
                 List() {
                     ForEach(theRestaurantStations) { item in
-                        Text(item.url?.absoluteString ?? "N/A")
+                        Text(item.name ?? "N/A")
                     }
                 }
 

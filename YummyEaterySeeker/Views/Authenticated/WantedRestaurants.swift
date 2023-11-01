@@ -119,7 +119,7 @@ struct WantedRestaurants: View {
                 })
                 
                 NavigationLink(destination: ListViewRestaurants(), label: {
-                    Text("btnForEach").bold().padding().foregroundColor(.white).background(Color.black).cornerRadius(9)
+                    Text("ListShow").bold().padding().foregroundColor(.white).background(Color.black).cornerRadius(9)
                 })
                 
             }
