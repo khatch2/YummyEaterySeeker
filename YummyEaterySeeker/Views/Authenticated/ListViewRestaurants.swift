@@ -16,8 +16,17 @@ struct ListViewRestaurants: View {
 //                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
                 
                 List() {
-                    ForEach(theRestaurantStations) { item in
-                        Text(item.name ?? "N/A")
+                    ForEach(theRestaurantStations) { itemRestaurantView in
+                        
+                        HStack {
+                            
+                            RestaurantView(restaurantStation: itemRestaurantView)
+                            
+                            Text(itemRestaurantView.name ?? "N/A")
+                            
+                        }
+                        
+                        
                     }
                 }
 
