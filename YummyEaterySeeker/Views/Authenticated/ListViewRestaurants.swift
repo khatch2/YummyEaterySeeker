@@ -20,7 +20,7 @@ struct ListViewRestaurants: View {
                         
                         HStack {
                             
-                            RestaurantView(restaurantStation: itemRestaurantView)
+                            RestaurantView(db: DbConnection(), restaurantStation: itemRestaurantView)
                             
                             Text(itemRestaurantView.name ?? "N/A")
                             

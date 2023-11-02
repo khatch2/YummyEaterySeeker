@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SecondScreenView: View {
+struct DetailsScreenView: View {
     
     var restaurantStation : RestaurantStation?
     
@@ -20,10 +20,10 @@ struct SecondScreenView: View {
                 Text("Photo of \(restaurantStation.name)")
 
             }
-        }
+        }.background(Color.blue)
     }
 }
 
 #Preview {
-    SecondScreenView()
+    DetailsScreenView()
 }

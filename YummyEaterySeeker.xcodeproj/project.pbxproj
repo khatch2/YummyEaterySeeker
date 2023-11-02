@@ -41,8 +41,10 @@
 		11DC44E72AEEE28100AD26EE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC44E62AEEE28100AD26EE /* LocationManager.swift */; };
 		11DC44E92AF03A4200AD26EE /* ListViewRestaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC44E82AF03A4200AD26EE /* ListViewRestaurants.swift */; };
 		11F596832AF2BFD8000377FD /* RestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F596822AF2BFD8000377FD /* RestaurantView.swift */; };
-		11F596852AF2C1BE000377FD /* SecondScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F596842AF2C1BE000377FD /* SecondScreenView.swift */; };
+		11F596852AF2C1BE000377FD /* DetailsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F596842AF2C1BE000377FD /* DetailsScreenView.swift */; };
 		11F596882AF3BF6C000377FD /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F596872AF3BF6C000377FD /* StorageManager.swift */; };
+		11F5968A2AF3E2A7000377FD /* UploadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F596892AF3E2A7000377FD /* UploadImageView.swift */; };
+		11F5968C2AF3EC6B000377FD /* ShowImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F5968B2AF3EC6B000377FD /* ShowImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,8 +95,10 @@
 		11DC44E62AEEE28100AD26EE /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		11DC44E82AF03A4200AD26EE /* ListViewRestaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewRestaurants.swift; sourceTree = "<group>"; };
 		11F596822AF2BFD8000377FD /* RestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantView.swift; sourceTree = "<group>"; };
-		11F596842AF2C1BE000377FD /* SecondScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenView.swift; sourceTree = "<group>"; };
+		11F596842AF2C1BE000377FD /* DetailsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreenView.swift; sourceTree = "<group>"; };
 		11F596872AF3BF6C000377FD /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		11F596892AF3E2A7000377FD /* UploadImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageView.swift; sourceTree = "<group>"; };
+		11F5968B2AF3EC6B000377FD /* ShowImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +168,9 @@
 				1196353C2AED356500DC7032 /* AddRestaurantView.swift */,
 				1196353E2AED360100DC7032 /* ListRestaurantsView.swift */,
 				11F596822AF2BFD8000377FD /* RestaurantView.swift */,
-				11F596842AF2C1BE000377FD /* SecondScreenView.swift */,
+				11F596842AF2C1BE000377FD /* DetailsScreenView.swift */,
+				11F596892AF3E2A7000377FD /* UploadImageView.swift */,
+				11F5968B2AF3EC6B000377FD /* ShowImageView.swift */,
 			);
 			path = Authenticated;
 			sourceTree = "<group>";
@@ -413,14 +419,16 @@
 				119635492AEDA89000DC7032 /* UserMe.swift in Sources */,
 				1196353A2AED343B00DC7032 /* RegisterView.swift in Sources */,
 				119CC2552AEBD7550088C0D5 /* YummyEaterySeekerApp.swift in Sources */,
-				11F596852AF2C1BE000377FD /* SecondScreenView.swift in Sources */,
+				11F596852AF2C1BE000377FD /* DetailsScreenView.swift in Sources */,
 				119635472AEDA3B500DC7032 /* RegisterViewViewModel.swift in Sources */,
 				11DC44E52AEEDE4D00AD26EE /* RestaurantStation.swift in Sources */,
 				1196352D2AED322A00DC7032 /* ContentView.swift in Sources */,
 				119635422AED918600DC7032 /* YummyVM.swift in Sources */,
+				11F5968A2AF3E2A7000377FD /* UploadImageView.swift in Sources */,
 				1196353D2AED356500DC7032 /* AddRestaurantView.swift in Sources */,
 				119635322AED334D00DC7032 /* UserData.swift in Sources */,
 				1190DA2F2AEC1E88002CA42E /* SplashScreenView.swift in Sources */,
+				11F5968C2AF3EC6B000377FD /* ShowImageView.swift in Sources */,
 				119635342AED33A200DC7032 /* Restaurant.swift in Sources */,
 				1196353F2AED360100DC7032 /* ListRestaurantsView.swift in Sources */,
 				119635382AED342700DC7032 /* LoginView.swift in Sources */,

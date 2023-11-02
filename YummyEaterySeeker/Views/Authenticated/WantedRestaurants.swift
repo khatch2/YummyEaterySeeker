@@ -34,43 +34,44 @@ func populateNearByPlaces(theRegion: MKCoordinateRegion, theCookingChefs: [Cooki
     
     wantedRequest.region = theRegion
     
-    print()
+//    print()
 //    print("wantedRequest = " , wantedRequest)
     print()
     
     var wantedSearch = MKLocalSearch(request: wantedRequest)
     
-    print()
+//    print()
 //    print("wantedSearch = " , wantedSearch)
-    print()
+//    print()
     
     wantedSearch.start() { (response, error) in
         
         guard let response = response else {return}
         
-        print("response is = ", response.self.mapItems.first?.url ?? "N/A")
-        
-        print("error = ", error)
+//        print("response is = ", response.self.mapItems.first?.url ?? "N/A")
+        if let error = error {
+            print("error = ", error)
+        }
         
         for item in response.mapItems {
             
-            print()
-            print(" item.placemark = ", item.placemark)
-            print("typeof item is: ", type(of: item))
+//            print()
+//            print(" item.placemark = ", item.placemark)
+//            print("typeof item is: ", type(of: item))
             
-            print(" theRestaurantStations.count = ", theRestaurantStations.count)
+//            print(" theRestaurantStations.count = ", theRestaurantStations.count)
            
 //            theRestaurantStations.append(RestaurantStation(name: item.name ?? "default value", latitude: item.placemark.coordinate.latitude, longitude: item.placemark.coordinate.longitude))
             
             theRestaurantStations.append(RestaurantStation(name: item.name ?? "N/A", phoneNumber: item.phoneNumber, placemark: item.placemark, timeZone: item.timeZone, url: item.url, latitude: item.placemark.coordinate.latitude, longitude: item.placemark.coordinate.longitude))
             
-            print("theRestaurantStations.count = " , theRestaurantStations.count)
+//            print("theRestaurantStations.count = " , theRestaurantStations.count)
             
-            print("<><><><><><><>")
+//            print("<><><><><><><>")
             
             var look2 = MapMarker(coordinate: item.placemark.coordinate)
-            print("typof look2 is: ", type(of: look2))
-            print(" look2 = ", look2)
+//            print("typof look2 is: ", type(of: look2))
+//            print(" look2 = ", look2)
             
             MapMarker(coordinate: item.placemark.coordinate)
             
@@ -115,11 +116,11 @@ struct WantedRestaurants: View {
                                 
                     
                 }, label: {
-                    Text("Seek eatries now").bold().background(Color.yellow)
+                    Text("Seek eatries now").bold().padding().background(Color.yellow).cornerRadius(9)
                 })
                 
                 NavigationLink(destination: ListViewRestaurants(), label: {
-                    Text("ListShow").bold().padding().foregroundColor(.white).background(Color.black).cornerRadius(9)
+                    Text("ListShow").bold().padding().foregroundColor(.blue).background(Color.yellow).cornerRadius(9)
                 })
                 
             }
