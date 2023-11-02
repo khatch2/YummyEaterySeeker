@@ -55,7 +55,6 @@ struct LoginView: View {
                     if !email.isEmpty && !password.isEmpty {
                         
                         // Log in the user
-                        
                         var look2 = ListRestaurantsView(db: DbConnection())
                         
                         print("look2 = " , look2.db.USER_DATA_COLLECTION.description)
@@ -65,8 +64,8 @@ struct LoginView: View {
                     Text("Log in")
                         .bold()
                         .padding()
-                        .foregroundColor(.white)
-                        .background(.black)
+                        .foregroundColor(.blue)
+                        .background(.yellow)
                         .cornerRadius(9)
                 })
                 
@@ -81,11 +80,21 @@ struct LoginView: View {
                     }
                     
                 }, label: {
-                    Text("Log me out").bold().padding().foregroundColor(.white).background(.black).cornerRadius(9)
+                    Text("Log me out")
+                        .bold()
+                        .padding()
+                        .foregroundColor(.blue)
+                        .background(.yellow)
+                        .cornerRadius(9)
                 })
                 
                 NavigationLink(destination: RegisterView(db: db), label: {
-                    Text("Register account").bold().padding().foregroundColor(.black)
+                    Text("Register account")
+                        .bold()
+                        .padding()
+                        .foregroundColor(.blue)
+                        .background(Color.yellow)
+                        .cornerRadius(9.0)
                 })
                 
         }

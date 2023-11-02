@@ -7,21 +7,6 @@
 
 import SwiftUI
 
-extension Image {
-    init?(base64String: String) {
-        guard let data = Data(base64Encoded: base64String, options: .ignoreUnknownCharacters) else {
-            print("Error in converting from String to Data")
-            return nil }
-        
-        guard let uiImage = UIImage(data: data) else {
-            print("Error in convering from Data to UIImage")
-            print(data.description)
-            print()
-            return nil }
-        
-        self = Image(uiImage: uiImage)
-    }
-}
 
 struct RestaurantView: View {
     
@@ -31,7 +16,6 @@ struct RestaurantView: View {
     
     var restaurantStation: RestaurantStation
     
-    
     var body: some View {
         
         VStack {
@@ -39,23 +23,23 @@ struct RestaurantView: View {
             NavigationLink(destination: DetailsScreenView(restaurantStation: restaurantStation), label: {
                 
                 HStack {
-                    
-//                    let swiftUI = Image(base64String: base64String)
-                    
+                                        
                     if let userImage = userImage {
                         
-                        Image(uiImage: userImage).resizable().frame(width: 200, height: 200, alignment: .center).cornerRadius(20)
-                        
+                        AsyncImage(url: URL(string: "https://www.svtstatic.se/image/wide/992/41404046/1697528910"), content: { image in
+                            image.resizable().overlay(content: {
+                                VStack {
+                                    Text("restaurant name i.e. db.name").bold().font(.title).foregroundColor(.white)
+                                }
+                            })},
+                                   placeholder: {
+                            Text("Loading...").foregroundColor(.white).bold()
+                        })
                     }
                     
                 }.foregroundColor(.white).background(Color.green)
             })
             
-//            NavigationLink(destination:
-//                                            
-//                                UploadImageView(db: db), label: {
-//                                Text("Add Image").bold().padding().foregroundColor(.blue).background(.yellow).cornerRadius(9)
-//                            })
             
             NavigationLink(destination:
                                             

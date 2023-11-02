@@ -12,25 +12,24 @@ struct ListViewRestaurants: View {
         
         GeometryReader { geometry in
             VStack(alignment: .leading) {
-                
-//                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-                
+                                
                 List() {
+                    
                     ForEach(theRestaurantStations) { itemRestaurantView in
                         
-                        HStack {
+                        VStack {
                             
-                            RestaurantView(db: DbConnection(), restaurantStation: itemRestaurantView)
-                            
-                            Text(itemRestaurantView.name ?? "N/A")
-                            
+                            HStack {
+                                
+                                Text(itemRestaurantView.name ?? "N/A")
+                                
+                                RestaurantView(db: DbConnection(), restaurantStation: itemRestaurantView)
+
+                            }
                         }
-                        
-                        
                     }
                 }
-
-            }
+            }.background(Color.orange)
         }
     }
 }

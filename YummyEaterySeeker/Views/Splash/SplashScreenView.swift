@@ -23,9 +23,9 @@ struct SplashScreenView: View {
         
         if (isActive == true) {
 
-//            DBContentView()
+            DBContentView()
             
-            WantedRestaurants()
+//            WantedRestaurants()
             
 //            AddRestaurantView(db: DbConnection())
             
