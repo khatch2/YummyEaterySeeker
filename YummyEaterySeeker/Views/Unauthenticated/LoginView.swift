@@ -58,6 +58,7 @@ struct LoginView: View {
                         var look2 = ListRestaurantsView(db: DbConnection())
                         
                         print("look2 = " , look2.db.USER_DATA_COLLECTION.description)
+                        
                     }
                     
                 }, label: {
@@ -67,6 +68,10 @@ struct LoginView: View {
                         .foregroundColor(.blue)
                         .background(.yellow)
                         .cornerRadius(9)
+                })
+                
+                NavigationLink(destination: ListRestaurantsView(db: db), label: {
+                    Text("Logga in").bold().padding().foregroundColor(.blue).background(.yellow).cornerRadius(9)
                 })
                 
                 Button(action: {

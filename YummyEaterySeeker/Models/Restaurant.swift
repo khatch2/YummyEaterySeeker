@@ -11,23 +11,41 @@ import FirebaseFirestoreSwift
 
 struct Restaurant: Codable, Identifiable {
     
-    var id = UUID()
+    var description: String?
+    
+//    var id = UUID()
+    @DocumentID var id: String?
+    
+    var image: String?
+    
+    var location: Location?
     
     var name: String
     
-    var category = "restaurant"
+    var openingHours: String?
     
-    var isActive: Bool
+    var rating: Int?
+    
+    var reviews: [Review]?
     
     enum CodingKeys: String, CodingKey {
         
+        case description
+        
         case id
+        
+        case image
+        
+        case location
         
         case name
         
-        case category
+        case openingHours = "opening_hours"
         
-        case isActive = "is_active"
+        case rating
+        
+        case reviews
+    
     }
 }
 
@@ -35,19 +53,20 @@ struct Restaurant: Codable, Identifiable {
 
 // Sti coordinates: 59,30972667974045, 18,021641515542505
 
-struct RestaurantExample {
-    
-    var id: String
-    var name: String
-    var description: String
-    var openingHours: String
-    var location: Location
-    var reviews: [Review]
-    var rating: Double
-    var image: String
-}
+//struct RestaurantExample {
+//    
+//    var id: String
+//    var name: String
+//    var description: String
+//    var openingHours: String
+//    var location: Location
+//    var reviews: [Review]
+//    var rating: Double
+//    var image: String
+//}
 
-struct Review {
+
+struct Review: Codable {
     
     var userName: String
     var message: String
@@ -55,10 +74,12 @@ struct Review {
     
 }
 
-struct Location {
+
+struct Location: Codable {
     
     var latitude: Double
     var longitude: Double
     
 }
+
 /* From the teacher, end */

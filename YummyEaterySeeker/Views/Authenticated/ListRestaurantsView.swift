@@ -33,7 +33,14 @@ struct ListRestaurantsView: View {
                             } else {
                                 List() {
                                     ForEach(userData.restaurants) { restaurant in
-                                        Text(restaurant.name)
+                                        VStack {
+                                            HStack {
+                                                NavigationLink(destination: ListRestaurantsView(db: DbConnection()), label: {
+                                                    Text(restaurant.name)
+
+                                                })
+                                            }
+                                        }
                                     }
                                 }
                                 

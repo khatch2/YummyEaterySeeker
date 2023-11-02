@@ -34,7 +34,6 @@
 		119CC28C2AEBE35A0088C0D5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 119CC28B2AEBE35A0088C0D5 /* FirebaseStorage */; };
 		119CC28E2AEBE35A0088C0D5 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 119CC28D2AEBE35A0088C0D5 /* FirebaseStorageCombine-Community */; };
 		11DC44DD2AEEC0FC00AD26EE /* DBContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC44DC2AEEC0FC00AD26EE /* DBContentView.swift */; };
-		11DC44DF2AEEC1DF00AD26EE /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC44DE2AEEC1DF00AD26EE /* Player.swift */; };
 		11DC44E12AEEDAE900AD26EE /* WantedRestaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC44E02AEEDAE900AD26EE /* WantedRestaurants.swift */; };
 		11DC44E32AEEDDF100AD26EE /* CookingChef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC44E22AEEDDF100AD26EE /* CookingChef.swift */; };
 		11DC44E52AEEDE4D00AD26EE /* RestaurantStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC44E42AEEDE4D00AD26EE /* RestaurantStation.swift */; };
@@ -88,7 +87,6 @@
 		119CC2712AEBD7570088C0D5 /* YummyEaterySeekerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummyEaterySeekerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		119CC2802AEBDF940088C0D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		11DC44DC2AEEC0FC00AD26EE /* DBContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBContentView.swift; sourceTree = "<group>"; };
-		11DC44DE2AEEC1DF00AD26EE /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		11DC44E02AEEDAE900AD26EE /* WantedRestaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WantedRestaurants.swift; sourceTree = "<group>"; };
 		11DC44E22AEEDDF100AD26EE /* CookingChef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingChef.swift; sourceTree = "<group>"; };
 		11DC44E42AEEDE4D00AD26EE /* RestaurantStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantStation.swift; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 				119635312AED334D00DC7032 /* UserData.swift */,
 				119635332AED33A200DC7032 /* Restaurant.swift */,
 				119635482AEDA89000DC7032 /* UserMe.swift */,
-				11DC44DE2AEEC1DF00AD26EE /* Player.swift */,
 				11DC44E22AEEDDF100AD26EE /* CookingChef.swift */,
 				11DC44E42AEEDE4D00AD26EE /* RestaurantStation.swift */,
 				11DC44E62AEEE28100AD26EE /* LocationManager.swift */,
@@ -432,7 +429,6 @@
 				119635342AED33A200DC7032 /* Restaurant.swift in Sources */,
 				1196353F2AED360100DC7032 /* ListRestaurantsView.swift in Sources */,
 				119635382AED342700DC7032 /* LoginView.swift in Sources */,
-				11DC44DF2AEEC1DF00AD26EE /* Player.swift in Sources */,
 				11DC44E72AEEE28100AD26EE /* LocationManager.swift in Sources */,
 				119635302AED32AC00DC7032 /* DbConnection.swift in Sources */,
 				11DC44E92AF03A4200AD26EE /* ListViewRestaurants.swift in Sources */,

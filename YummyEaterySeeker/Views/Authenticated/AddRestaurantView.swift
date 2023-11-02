@@ -18,6 +18,9 @@ struct AddRestaurantView: View {
     
     @State var restaurantName = ""
     
+    // Debug purpose only, then comment the following line:
+    @State var restaurantImage = "https://www.svtstatic.se/image/wide/992/41404046/1697528910"
+    
     var body: some View {
         VStack {
             Text(" Add a new restaurant into database? ")
@@ -33,8 +36,8 @@ struct AddRestaurantView: View {
             Button(action: {
                 
                 if !restaurantName.isEmpty {
-                    
-                    let newRestaurant = Restaurant(name: restaurantName, isActive: true)
+                                        
+                    let newRestaurant = Restaurant( image: restaurantImage, name: restaurantName)
 
                     db.addRestaurantToDb(restaurant: newRestaurant)
                     
