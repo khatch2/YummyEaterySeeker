@@ -42,6 +42,7 @@
 		11DC44E92AF03A4200AD26EE /* ListViewRestaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DC44E82AF03A4200AD26EE /* ListViewRestaurants.swift */; };
 		11F596832AF2BFD8000377FD /* RestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F596822AF2BFD8000377FD /* RestaurantView.swift */; };
 		11F596852AF2C1BE000377FD /* SecondScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F596842AF2C1BE000377FD /* SecondScreenView.swift */; };
+		11F596882AF3BF6C000377FD /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F596872AF3BF6C000377FD /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		11DC44E82AF03A4200AD26EE /* ListViewRestaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewRestaurants.swift; sourceTree = "<group>"; };
 		11F596822AF2BFD8000377FD /* RestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantView.swift; sourceTree = "<group>"; };
 		11F596842AF2C1BE000377FD /* SecondScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenView.swift; sourceTree = "<group>"; };
+		11F596872AF3BF6C000377FD /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				11DC44E22AEEDDF100AD26EE /* CookingChef.swift */,
 				11DC44E42AEEDE4D00AD26EE /* RestaurantStation.swift */,
 				11DC44E62AEEE28100AD26EE /* LocationManager.swift */,
+				11F596872AF3BF6C000377FD /* StorageManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				119CC2642AEBD7570088C0D5 /* YummyEaterySeekerTests */,
 				119CC26E2AEBD7570088C0D5 /* YummyEaterySeekerUITests */,
 				119CC2522AEBD7550088C0D5 /* Products */,
+				11F596862AF3BD11000377FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -250,6 +254,13 @@
 				119CC2712AEBD7570088C0D5 /* YummyEaterySeekerUITestsLaunchTests.swift */,
 			);
 			path = YummyEaterySeekerUITests;
+			sourceTree = "<group>";
+		};
+		11F596862AF3BD11000377FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,6 +429,7 @@
 				119635302AED32AC00DC7032 /* DbConnection.swift in Sources */,
 				11DC44E92AF03A4200AD26EE /* ListViewRestaurants.swift in Sources */,
 				11F596832AF2BFD8000377FD /* RestaurantView.swift in Sources */,
+				11F596882AF3BF6C000377FD /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,5 +16,7 @@ struct UserData: Codable {
     
     var birthdate: Date
     
+    var image: String
+    
 }
 
