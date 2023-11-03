@@ -33,7 +33,9 @@
 		11FBEA302AF53F6500C3C5C0 /* RestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEA2F2AF53F6500C3C5C0 /* RestaurantView.swift */; };
 		11FBEA322AF5408700C3C5C0 /* RestaurantVoucher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEA312AF5408700C3C5C0 /* RestaurantVoucher.swift */; };
 		11FBEA342AF5414900C3C5C0 /* RestaurantsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEA332AF5414900C3C5C0 /* RestaurantsMapView.swift */; };
-		11FBEA362AF5507600C3C5C0 /* ReviewPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEA352AF5507600C3C5C0 /* ReviewPopup.swift */; };
+		11FBEA362AF5507600C3C5C0 /* ReviewPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEA352AF5507600C3C5C0 /* ReviewPopupView.swift */; };
+		11FBEA382AF5534D00C3C5C0 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEA372AF5534D00C3C5C0 /* Review.swift */; };
+		11FBEA3A2AF55F4D00C3C5C0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEA392AF55F4D00C3C5C0 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +76,9 @@
 		11FBEA2F2AF53F6500C3C5C0 /* RestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantView.swift; sourceTree = "<group>"; };
 		11FBEA312AF5408700C3C5C0 /* RestaurantVoucher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantVoucher.swift; sourceTree = "<group>"; };
 		11FBEA332AF5414900C3C5C0 /* RestaurantsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsMapView.swift; sourceTree = "<group>"; };
-		11FBEA352AF5507600C3C5C0 /* ReviewPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPopup.swift; sourceTree = "<group>"; };
+		11FBEA352AF5507600C3C5C0 /* ReviewPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPopupView.swift; sourceTree = "<group>"; };
+		11FBEA372AF5534D00C3C5C0 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		11FBEA392AF55F4D00C3C5C0 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +139,7 @@
 				11FBEA272AF52E9700C3C5C0 /* RestaurantsListView.swift */,
 				11FBEA2F2AF53F6500C3C5C0 /* RestaurantView.swift */,
 				11FBEA332AF5414900C3C5C0 /* RestaurantsMapView.swift */,
-				11FBEA352AF5507600C3C5C0 /* ReviewPopup.swift */,
+				11FBEA352AF5507600C3C5C0 /* ReviewPopupView.swift */,
 			);
 			path = Authenticated;
 			sourceTree = "<group>";
@@ -161,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				11FBEA2B2AF530A600C3C5C0 /* Restaurant.swift */,
+				11FBEA372AF5534D00C3C5C0 /* Review.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 				119CC25A2AEBD7560088C0D5 /* Preview Content */,
 				1196352C2AED322A00DC7032 /* ContentView.swift */,
 				11FBEA252AF52D7000C3C5C0 /* DatabaseConnection.swift */,
+				11FBEA392AF55F4D00C3C5C0 /* Color.swift */,
 			);
 			path = YummyEaterySeeker;
 			sourceTree = "<group>";
@@ -388,9 +394,11 @@
 				1196352D2AED322A00DC7032 /* ContentView.swift in Sources */,
 				11FBEA302AF53F6500C3C5C0 /* RestaurantView.swift in Sources */,
 				11FBEA2E2AF539DE00C3C5C0 /* RegisterView.swift in Sources */,
+				11FBEA382AF5534D00C3C5C0 /* Review.swift in Sources */,
+				11FBEA3A2AF55F4D00C3C5C0 /* Color.swift in Sources */,
 				11FBEA282AF52E9700C3C5C0 /* RestaurantsListView.swift in Sources */,
 				11FBEA342AF5414900C3C5C0 /* RestaurantsMapView.swift in Sources */,
-				11FBEA362AF5507600C3C5C0 /* ReviewPopup.swift in Sources */,
+				11FBEA362AF5507600C3C5C0 /* ReviewPopupView.swift in Sources */,
 				1190DA2F2AEC1E88002CA42E /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

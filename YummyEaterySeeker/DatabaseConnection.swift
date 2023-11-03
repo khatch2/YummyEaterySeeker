@@ -23,9 +23,10 @@ class DatabaseConnection: ObservableObject {
     
     init() {
         
-        Auth.auth().addStateDidChangeListener { auth, user in
+        Auth.auth().addStateDidChangeListener { 
+            auth, user in
                 
-            if let user = {
+            if let user = user {
                 
                 self.userLoggedIn = true
                 
@@ -34,7 +35,8 @@ class DatabaseConnection: ObservableObject {
                 self.startListeningToRestaurants()
                 // If user is not nil, it means that we are now logged in.
                 
-            } else {
+            }
+            else {
                 
                 self.userLoggedIn = false
                 

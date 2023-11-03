@@ -15,9 +15,9 @@ struct RestaurantsListView: View {
     
     var body: some View {
         
-        GeometryReader { geometry in
-            
-            VStack(spacing: 30) {
+//        GeometryReader { geometry in
+//            
+//            VStack(spacing: 30) {
                 
                 ZStack {
                     
@@ -47,17 +47,17 @@ struct RestaurantsListView: View {
                         
                     })
                     
-//                    if viewOnMap {
-//                        RestaurantsMapView(viewOnMap: $viewOnMap)
-//                    }
+                    if viewOnMap {
+                        RestaurantsMapView(viewOnMap: $viewOnMap)
+                    }
                     
                     Text("Hello, RestaurantsListView")
 
                 }
-            }.padding()
+            }
         }
-    }
-}
+//    }
+//}
 
 #Preview {
     RestaurantsListView()
