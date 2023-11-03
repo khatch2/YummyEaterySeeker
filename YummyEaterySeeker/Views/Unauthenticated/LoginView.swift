@@ -33,12 +33,11 @@ struct LoginView: View {
                 
                 Button("Login") {
                     dbConnection.LoginUser(email: email, password: password)
-                }.foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/).background(.yellow).cornerRadius(9)
+                }.foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/).background(.yellow).cornerRadius(3)
                 
                 NavigationLink(destination: RegisterView(), label: {
-                    Text("Register an account").foregroundColor(Color(UIColor {
-                        $0.userInterfaceStyle == .dark ? UIColor(.white) : UIColor(.black)
-                    })).bold()
+                    Text("Register an account").foregroundColor(.blue).bold()
+                    
                 }).bold()
                     .padding()
                     .foregroundColor(.blue)

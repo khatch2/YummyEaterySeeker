@@ -8,7 +8,13 @@
             <PersistentString
                value = "db">
             </PersistentString>
+            <PersistentString
+               value = "dbConnection">
+            </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DbConnection.startListeningToDb():DbConnection.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
