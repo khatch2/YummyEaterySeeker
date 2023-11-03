@@ -39,7 +39,11 @@ struct LoginView: View {
                     Text("Register an account").foregroundColor(Color(UIColor {
                         $0.userInterfaceStyle == .dark ? UIColor(.white) : UIColor(.black)
                     })).bold()
-                })
+                }).bold()
+                    .padding()
+                    .foregroundColor(.blue)
+                    .background(Color.yellow)
+                    .cornerRadius(9.0)
                 
 //                Text("Hello, LoginView")
 

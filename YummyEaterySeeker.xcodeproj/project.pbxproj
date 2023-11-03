@@ -131,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				11FBEA292AF52EC700C3C5C0 /* LoginView.swift */,
+				11FBEA2D2AF539DE00C3C5C0 /* RegisterView.swift */,
 			);
 			path = Unauthenticated;
 			sourceTree = "<group>";
@@ -185,7 +186,6 @@
 				1196352C2AED322A00DC7032 /* ContentView.swift */,
 				11FBEA252AF52D7000C3C5C0 /* DatabaseConnection.swift */,
 				11FBEA272AF52E9700C3C5C0 /* RestaurantsListView.swift */,
-				11FBEA2D2AF539DE00C3C5C0 /* RegisterView.swift */,
 			);
 			path = YummyEaterySeeker;
 			sourceTree = "<group>";
