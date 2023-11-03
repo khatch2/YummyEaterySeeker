@@ -42,14 +42,14 @@ struct RestaurantsListView: View {
                             
                         }, label: {
                             
-                            Text("View on map").padding().background(Color.primaryColor).foregroundColor(Color.secondaryColor).cornerRadius(9)
+                            Text("View on map").padding().background(.orange).foregroundColor(.purple).cornerRadius(9)
                         })
                         
                     })
                     
-                    if viewOnMap {
-                        RestaurantsMapView(viewOnMap: $viewOnMap)
-                    }
+//                    if viewOnMap {
+//                        RestaurantsMapView(viewOnMap: $viewOnMap)
+//                    }
                     
                     Text("Hello, RestaurantsListView")
 

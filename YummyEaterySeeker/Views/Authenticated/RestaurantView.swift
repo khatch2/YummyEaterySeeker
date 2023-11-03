@@ -9,6 +9,10 @@ import SwiftUI
 
 struct RestaurantView: View {
     
+    @EnvironmentObject var dbConnection: DatabaseConnection
+    
+    var restaurant: Restaurant
+    
     var body: some View {
         
         GeometryReader { geometry in 
@@ -23,5 +27,5 @@ struct RestaurantView: View {
 }
 
 #Preview {
-    RestaurantView()
+    RestaurantView(dbConnection: DatabaseConnection(), restaurant: Restaurant)
 }

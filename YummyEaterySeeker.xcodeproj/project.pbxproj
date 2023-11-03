@@ -32,6 +32,8 @@
 		11FBEA2E2AF539DE00C3C5C0 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEA2D2AF539DE00C3C5C0 /* RegisterView.swift */; };
 		11FBEA302AF53F6500C3C5C0 /* RestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEA2F2AF53F6500C3C5C0 /* RestaurantView.swift */; };
 		11FBEA322AF5408700C3C5C0 /* RestaurantVoucher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEA312AF5408700C3C5C0 /* RestaurantVoucher.swift */; };
+		11FBEA342AF5414900C3C5C0 /* RestaurantsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEA332AF5414900C3C5C0 /* RestaurantsMapView.swift */; };
+		11FBEA362AF5507600C3C5C0 /* ReviewPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEA352AF5507600C3C5C0 /* ReviewPopup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		11FBEA2D2AF539DE00C3C5C0 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		11FBEA2F2AF53F6500C3C5C0 /* RestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantView.swift; sourceTree = "<group>"; };
 		11FBEA312AF5408700C3C5C0 /* RestaurantVoucher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantVoucher.swift; sourceTree = "<group>"; };
+		11FBEA332AF5414900C3C5C0 /* RestaurantsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsMapView.swift; sourceTree = "<group>"; };
+		11FBEA352AF5507600C3C5C0 /* ReviewPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPopup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 			children = (
 				11FBEA272AF52E9700C3C5C0 /* RestaurantsListView.swift */,
 				11FBEA2F2AF53F6500C3C5C0 /* RestaurantView.swift */,
+				11FBEA332AF5414900C3C5C0 /* RestaurantsMapView.swift */,
+				11FBEA352AF5507600C3C5C0 /* ReviewPopup.swift */,
 			);
 			path = Authenticated;
 			sourceTree = "<group>";
@@ -383,6 +389,8 @@
 				11FBEA302AF53F6500C3C5C0 /* RestaurantView.swift in Sources */,
 				11FBEA2E2AF539DE00C3C5C0 /* RegisterView.swift in Sources */,
 				11FBEA282AF52E9700C3C5C0 /* RestaurantsListView.swift in Sources */,
+				11FBEA342AF5414900C3C5C0 /* RestaurantsMapView.swift in Sources */,
+				11FBEA362AF5507600C3C5C0 /* ReviewPopup.swift in Sources */,
 				1190DA2F2AEC1E88002CA42E /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
