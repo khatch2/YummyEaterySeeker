@@ -6,28 +6,21 @@
 //
 
 import SwiftUI
-import FirebaseFirestore
+//import FirebaseFirestore
 
 struct ContentView: View {
-
-    @StateObject var db = DbConnection()
     
-    @State var restaurants = [Restaurant]()
+    @EnvironmentObject var dbConnection: DatabaseConnection    
     
     var body: some View {
 
-        if let user = db.currentUser {
-            
+        if dbConnection.userLoggedIn {
             NavigationStack {
-                
-                ListRestaurantsView(db: db)
+                RestaurantsListView()
             }
-            
         } else {
-            
             NavigationStack {
-                
-                LoginView(db: db)
+                LoginView()
             }
         }
     }

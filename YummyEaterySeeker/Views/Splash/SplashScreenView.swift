@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SplashScreenView: View {
     
-    @ObservedObject var db: DbConnection
+//    @ObservedObject var db: DbConnection
     
     @State var isActive: Bool = false
     
@@ -22,8 +22,10 @@ struct SplashScreenView: View {
 
         
         if (isActive == true) {
+            
+            ContentView()
 
-            DBContentView()
+//            DBContentView()
             
 //            WantedRestaurants()
             
@@ -63,5 +65,5 @@ struct SplashScreenView: View {
 
 
 #Preview {
-    SplashScreenView(db: DbConnection())
+    SplashScreenView()
 }
