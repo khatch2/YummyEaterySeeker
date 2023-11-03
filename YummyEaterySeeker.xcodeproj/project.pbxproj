@@ -30,6 +30,8 @@
 		11FBEA2A2AF52EC700C3C5C0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEA292AF52EC700C3C5C0 /* LoginView.swift */; };
 		11FBEA2C2AF530A600C3C5C0 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEA2B2AF530A600C3C5C0 /* Restaurant.swift */; };
 		11FBEA2E2AF539DE00C3C5C0 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEA2D2AF539DE00C3C5C0 /* RegisterView.swift */; };
+		11FBEA302AF53F6500C3C5C0 /* RestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEA2F2AF53F6500C3C5C0 /* RestaurantView.swift */; };
+		11FBEA322AF5408700C3C5C0 /* RestaurantVoucher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEA312AF5408700C3C5C0 /* RestaurantVoucher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		11FBEA292AF52EC700C3C5C0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		11FBEA2B2AF530A600C3C5C0 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		11FBEA2D2AF539DE00C3C5C0 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		11FBEA2F2AF53F6500C3C5C0 /* RestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantView.swift; sourceTree = "<group>"; };
+		11FBEA312AF5408700C3C5C0 /* RestaurantVoucher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantVoucher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 		1196352E2AED328D00DC7032 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				11FBEA312AF5408700C3C5C0 /* RestaurantVoucher.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				11FBEA272AF52E9700C3C5C0 /* RestaurantsListView.swift */,
+				11FBEA2F2AF53F6500C3C5C0 /* RestaurantView.swift */,
 			);
 			path = Authenticated;
 			sourceTree = "<group>";
@@ -371,8 +377,10 @@
 				11FBEA2A2AF52EC700C3C5C0 /* LoginView.swift in Sources */,
 				11FBEA262AF52D7000C3C5C0 /* DatabaseConnection.swift in Sources */,
 				119CC2552AEBD7550088C0D5 /* YummyEaterySeekerApp.swift in Sources */,
+				11FBEA322AF5408700C3C5C0 /* RestaurantVoucher.swift in Sources */,
 				11FBEA2C2AF530A600C3C5C0 /* Restaurant.swift in Sources */,
 				1196352D2AED322A00DC7032 /* ContentView.swift in Sources */,
+				11FBEA302AF53F6500C3C5C0 /* RestaurantView.swift in Sources */,
 				11FBEA2E2AF539DE00C3C5C0 /* RegisterView.swift in Sources */,
 				11FBEA282AF52E9700C3C5C0 /* RestaurantsListView.swift in Sources */,
 				1190DA2F2AEC1E88002CA42E /* SplashScreenView.swift in Sources */,
