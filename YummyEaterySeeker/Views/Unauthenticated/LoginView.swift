@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct LoginView: View {
+    
+    @EnvironmentObject var dbConnection: DatabaseConnection
+    @State var email = ""
+    @State var password = ""
+    
     var body: some View {
-        Text("Hello, LoginView")
+        
+        GeometryReader { geometry in
+            
+            VStack (spacing: 30) {
+                
+                Text("Hello, LoginView")
+
+            }
+
+        }
+        
     }
 }
 
