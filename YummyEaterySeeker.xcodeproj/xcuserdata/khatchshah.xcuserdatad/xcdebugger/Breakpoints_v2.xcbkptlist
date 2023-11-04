@@ -90,8 +90,8 @@
             filePath = "YummyEaterySeeker/Views/Unauthenticated/LoginView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61">
+            startingLineNumber = "62"
+            endingLineNumber = "62">
             <Locations>
                <Location
                   uuid = "1834A4CA-DE4B-41E3-A950-5934B15DF6F5 - 9ab7661db7a7188c"
@@ -1107,8 +1107,8 @@
             filePath = "YummyEaterySeeker/Views/Unauthenticated/RegisterView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -1123,8 +1123,8 @@
             filePath = "YummyEaterySeeker/Views/Unauthenticated/RegisterView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>

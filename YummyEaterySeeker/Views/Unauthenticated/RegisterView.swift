@@ -26,20 +26,21 @@ struct RegisterView: View {
                 
                 VStack(alignment: .leading) {
                     Text("Email")
-                    TextField("", text: $email).textFieldStyle(.roundedBorder)
+                    TextField("Email?", text: $email).textFieldStyle(.roundedBorder).font(.custom("times", size: 14)).keyboardType(.emailAddress).textInputAutocapitalization(.never)
                     
                     Text("Password")
-                    SecureField("", text: $password).textFieldStyle(.roundedBorder)
+                    SecureField("", text: $password).textFieldStyle(.roundedBorder).font(.custom("times", size: 14)).textInputAutocapitalization(.never)
+                    
                 }.padding()
                 
                 Button("Register") {
                     dbConnection.RegisterUser(email: email, password: password)
-                }.foregroundColor(.blue).background(.yellow).cornerRadius(3)
+                }.bold().padding().foregroundColor(.blue).background(.yellow).cornerRadius(9)
                 
 //                Text("Hello, RegisterView")
 
-            }.padding()
-        }
+            }.padding().background(.orange)
+        }.background(.yellow)
     }
 }
 

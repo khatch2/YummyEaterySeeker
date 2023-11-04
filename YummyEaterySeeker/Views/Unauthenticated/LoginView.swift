@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     
     @EnvironmentObject var dbConnection: DatabaseConnection
+    
     @State var email = ""
     @State var password = ""
     
