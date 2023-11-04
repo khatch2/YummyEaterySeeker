@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SplashScreenView: View {
     
+    @EnvironmentObject var dbConnection: DatabaseConnection
+    
 //    @ObservedObject var db: DbConnection
     
     @State var isActive: Bool = false

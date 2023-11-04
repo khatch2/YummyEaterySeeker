@@ -11,7 +11,7 @@ struct RestaurantView: View {
     
     @EnvironmentObject var dbConnection: DatabaseConnection
     
-    var restaurant: Restaurant?
+    var restaurant: Restaurant
     
     @State var showPopup: Bool = false
     
@@ -23,17 +23,21 @@ struct RestaurantView: View {
                 
                 ZStack() {
                     
-//                    GeometryReader { geometry in
+                    GeometryReader { geometry in
                         
-                        Color(.systemGray6).ignoresSafeArea()
+//                        Color(.systemGray6).ignoresSafeArea()
+                        
                         ScrollView {
+                            
                             VStack(alignment: .leading) {
-                                AsyncImage(url: URL(string: restaurant?.image ?? "N/A"), content: {
+                                
+                                AsyncImage(url: URL(string: restaurant.image ?? "N/A"), content: {
                                     image in
                                     
                                     image.resizable().overlay(alignment: .bottomLeading, content: {
+                                        
                                         VStack {
-                                            Text(restaurant?.name ?? "N/A").bold().font(.title).foregroundColor(.white)
+                                            Text(restaurant.name ?? "N/A").bold().font(.title).foregroundColor(.white)
                                             
                                             
                                         }.padding()
@@ -47,11 +51,11 @@ struct RestaurantView: View {
                                 
                                 VStack(alignment: .leading, spacing: 20) {
                                     
-                                    Text(restaurant?.openingHours ?? "N/A").font(.system(.subheadline, design: .monospaced, weight: .thin))
+                                    Text(restaurant.openingHours ?? "N/A").font(.system(.subheadline, design: .monospaced, weight: .thin))
                                     
-                                    Text(restaurant?.name ?? "N/A").bold().font(.title)
+                                    Text(restaurant.name ?? "N/A").bold().font(.title)
                                     
-                                    Text(restaurant?.description ?? "N/A")
+                                    Text(restaurant.description ?? "N/A")
                                     
                                     HStack {
                                         Text("Reviews").bold().font(.title)
@@ -63,7 +67,7 @@ struct RestaurantView: View {
                                         })
                                     }
                                         
-                                        ForEach(restaurant.reviews) { review in
+                                    ForEach(restaurant.reviews) { review in
                                             
                                             VStack(alignment: .leading, spacing: 5) {
                                                 Text(review.name).bold()
@@ -90,7 +94,7 @@ struct RestaurantView: View {
                 
             }.padding()
         }
-//    }
+    }
 }
 
 #Preview {
