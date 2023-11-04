@@ -21,22 +21,24 @@ struct LoginView: View {
                 
                 Image("restaurant-logo").resizable().frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.28, alignment: .center).padding()
                 
-                Text("Enter your credentials? ").bold().font(.title)
+                Text("Welcome to Yummy Seeker!").bold().font(.system(size: 24, design: .serif)).italic().padding(.bottom, geometry.size.height * 0.02)
+                
+                Text("Enter your credentials? ").font(.system(size: 20, design: .serif)).bold().italic()
                 
                 VStack(alignment: .leading) {
-                    Text("Email")
-                    TextField("", text: $email).textFieldStyle(.roundedBorder)
+                    Text("Epost")
+                    TextField("Email address?", text: $email).textFieldStyle(.roundedBorder).font(.custom("times", size: 14)).keyboardType(.emailAddress).textInputAutocapitalization(.never)
                     
-                    Text("Password")
-                    SecureField("", text: $password).textFieldStyle(.roundedBorder)
+                    Text("Lösenord")
+                    SecureField("Password?", text: $password).textFieldStyle(.roundedBorder).font(.custom("times", size: 14))
                 }.padding()
                 
                 Button("Login") {
                     dbConnection.LoginUser(email: email, password: password)
-                }.foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/).background(.yellow).cornerRadius(3)
+                }.bold().padding().foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/).background(.yellow).cornerRadius(9)
                 
                 NavigationLink(destination: RegisterView(), label: {
-                    Text("Register an account").foregroundColor(.blue).bold()
+                    Text("Register an account").bold().padding().foregroundColor(.blue).background(.yellow).cornerRadius(9)
                     
                 }).bold()
                     .padding()

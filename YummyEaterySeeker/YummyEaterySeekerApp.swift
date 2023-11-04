@@ -55,12 +55,12 @@ struct YummyEaterySeekerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
+//            NavigationStack {
                 
 //                ContentView()
                 
                 SplashScreenView().environmentObject(dbConnection)
-            }
+//            }
         }
     }
 }
