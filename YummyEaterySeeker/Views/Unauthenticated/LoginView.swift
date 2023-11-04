@@ -39,7 +39,7 @@ struct LoginView: View {
                 }.bold().padding().foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/).background(.yellow).cornerRadius(9)
                 
                 NavigationLink(destination: RegisterView(), label: {
-                    Text("Register an account").bold().padding().foregroundColor(.blue).background(.yellow).cornerRadius(9)
+                    Text("Register an account").bold().foregroundColor(.blue).background(.yellow).cornerRadius(9)
                     
                 }).bold()
                     .padding()
@@ -49,9 +49,9 @@ struct LoginView: View {
                 
 //                Text("Hello, LoginView")
 
-            }.padding()
+            }.padding().background(.orange)
 
-        }
+        }.background(.yellow)
         
     }
 }
