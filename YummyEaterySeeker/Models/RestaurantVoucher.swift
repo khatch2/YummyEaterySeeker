@@ -36,8 +36,8 @@ struct RestaurantVoucher: View {
                 
                 Text("Hello, RestaurantVoucher")
                 
-            }.padding()
-        }
+            }.padding().background( .orange )
+        }.background(.yellow)
     }
 }
 

@@ -78,12 +78,12 @@ struct ReviewPopupView: View {
                     }
                     
                     
-                }.frame(width: 300, height: 360).cornerRadius(9)
+                }.frame(width: 300, height: 360).cornerRadius(9).background( .orange )
                 
                 Text("Hello, ReviewPopup")
 
-            }.padding()
-        }
+            }.padding().background(.yellow)
+        }.background(.brown)
     }
 }
 

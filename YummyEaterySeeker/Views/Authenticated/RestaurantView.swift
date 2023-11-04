@@ -88,11 +88,11 @@ struct RestaurantView: View {
                         ReviewPopupView(restaurantId: restaurant.id, showPopup: $showPopup)
                     }
                     
-                }
+                }.background(.orange)
                 
                 Text("Hello, RestaurantView")
                 
-            }.padding()
+            }.padding().background(.yellow)
         }
     }
 }

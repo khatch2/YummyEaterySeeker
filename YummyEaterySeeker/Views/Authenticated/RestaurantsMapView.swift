@@ -83,8 +83,8 @@ struct RestaurantsMapView: View {
                 
                 Text("Hello, RestaurantsMapView")
 
-            }.padding()
-        }
+            }.padding().background(.orange)
+        }.background(.yellow)
     }
 }
 
