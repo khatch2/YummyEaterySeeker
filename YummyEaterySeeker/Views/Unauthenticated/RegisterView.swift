@@ -31,7 +31,7 @@ struct RegisterView: View {
                     Text("Password")
                     SecureField("", text: $password).textFieldStyle(.roundedBorder).font(.custom("times", size: 14)).textInputAutocapitalization(.never)
                     
-                }.padding()
+                }.background(.yellow).padding()
                 
                 Button("Register") {
                     dbConnection.RegisterUser(email: email, password: password)

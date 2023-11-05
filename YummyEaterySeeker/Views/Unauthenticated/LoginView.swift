@@ -32,11 +32,11 @@ struct LoginView: View {
                     
                     Text("Lösenord")
                     SecureField("Password?", text: $password).textFieldStyle(.roundedBorder).font(.custom("times", size: 14))
-                }.padding()
+                }.background(.yellow).padding()
                 
                 Button("Login") {
                     dbConnection.LoginUser(email: email, password: password)
-                }.bold().padding().foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/).background(.yellow).cornerRadius(9)
+                }.bold().padding().foregroundColor(.blue).background(.yellow).cornerRadius(9)
                 
                 NavigationLink(destination: RegisterView(), label: {
                     Text("Register an account").bold().foregroundColor(.blue).background(.yellow).cornerRadius(9)

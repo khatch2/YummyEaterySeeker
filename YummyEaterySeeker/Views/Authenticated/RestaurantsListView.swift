@@ -51,8 +51,24 @@ struct RestaurantsListView: View {
                         RestaurantsMapView(viewOnMap: $viewOnMap)
                     }
                     
-                    Text("Hello, RestaurantsListView")
+                    VStack (spacing: 30) {
+                        
+                        Text("Hello, RestaurantsListView")
+                        
+                        Button(action: {
+                                do {
+    //                                try db.auth.signOut()
+                                    try dbConnection.SignOut()
+                                    
+                                } catch let signOutError as NSError {
+                                    print("Error signing out: %@", signOutError)}
+                                                        }, label: {
+                                                            
+                                                            Text("Log out me").bold().background(.white).cornerRadius(5).padding()
+                                                        })
 
+                        
+                    }.background(.brown).padding()
                 }
             }
         }
