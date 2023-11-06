@@ -811,7 +811,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "198"
             endingLineNumber = "198"
-            landmarkName = "startListeningToDb()"
+            landmarkName = "addRestaurantToDb(restaurant:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -889,7 +889,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "200"
             endingLineNumber = "200"
-            landmarkName = "startListeningToDb()"
+            landmarkName = "addRestaurantToDb(restaurant:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -967,7 +967,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "199"
             endingLineNumber = "199"
-            landmarkName = "startListeningToDb()"
+            landmarkName = "addRestaurantToDb(restaurant:)"
             landmarkType = "7">
             <Locations>
                <Location
