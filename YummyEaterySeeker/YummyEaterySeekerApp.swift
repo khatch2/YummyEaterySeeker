@@ -51,7 +51,8 @@ struct YummyEaterySeekerApp: App {
     // register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
-    @StateObject var dbConnection = DatabaseConnection()
+//    @StateObject var dbConnection = DatabaseConnection()
+    @StateObject var db = DbConnection()
     
     var body: some Scene {
         WindowGroup {
@@ -59,7 +60,8 @@ struct YummyEaterySeekerApp: App {
                 
 //                ContentView()
                 
-                SplashScreenView().environmentObject(dbConnection)
+                SplashScreenView().environmentObject(db)
+            
 //            }
         }
     }

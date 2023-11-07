@@ -72,17 +72,17 @@ class DatabaseConnection: ObservableObject {
 //        }
 //    }
     
-    func addReviewToRestaurant(restaurantId: String, review: Review) {
-        
-        do {
-            
-            try db.collection(restaurantCollection).document(restaurantId).updateData(["reviews": FieldValue.arrayUnion([Firestore.Encoder().encode(review)])])
-            
-        } catch {
-            print("Error adding review!")
-        }
-        
-    }
+//    func addReviewToRestaurant(restaurantId: String, review: Review) {
+//        
+//        do {
+//            
+//            try db.collection(restaurantCollection).document(restaurantId).updateData(["reviews": FieldValue.arrayUnion([Firestore.Encoder().encode(review)])])
+//            
+//        } catch {
+//            print("Error adding review!")
+//        }
+//        
+//    }
     
     func stopListeningToRestaurants() {
         

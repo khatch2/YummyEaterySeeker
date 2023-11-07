@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct RestaurantVoucher: View {
+struct RestaurantDetailView: View {
     
     var restaurant: Restaurant
     
-    var isMini: Bool
+//    var isMini: Bool
     
     var body: some View {
         
@@ -32,17 +32,15 @@ struct RestaurantVoucher: View {
                     
                     Text("Still loading ...").bold().padding().foregroundColor(.white).background(.yellow).cornerRadius(9)
 
-                }).frame(width: isMini ? 200 : 325, height: isMini ? 150 : 210).background(.black).cornerRadius(9)
-                
-//                Text("Hello, RestaurantVoucher")
-                
+                }).frame(width: 325, height: 210).background(.black).cornerRadius(9)
+                                
             }.padding().background( .orange )
         }.background(.yellow)
     }
 }
 
 #Preview {
-    RestaurantVoucher(restaurant: Restaurant(description: "Hej vi är en god pizzeria", id: "11", image: "https://lh3.googleusercontent.com/p/AF1QipNL5LJEubSGhC9mVD_kIJuSpoEgTgQzW0Njm6_9=w600-k", location: Location(latitude: 18.02395798266904, longitude: 59.311150897492475), name: "Eriks pizzeria", openingHours: "10 a.m. - 9:00 p.m.", rating: 7, reviews: [Review(id: "1", name: "Tomas", message: "It's highly recommanded")]), isMini: false)
+    RestaurantDetailView(restaurant: Restaurant(description: "TryingRestaurang", id: "5", image: "https://lh5.googleusercontent.com/p/AF1QipNCq1B7QPIZOpzH6Yu-U33xfzu5W28hYJKd7xXq=w408-h306-k-no", location: Location(latitude: 59.30465856210876, longitude: 18.03055060891921), name: "Eriks pizzeria", openingHours: "10 a.m. - 9 p.m.", rating: 7, reviews: [ OpinionsView(name: "John", opinions: "I am glad for its meals.", restaurantId: "restaurantId2", showPopup: .constant(false)) ] ))
     
-//    RestaurantVoucher(restaurant: Restaurant(from: <#Decoder#>), isMini: true)
+    
 }

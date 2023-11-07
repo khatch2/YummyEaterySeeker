@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SplashScreenView: View {
     
-    @EnvironmentObject var dbConnection: DatabaseConnection
+//    @EnvironmentObject var dbConnection: DatabaseConnection
+    @EnvironmentObject var db: DbConnection
     
 //    @ObservedObject var db: DbConnection
     

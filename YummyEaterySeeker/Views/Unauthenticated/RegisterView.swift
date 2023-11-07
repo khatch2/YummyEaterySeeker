@@ -42,6 +42,9 @@ struct RegisterView: View {
                 
                 Button("Register") {
                     dbConnection.RegisterUser(email: email, password: password)
+                    
+
+                    
                 }.bold().padding().foregroundColor(.blue).background(.yellow).cornerRadius(9)
                 
                 
@@ -49,7 +52,9 @@ struct RegisterView: View {
 //                Text("Hello, RegisterView")
 
             }.padding().background(.orange)
-        }.background(.yellow)
+        }.background(.yellow).alert(Text("Error"), isPresented: $showToast, actions: {
+            Text("Hello")
+        })
     }
 }
 

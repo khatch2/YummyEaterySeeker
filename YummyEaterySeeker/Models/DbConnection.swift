@@ -12,6 +12,8 @@ class DbConnection: ObservableObject {
     
     @Published var restaurantsList : [Restaurant] = []
     
+    private var RESTAURANT_COLLECTION = "Restaurants"
+    
     var db = Firestore.firestore()
     
     var auth = Auth.auth()
@@ -19,6 +21,8 @@ class DbConnection: ObservableObject {
     var storageManager = StorageManager()
     
     let LILJEHOLMEN_DATA_COLLECTION = "restaurants_in_near_liljeholmen"
+    
+    @Published var userHasLoggedIn = false
     
     @Published var currentUserData: UserData?
     
@@ -37,11 +41,15 @@ class DbConnection: ObservableObject {
                     // A user has just logged in
                     print("A user has logged in with email: \(user.email ?? "No Email")")
                     
+                    self.userHasLoggedIn = true
+                    
                     self.currentUser = user
                     
                     self.startListeningToDb()
                     
                 } else {
+                    
+                    self.userHasLoggedIn = false
                     
                     self.dbListener?.remove()
                     self.dbListener = nil
@@ -90,6 +98,22 @@ class DbConnection: ObservableObject {
 //                
 //            }
 //        }
+    
+    func addEvaluationToRestaurant(restaurantId: String, evaluation: Evaluation) {
+        
+        do {
+            try db.collection(RESTAURANT_COLLECTION).document(restaurantId).updateData(
+                ["evaluations": FieldValue.arrayUnion(
+                    [Firestore.Encoder().encode(evaluation)] )] )
+                        
+        } catch {
+            
+            print("Error adding review!")
+            
+        }
+        
+    }
+    
         
         func getRestaurantImage(completion: @escaping (UIImage?) -> Void) {
             
@@ -249,7 +273,7 @@ class DbConnection: ObservableObject {
                      */
                     
 //                    try db.collection(USER_DATA_COLLECTION).document(currentUser.uid).updateData(["restaurants": FieldValue.arrayUnion([Firestore.Encoder().encode(restaurant)])])
-                    try db.collection(LILJEHOLMEN_DATA_COLLECTION).document().setData( ["restaurants": FieldValue.arrayUnion([Firestore.Encoder().encode(restaurant)])] )
+                    try db.collection(LILJEHOLMEN_DATA_COLLECTION).document().setData( ["restaurants": FieldValue.arrayUnion([Firestore.Encoder().encode(restaurant)])] )
                     
                 } catch {
                     

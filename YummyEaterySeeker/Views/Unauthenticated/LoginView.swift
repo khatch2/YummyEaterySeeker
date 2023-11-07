@@ -9,16 +9,17 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @EnvironmentObject var dbConnection: DatabaseConnection
+    @EnvironmentObject var db: DbConnection
     
     @State var email = ""
+    
     @State var password = ""
     
     var body: some View {
         
         GeometryReader { geometry in
             
-            VStack (spacing: 30) {
+            VStack () {
                 
                 Image("restaurant-logo").resizable().frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.28, alignment: .center).padding()
                 
@@ -27,15 +28,16 @@ struct LoginView: View {
                 Text("Enter your credentials? ").font(.system(size: 20, design: .serif)).bold().italic()
                 
                 VStack(alignment: .leading) {
-                    Text("Epost")
+                    Text("E-post")
                     TextField("Email address?", text: $email).textFieldStyle(.roundedBorder).font(.custom("times", size: 14)).keyboardType(.emailAddress).textInputAutocapitalization(.never)
                     
-                    Text("Lösenord")
+                    Text("Open sesame")
                     SecureField("Password?", text: $password).textFieldStyle(.roundedBorder).font(.custom("times", size: 14))
                 }.background(.yellow).padding()
                 
                 Button("Login") {
-                    dbConnection.LoginUser(email: email, password: password)
+                    
+                    /* var resultLogation = */ db.LoginUser(email: email, password: password)
                 }.bold().padding().foregroundColor(.blue).background(.yellow).cornerRadius(9)
                 
                 NavigationLink(destination: RegisterView(), label: {
@@ -47,12 +49,9 @@ struct LoginView: View {
                     .background(Color.yellow)
                     .cornerRadius(9.0)
                 
-//                Text("Hello, LoginView")
-
             }.padding().background(.orange)
 
         }.background(.yellow)
-        
     }
 }
 

@@ -27,7 +27,7 @@ struct Restaurant : Codable, Identifiable {
 
     var rating: Int
     
-    var reviews: [Review]
+    var reviews: [Evaluation]
     
     
     enum CodingKeys: String, CodingKey {

@@ -10,11 +10,11 @@ import MapKit
 
 struct RestaurantsMapView: View {
     
-    @EnvironmentObject var dbConnection: DatabaseConnection
+    @EnvironmentObject var db: DbConnection
     
-    @Binding var viewOnMap: Bool
+    @Binding var viewThemOnMap: Bool
     
-    @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 59.325300386430435, longitude: 18.06622395719864), span: MKCoordinateSpan(latitudeDelta: 0.30, longitudeDelta: 0.25))
+    @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 59.30769909740655, longitude: 18.030594636663807), span: MKCoordinateSpan(latitudeDelta: 0.30, longitudeDelta: 0.25))
     
     @State var selectedRestaurant: Restaurant?
     
@@ -23,20 +23,10 @@ struct RestaurantsMapView: View {
         
         GeometryReader { geometry in
             
-            VStack (spacing: 30) {
+            VStack (alignment: .leading) {
                 
-                List() {
-                    ForEach(dbConnection.restaurantList) { restaurant in
-                        Text(restaurant.name)
-                    }
-                }
-                
-                
-                Map(coordinateRegion: $region, annotationItems: dbConnection.restaurantList) {
+                Map(coordinateRegion: $region, annotationItems: db.restaurantsList) {
                     restaurant in
-                    
-                    
-                    
                     
                     MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: restaurant.location.latitude, longitude: restaurant.location.longitude), content: {
                         Button(action: {
@@ -57,63 +47,62 @@ struct RestaurantsMapView: View {
                                     Image(systemName: "fork.knife.circle").foregroundColor(Color.blue)
                                 }
 
-                                Text(restaurant.name).bold().foregroundColor(Color.primaryColor)
+                                Text(restaurant.name).bold()
                             }
                         })
-
                     })
                     
                 }.ignoresSafeArea().onTapGesture {
+                    
                     selectedRestaurant = nil
+                    
                 }.overlay(alignment: .bottom, content: {
                     
                     VStack  {
                         if let selectedRestaurant = selectedRestaurant {
                          
                             NavigationLink(destination: RestaurantView(restaurant: selectedRestaurant), label: {
-                                
-                                
-                                RestaurantVoucher(restaurant: selectedRestaurant, isMini: true).padding()
+                                RestaurantDetailView(restaurant: selectedRestaurant).padding()
                             })
-                            
                         }
                         
                         Button(action: {
-                            viewOnMap.toggle()
+                            viewThemOnMap.toggle()
+                            
+//                            viewOnMap.toggle()
                         }, label: {
-                            Text("View on list").padding().background(Color.primaryColor).foregroundColor(Color.secondaryColor).cornerRadius(9)
+                            Text("View them on list").padding().background(.cyan).cornerRadius(9)
                         })
                     }
-
-                    
                 })
-                
-                
-//                Text("Hello, RestaurantsMapView")
-                
+                                
                 VStack (spacing: 30) {
-                    
-//                    Text("Hello, RestaurantsMapView")
-                    
+                                        
                     Button(action: {
+                        
                             do {
-//                                try db.auth.signOut()
-                                try dbConnection.SignOut()
+                                
+                                try db.auth.signOut()
+                                
+//                                try dbConnection.SignOut()
                                 
                             } catch let signOutError as NSError {
                                 print("Error signing out: %@", signOutError)}
                                                     }, label: {
                                                         
-                                                        Text("Log me out").bold().background(.white).cornerRadius(5)
+                                                        Text("Log me out").bold().foregroundStyle(.blue).background(.yellow).cornerRadius(5)
                                                     })
                     
                 }.background(.brown)
 
             }.padding().background(.orange)
+            
         }.background(.yellow)
     }
 }
 
 #Preview {
-    RestaurantsMapView(viewOnMap: .constant(true)).environmentObject(DatabaseConnection())
+    RestaurantsMapView( viewThemOnMap: .constant(true)).environmentObject(DbConnection())
+//    RestaurantsMapView(db: , viewThemOnMap: .constant(true))
+//    RestaurantsMapView(db: DbConnection(), viewOnMap: .constant(true)).environmentObject(DatabaseConnection())
 }

@@ -14,8 +14,8 @@
             filePath = "YummyEaterySeeker/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "unknown"
             landmarkType = "0">
             <Locations>
@@ -84,14 +84,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "1834A4CA-DE4B-41E3-A950-5934B15DF6F5"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YummyEaterySeeker/Views/Unauthenticated/LoginView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62">
+            startingLineNumber = "61"
+            endingLineNumber = "61">
             <Locations>
                <Location
                   uuid = "1834A4CA-DE4B-41E3-A950-5934B15DF6F5 - 9ab7661db7a7188c"
@@ -513,8 +513,8 @@
             filePath = "YummyEaterySeeker/Views/Authenticated/RestaurantView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -809,8 +809,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
             landmarkName = "addRestaurantToDb(restaurant:)"
             landmarkType = "7">
             <Locations>
@@ -887,8 +887,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
+            startingLineNumber = "272"
+            endingLineNumber = "272"
             landmarkName = "addRestaurantToDb(restaurant:)"
             landmarkType = "7">
             <Locations>
@@ -965,8 +965,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
             landmarkName = "addRestaurantToDb(restaurant:)"
             landmarkType = "7">
             <Locations>
@@ -1107,8 +1107,8 @@
             filePath = "YummyEaterySeeker/Views/Authenticated/RestaurantsMapView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -1148,69 +1148,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FB7ACA8A-AEB6-496F-A4A8-11189F8DB189"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YummyEaterySeeker/Views/Authenticated/RestaurantsMapView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "FB7ACA8A-AEB6-496F-A4A8-11189F8DB189 - bd343b67eaa38fa0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;YummyEaterySeeker.Restaurant&gt;, Swift.String, SwiftUI.Text&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.overlay&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(alignment: SwiftUI.Alignment, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.background&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ShapeStyle&gt;(_: &#x3c4;_1_0, ignoresSafeAreaEdges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0)&gt; in closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of SwiftUI.View.background&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ShapeStyle&gt;(_: &#x3c4;_1_0, ignoresSafeAreaEdges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0 in YummyEaterySeeker.RestaurantsMapView.body.getter : some"
-                  moduleName = "YummyEaterySeeker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/khatchshah/Desktop/Github_Desktop/YummyEaterySeeker/YummyEaterySeeker/Views/Authenticated/RestaurantsMapView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "1228">
-               </Location>
-               <Location
-                  uuid = "FB7ACA8A-AEB6-496F-A4A8-11189F8DB189 - f7ebefa5b564c91e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (YummyEaterySeeker.Restaurant) -&gt; _MapKit_SwiftUI.MapAnnotation&lt;SwiftUI.Button&lt;SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.Text)&gt;&gt;&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;YummyEaterySeeker.Restaurant&gt;, Swift.String, SwiftUI.Text&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.overlay&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(alignment: SwiftUI.Alignment, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.background&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ShapeStyle&gt;(_: &#x3c4;_1_0, ignoresSafeAreaEdges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0)&gt; in closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of SwiftUI.View.background&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ShapeStyle&gt;(_: &#x3c4;_1_0, ignoresSafeAreaEdges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0 in YummyEaterySeeker.RestaurantsMapView.body.getter : some"
-                  moduleName = "YummyEaterySeeker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/khatchshah/Desktop/Github_Desktop/YummyEaterySeeker/YummyEaterySeeker/Views/Authenticated/RestaurantsMapView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "480">
-               </Location>
-               <Location
-                  uuid = "FB7ACA8A-AEB6-496F-A4A8-11189F8DB189 - cb6ab85534b30726"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (YummyEaterySeeker.Restaurant) -&gt; _MapKit_SwiftUI.MapAnnotation&lt;SwiftUI.Button&lt;SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.Text&gt;, SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.Text)&gt;&gt;&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;YummyEaterySeeker.Restaurant&gt;, Swift.String, SwiftUI.Text&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.overlay&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(alignment: SwiftUI.Alignment, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.background&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ShapeStyle&gt;(_: &#x3c4;_1_0, ignoresSafeAreaEdges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0)&gt; in closure #1 (SwiftUI.GeometryProxy) -&gt; &lt;&lt;opaque return type of SwiftUI.View.background&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ShapeStyle&gt;(_: &#x3c4;_1_0, ignoresSafeAreaEdges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0 in YummyEaterySeeker.RestaurantsMapView.body.getter : some"
-                  moduleName = "YummyEaterySeeker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/khatchshah/Desktop/Github_Desktop/YummyEaterySeeker/YummyEaterySeeker/Views/Authenticated/RestaurantsMapView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "480">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "FB9A662A-064F-435C-9F34-37C4552E58DC"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1218,8 +1155,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "DbConnection"
             landmarkType = "3">
             <Locations>
@@ -1266,8 +1203,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
             landmarkName = "DbConnection"
             landmarkType = "3">
          </BreakpointContent>
@@ -1282,8 +1219,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "startListeningToDb()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1298,8 +1235,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "startListeningToDb()"
             landmarkType = "7">
          </BreakpointContent>

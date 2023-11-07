@@ -6,18 +6,16 @@
 //
 
 import SwiftUI
-//import FirebaseFirestore
 
 struct ContentView: View {
     
-    @EnvironmentObject var dbConnection: DatabaseConnection    
-    @StateObject var db = DbConnection()
-    
+    @EnvironmentObject var db: DbConnection
+        
     var body: some View {
-
-        if dbConnection.userLoggedIn {
+        
+        if db.userHasLoggedIn {
             NavigationStack {
-                RestaurantsListView(db: db)
+                RestaurantsListView(db: _db)
             }
         } else {
             NavigationStack {
@@ -26,8 +24,6 @@ struct ContentView: View {
         }
     }
 }
-
-
 
 #Preview {
     ContentView()
