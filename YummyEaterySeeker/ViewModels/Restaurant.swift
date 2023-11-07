@@ -7,16 +7,19 @@
 
 import Foundation
 import FirebaseFirestoreSwift
+import CoreLocation
 
 struct Restaurant : Codable, Identifiable {
     
     var description: String
     
+    // OR var id = UUID()
+    // OR @DocumentID var id: String?
     var id: String
     
     var image: String
 
-    var location: [Location]
+    var location: Location
     
     var name: String
     

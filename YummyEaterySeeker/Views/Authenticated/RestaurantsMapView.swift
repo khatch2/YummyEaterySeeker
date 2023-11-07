@@ -25,67 +25,66 @@ struct RestaurantsMapView: View {
             
             VStack (spacing: 30) {
                 
-                Button ("Press here") {
-                    List() {
-                        ForEach(dbConnection.restaurantList) { restaurant in
-                            Text( restaurant.name )
-                        }
+                List() {
+                    ForEach(dbConnection.restaurantList) { restaurant in
+                        Text(restaurant.name)
                     }
                 }
                 
-//                Map(coordinateRegion: $region, annotationItems: dbConnection.restaurantList) {
-//                    restaurant in
+                
+                Map(coordinateRegion: $region, annotationItems: dbConnection.restaurantList) {
+                    restaurant in
                     
                     
-//                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: restaurant.location, longitude: restaurant.location.first?.longitude!!), content: {
-//                        Button(action: {
-//                            selectedRestaurant = restaurant
-//                        }, label: {
-//                            VStack {
-//                                
-//                                ZStack {
-//                                    Circle().fill(Color.primaryColor).frame(width: 35, height: 35)
-//                                    Image(systemName: "carrot").foregroundColor(Color.secondaryColor)
-//                                }
-//
-//                                Text(restaurant.name).bold().foregroundColor(Color.primaryColor)
-//                            }
-//                        })
-//
-//                    })
-//                    
-//                }.ignoresSafeArea().onTapGesture {
-//                    selectedRestaurant = nil
-//                }.overlay(alignment: .bottom, content: {
-//                    
-//                    VStack  {
-//                        if let selectedRestaurant = selectedRestaurant {
-//                         
-//                            NavigationLink(destination: RestaurantView(restaurant: selectedRestaurant), label: {
-//                                
-////                                RestaurantCard(restaurant: selectedRestaurant, isMini: true).padding()
-//                                
-//                                RestaurantVoucher(restaurant: selectedRestaurant, isMini: true).padding()
-//                            })
-//                            
-//                        }
-//                        
-//                        Button(action: {
-//                            viewOnMap.toggle()
-//                        }, label: {
-//                            Text("View on list").padding().background(Color.primaryColor).foregroundColor(Color.secondaryColor).cornerRadius(9)
-//                        })
-//                    }
+                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: restaurant.location.latitude, longitude: restaurant.location.longitude), content: {
+                        Button(action: {
+                            selectedRestaurant = restaurant
+                        }, label: {
+                            VStack {
+                                
+                                ZStack {
+                                    Circle().fill(Color.primaryColor).frame(width: 35, height: 35)
+                                    Image(systemName: "carrot").foregroundColor(Color.secondaryColor)
+                                }
+
+                                Text(restaurant.name).bold().foregroundColor(Color.primaryColor)
+                            }
+                        })
+
+                    })
+                    
+                }.ignoresSafeArea().onTapGesture {
+                    selectedRestaurant = nil
+                }.overlay(alignment: .bottom, content: {
+                    
+                    VStack  {
+                        if let selectedRestaurant = selectedRestaurant {
+                         
+                            NavigationLink(destination: RestaurantView(restaurant: selectedRestaurant), label: {
+                                
+//                                RestaurantCard(restaurant: selectedRestaurant, isMini: true).padding()
+                                
+                                RestaurantVoucher(restaurant: selectedRestaurant, isMini: true).padding()
+                            })
+                            
+                        }
+                        
+                        Button(action: {
+                            viewOnMap.toggle()
+                        }, label: {
+                            Text("View on list").padding().background(Color.primaryColor).foregroundColor(Color.secondaryColor).cornerRadius(9)
+                        })
+                    }
 
                     
-//                })
+                })
                 
                 
 //                Text("Hello, RestaurantsMapView")
                 
                 VStack (spacing: 30) {
                     
-                    Text("Hello, RestaurantsMapView")
+//                    Text("Hello, RestaurantsMapView")
                     
                     Button(action: {
                             do {
@@ -96,11 +95,10 @@ struct RestaurantsMapView: View {
                                 print("Error signing out: %@", signOutError)}
                                                     }, label: {
                                                         
-                                                        Text("Log me out").bold().background(.white).cornerRadius(5).padding()
+                                                        Text("Log me out").bold().background(.white).cornerRadius(5)
                                                     })
-
                     
-                }.background(.brown).padding()
+                }.background(.brown)
 
             }.padding().background(.orange)
         }.background(.yellow)

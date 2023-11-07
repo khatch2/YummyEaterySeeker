@@ -51,15 +51,17 @@ struct RestaurantsListView: View {
                     GeometryReader { geometry in
                         
                 
-                ZStack {
+                        ZStack(alignment: .leading) {
                     
                     ScrollView {
                         
                         if let userData = db.currentUser {
                             
-                            if userData.restaurant.count < 1 {
-                                Text("No restaurants yet!!")
-                            }
+                            Text("userData \(userData)")
+                            
+//                            if userData.restaurant.count < 1 {
+//                                Text("No restaurants yet!!")
+//                            }
                         }
                         
                         Text("Restaurants").bold().font(.title)
@@ -90,24 +92,24 @@ struct RestaurantsListView: View {
                         RestaurantsMapView(viewOnMap: $viewOnMap)
                     }
                     
-                    VStack (spacing: 30) {
-                        
-                        Text("Hello, RestaurantsListView")
-                        
-                        Button(action: {
-                                do {
-    //                                try db.auth.signOut()
-                                    try dbConnection.SignOut()
-                                    
-                                } catch let signOutError as NSError {
-                                    print("Error signing out: %@", signOutError)}
-                                                        }, label: {
-                                                            
-                                                            Text("Log out me").bold().background(.white).cornerRadius(5).padding()
-                                                        })
-
-                        
-                    }.background(.brown).padding()
+//                    VStack (spacing: 30) {
+//                        
+//                        Text("Hello, RestaurantsListView")
+//                        
+//                        Button(action: {
+//                                do {
+//    //                                try db.auth.signOut()
+//                                    try dbConnection.SignOut()
+//                                    
+//                                } catch let signOutError as NSError {
+//                                    print("Error signing out: %@", signOutError)}
+//                                                        }, label: {
+//                                                            
+//                                                            Text("Log out me").bold().background(.white).cornerRadius(5).padding()
+//                                                        })
+//
+//                        
+//                    }.background(.brown).padding()
                 }
             }
         }
@@ -115,5 +117,5 @@ struct RestaurantsListView: View {
 }
 
 #Preview {
-    RestaurantsListView()
+    RestaurantsListView(db: DbConnection())
 }

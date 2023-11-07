@@ -103,6 +103,6 @@ struct RestaurantView: View {
     
 //    RestaurantView()
     
-    RestaurantView(restaurant: Restaurant(description: "Hej vi är en god pizzeria", id: "11", image: "https://lh3.googleusercontent.com/p/AF1QipNL5LJEubSGhC9mVD_kIJuSpoEgTgQzW0Njm6_9=w600-k", location: [Location(latitude: 18.02395798266904, longitude: 59.311150897492475)], name: "Pizzeria Valla", openingHours: "10 a.m. - 19:00 p.m.", rating: 7, reviews: [Review(id: "1", name: "Tomas", message: "It's highly recommanded")]))
+    RestaurantView(restaurant: Restaurant(description: "Hej vi är en god pizzeria", id: "11", image: "https://lh3.googleusercontent.com/p/AF1QipNL5LJEubSGhC9mVD_kIJuSpoEgTgQzW0Njm6_9=w600-k", location: Location(latitude: 18.02395798266904, longitude: 59.311150897492475), name: "Pizzeria Valla", openingHours: "10 a.m. - 19:00 p.m.", rating: 7, reviews: [Review(id: "1", name: "Tomas", message: "It's highly recommanded")]))
     
 }

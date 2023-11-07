@@ -27,6 +27,7 @@
 		119CC28A2AEBE35A0088C0D5 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 119CC2892AEBE35A0088C0D5 /* FirebaseFirestoreSwift */; };
 		119CC28C2AEBE35A0088C0D5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 119CC28B2AEBE35A0088C0D5 /* FirebaseStorage */; };
 		119CC28E2AEBE35A0088C0D5 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 119CC28D2AEBE35A0088C0D5 /* FirebaseStorageCombine-Community */; };
+		11F132A52AFA39D200926ABB /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F132A42AFA39D200926ABB /* LocationManager.swift */; };
 		11F596942AF42F23000377FD /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 11F596932AF42F23000377FD /* FirebaseFunctions */; };
 		11F596962AF42F23000377FD /* FirebaseFunctionsCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 11F596952AF42F23000377FD /* FirebaseFunctionsCombine-Community */; };
 		11FBEA262AF52D7000C3C5C0 /* DatabaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FBEA252AF52D7000C3C5C0 /* DatabaseConnection.swift */; };
@@ -76,6 +77,7 @@
 		119CC26F2AEBD7570088C0D5 /* YummyEaterySeekerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummyEaterySeekerUITests.swift; sourceTree = "<group>"; };
 		119CC2712AEBD7570088C0D5 /* YummyEaterySeekerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummyEaterySeekerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		119CC2802AEBDF940088C0D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		11F132A42AFA39D200926ABB /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		11FBEA252AF52D7000C3C5C0 /* DatabaseConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseConnection.swift; sourceTree = "<group>"; };
 		11FBEA272AF52E9700C3C5C0 /* RestaurantsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsListView.swift; sourceTree = "<group>"; };
 		11FBEA292AF52EC700C3C5C0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				114A699E2AF92419008B0ED0 /* DbConnection.swift */,
 				114A69A02AF924A6008B0ED0 /* StorageManager.swift */,
 				114A69A22AF93A85008B0ED0 /* UserData.swift */,
+				11F132A42AFA39D200926ABB /* LocationManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				11FBEA342AF5414900C3C5C0 /* RestaurantsMapView.swift in Sources */,
 				11FBEA362AF5507600C3C5C0 /* ReviewPopupView.swift in Sources */,
 				114A699D2AF91F7B008B0ED0 /* AddRestaurantView.swift in Sources */,
+				11F132A52AFA39D200926ABB /* LocationManager.swift in Sources */,
 				1190DA2F2AEC1E88002CA42E /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
