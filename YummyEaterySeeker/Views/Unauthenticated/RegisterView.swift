@@ -16,7 +16,8 @@ struct RegisterView: View {
             hideAfter: 3
     )
     
-    @EnvironmentObject var dbConnection: DatabaseConnection
+//    @EnvironmentObject var dbConnection: DatabaseConnection
+    @EnvironmentObject var db: DbConnection
     
     @State var email = ""
     @State var password = ""
@@ -41,7 +42,8 @@ struct RegisterView: View {
                 }.background(.yellow).padding()
                 
                 Button("Register") {
-                    dbConnection.RegisterUser(email: email, password: password)
+                    db.RegisterUser(email: email, password: password)
+//                    dbConnection.RegisterUser(email: email, password: password)
                     
 
                     

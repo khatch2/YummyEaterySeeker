@@ -88,7 +88,10 @@ struct RestaurantView: View {
                     if showPopup {
                         
 //                        ReviewPopupView(restaurantId: restaurant.id, showPopup: $showPopup)
-                        OpinionsView(db: DbConnection(), restaurantId: restaurant.id, showPopup: $showPopup)
+                        
+                        OpinionsView( restaurantId: restaurant.id, showPopup: $showPopup)
+                        
+//                        OpinionsView(db: DbConnection(), restaurantId: restaurant.id, showPopup: $showPopup)
                     }
                     
                 }.background(.orange)

@@ -7,7 +7,10 @@
 
 import SwiftUI
 
+
 struct LoginView: View {
+    
+    @Binding var txtError: String 
     
     @EnvironmentObject var db: DbConnection
     
@@ -35,20 +38,28 @@ struct LoginView: View {
                     SecureField("Password?", text: $password).textFieldStyle(.roundedBorder).font(.custom("times", size: 14))
                 }.background(.yellow).padding()
                 
-                Button("Login") {
-                    
-                    /* var resultLogation = */ db.LoginUser(email: email, password: password)
-                }.bold().padding().foregroundColor(.blue).background(.yellow).cornerRadius(9)
+                Text(txtError)
                 
-                NavigationLink(destination: RegisterView(), label: {
-                    Text("Register an account").bold().foregroundColor(.blue).background(.yellow).cornerRadius(9)
+                HStack {
                     
-                }).bold()
-                    .padding()
-                    .foregroundColor(.blue)
-                    .background(Color.yellow)
-                    .cornerRadius(9.0)
+                    Button("Login") {
+                        
+                        /* var resultLogation = */ db.LoginUser(email: email, password: password)
+                    }.bold().padding().foregroundColor(.blue).background(.yellow).cornerRadius(9)
+                    
+                    NavigationLink(destination: RegisterView(), label: {
+                        Text("Register an account").bold().foregroundColor(.blue).background(.yellow).cornerRadius(9)
+                        }).bold()
+                            .padding()
+                            .foregroundColor(.blue)
+                            .background(Color.yellow)
+                            .cornerRadius(9.0)
+                    
+                }
                 
+                
+                
+                                
             }.padding().background(.orange)
 
         }.background(.yellow)
@@ -56,5 +67,6 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+//    @Binding var txtError: String = projectedValue
+    LoginView(txtError: .constant("Biblioteket"))
 }

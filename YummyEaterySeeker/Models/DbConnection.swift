@@ -10,6 +10,8 @@ import Firebase
 
 class DbConnection: ObservableObject {
     
+    @Published var txtError: String = "N/A"
+    
     @Published var restaurantsList : [Restaurant] = []
     
     private var RESTAURANT_COLLECTION = "Restaurants"
@@ -201,7 +203,7 @@ class DbConnection: ObservableObject {
             
 //        }
         
-        func RegisterUser(email: String, password: String, birthdate: Date) -> Bool {
+        func RegisterUser(email: String, password: String) -> Bool {
             
             var success = false
             
@@ -215,7 +217,8 @@ class DbConnection: ObservableObject {
                 if let authResult = authResult {
                     
                     // Create a UserData document in the database
-                    let newUserData = UserData(restaurants: [], birthdate: birthdate, image: "")
+//                    let newUserData = UserData(restaurants: [], birthdate: birthdate, image: "")
+                    let newUserData = UserData(restaurants: [], image: "")
                     
                     do {
 //                        try self.db.collection(self.USER_DATA_COLLECTION).document(authResult.user.uid).setData(from: newUserData)
@@ -248,7 +251,10 @@ class DbConnection: ObservableObject {
             auth.signIn(withEmail: email, password: password) { authDataResult, error in
                 
                 if let error = error {
+                    
                     print("Error logging in!")
+                    
+                    self.txtError = "Error logging in!"
                     
                     success = false
                 }

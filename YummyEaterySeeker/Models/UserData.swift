@@ -14,7 +14,7 @@ struct UserData: Codable, Identifiable {
     
     var restaurants: [Restaurant]
     
-    var birthdate: Date
+//    var birthdate: Date
     
     var image: String
     

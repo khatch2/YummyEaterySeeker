@@ -81,9 +81,11 @@ struct RestaurantsListView: View {
                     })
                     
                     if viewItOnTheMap {
-                        RestaurantsMapView(db: DbConnection(), viewThemOnMap: $viewItOnTheMap)
                         
-//                        RestaurantsMapView(db: DbConnection(), viewOnMap: $viewItOnTheMap)
+                        RestaurantsMapView(viewThemOnMap: $viewItOnTheMap)
+                        
+//                        RestaurantsMapView(db: DbConnection(), viewThemOnMap: $viewItOnTheMap).environmentObject(DbConnection())
+                        
                         
                     }
                     

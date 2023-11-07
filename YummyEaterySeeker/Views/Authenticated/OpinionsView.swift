@@ -19,7 +19,7 @@ struct OpinionsView: View {
     
     @Binding var showPopup: Bool
     
-    func submitReview() {
+    func conformOpinion() {
         
         if name == "" || opinions == "" {
             
@@ -57,7 +57,7 @@ struct OpinionsView: View {
                     
                 }.padding().textFieldStyle(.roundedBorder)
                 
-                Button(action: submitReview, label: {
+                Button(action: conformOpinion, label: {
                     Text("Conform").padding().background(.black).foregroundColor(.white).cornerRadius(9)
                 })
                 
@@ -74,6 +74,7 @@ struct OpinionsView: View {
 
 
 #Preview {
+//    Opin
     OpinionsView(restaurantId: "HelloEveryOne", showPopup: .constant(true))
 }
 

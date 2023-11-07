@@ -90,8 +90,8 @@
             filePath = "YummyEaterySeeker/Views/Unauthenticated/LoginView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61">
+            startingLineNumber = "73"
+            endingLineNumber = "73">
             <Locations>
                <Location
                   uuid = "1834A4CA-DE4B-41E3-A950-5934B15DF6F5 - 9ab7661db7a7188c"
@@ -809,8 +809,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "270"
-            endingLineNumber = "270"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
             landmarkName = "addRestaurantToDb(restaurant:)"
             landmarkType = "7">
             <Locations>
@@ -887,8 +887,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "272"
-            endingLineNumber = "272"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
             landmarkName = "addRestaurantToDb(restaurant:)"
             landmarkType = "7">
             <Locations>
@@ -965,8 +965,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
             landmarkName = "addRestaurantToDb(restaurant:)"
             landmarkType = "7">
             <Locations>
@@ -1043,8 +1043,8 @@
             filePath = "YummyEaterySeeker/Views/Unauthenticated/RegisterView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -1059,8 +1059,8 @@
             filePath = "YummyEaterySeeker/Views/Unauthenticated/RegisterView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -1155,8 +1155,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "DbConnection"
             landmarkType = "3">
             <Locations>
@@ -1203,8 +1203,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
             landmarkName = "DbConnection"
             landmarkType = "3">
          </BreakpointContent>
@@ -1219,8 +1219,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "startListeningToDb()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1235,8 +1235,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "startListeningToDb()"
             landmarkType = "7">
          </BreakpointContent>
