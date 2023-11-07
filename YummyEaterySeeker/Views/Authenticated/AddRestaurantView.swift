@@ -34,7 +34,7 @@ struct AddRestaurantView: View {
                     
                     let newRestaurant = Restaurant(description: "", id: "", image: restaurantImage, location: Location(latitude: 53.234, longitude: 51.3242), name: restaurantName, openingHours: "", rating: 3, reviews: [])
                     
-                    db.addRestaurantToDb(restaurant: newRestaurant)
+//                    db.addRestaurantToDb(restaurant: newRestaurant)
                     
                     dismiss()
                     

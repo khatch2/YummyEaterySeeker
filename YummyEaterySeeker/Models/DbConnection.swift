@@ -10,13 +10,15 @@ import Firebase
 
 class DbConnection: ObservableObject {
     
+    @Published var restaurantsList : [Restaurant] = []
+    
     var db = Firestore.firestore()
     
     var auth = Auth.auth()
     
     var storageManager = StorageManager()
     
-    let USER_DATA_COLLECTION = "user_data"
+    let LILJEHOLMEN_DATA_COLLECTION = "restaurants_in_near_liljeholmen"
     
     @Published var currentUserData: UserData?
     
@@ -24,14 +26,6 @@ class DbConnection: ObservableObject {
         
     var dbListener: ListenerRegistration?
     
-//    init(db: Firestore = Firestore.firestore(), auth: Auth = Auth.auth(), storageManager: StorageManager = StorageManager(), currentUserData: UserData? = nil, currentUser: User? = nil, dbListener: ListenerRegistration? = nil) {
-//        self.db = db
-//        self.auth = auth
-//        self.storageManager = storageManager
-//        self.currentUserData = currentUserData
-//        self.currentUser = currentUser
-//        self.dbListener = dbListener
-//    }
     
     init() {
             
@@ -61,19 +55,41 @@ class DbConnection: ObservableObject {
             }
         }
         
-        func uploadImageToUser(data: Data) {
-            
-            // We only upload the image if a user is logged in
-            guard let currentUser = currentUser else {return}
-            
-            storageManager.uploadImage(data: data) { path in
-                
-                // If we haven't received a path, then the upload has failed, and we end the function here
-                guard let path = path else {return}
-                
-                self.db.collection(self.USER_DATA_COLLECTION).document(currentUser.uid).updateData(["image": path])
-            }
-        }
+//        func uploadImageToUser(data: Data) {
+//            
+//            // We only upload the image if a user is logged in
+//            guard let currentUser = currentUser else {return}
+//            
+//            storageManager.uploadImage(data: data) { path in
+//                
+//                // If we haven't received a path, then the upload has failed, and we end the function here
+//                guard let path = path else {return}
+//                
+////                self.db.collection(self.USER_DATA_COLLECTION).document(currentUser.uid).updateData(["image": path])
+//                var lookLiljeholmen = self.db.collection(self.LILJEHOLMEN_DATA_COLLECTION)
+//                
+//                print()
+//                print(type(of: lookLiljeholmen))
+//                print("lookLiljeholmen ", lookLiljeholmen)
+//                print()
+//                
+//                var dbCollectionRef = self.db.collection(self.LILJEHOLMEN_DATA_COLLECTION)
+//                
+//                dbCollectionRef.getDocuments () { (querySnapshot, err) in
+//                    if let err = err {
+//                        print("Error getting documents: \(err)")
+//                      } else {
+//                          
+//                        for document in querySnapshot!.documents {
+//                            
+//                          print("\(document.documentID) => \(document.data())")
+//                        
+//                        }
+//                      }
+//                }
+//                
+//            }
+//        }
         
         func getRestaurantImage(completion: @escaping (UIImage?) -> Void) {
             
@@ -97,46 +113,69 @@ class DbConnection: ObservableObject {
             
             print("START LISTENING")
             
-            dbListener = db.collection(self.USER_DATA_COLLECTION).document(user.uid).addSnapshotListener {
-                snapshot, error in
-                
-                if let error = error {
-                    print("Error occurred \(error.localizedDescription)")
-                    return
-                }
-                
-                guard let documentSnapshot = snapshot else { return }
-                
-                let result = Result {
-                    try documentSnapshot.data(as: UserData.self)
-                }
-                
-                switch result {
-                    case .success(let userData):
-                        self.currentUserData = userData
-                    case .failure(let error):
-                        print("ERRORR")
-                        print(error.localizedDescription)
-                }
-                /*
-                for document in snapshot.documents {
-                    
-                    let result = Result {
-                        try document.data(as: Restaurant.self)
+            var dbCollectionRef = db.collection(self.LILJEHOLMEN_DATA_COLLECTION)
+            
+            dbListener =  dbCollectionRef.addSnapshotListener { (snapshot, err) in
+                                    
+                    if let err = err {
+                        print("Error occurred \(err.localizedDescription)")
+                        return
                     }
+                
+                print(snapshot?.documents ?? "N/A")
                     
-                    switch result {
-                    case .success(let restaurant):
-                        //self.restaurants.append(restaurant)
-                        print(restaurant.name)
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                    }
+                
+                guard let thisSnapshot = snapshot else { return }
                     
+                var fetchedRestaurants: [Restaurant] = []
+                        
+                for doc in thisSnapshot.documents {
+                            
+                            let result = Result {
+                                try doc.data(as: Restaurant.self)
+                            }
+                            
+                            switch result {
+                                case .success(let restaurant):
+                                fetchedRestaurants.append(restaurant)
+                                case .failure(let error):
+                                    print()
+                                    print(">ERROR<")
+                                    print(error.localizedDescription)
+                                print()
+                            }
+                            
+
                 }
-                 */
+                
+                self.restaurantsList = fetchedRestaurants
+                    
+                    
+
+                
+                    /*
+                    for document in snapshot.documents {
+                        
+                        let result = Result {
+                            try document.data(as: Restaurant.self)
+                        }
+                        
+                        switch result {
+                        case .success(let restaurant):
+                            //self.restaurants.append(restaurant)
+                            print(restaurant.name)
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                        }
+                        
+                    }
+                     */
+                }
+                
             }
-        }
+            
+            
+//        }
         
         func RegisterUser(email: String, password: String, birthdate: Date) -> Bool {
             
@@ -155,7 +194,16 @@ class DbConnection: ObservableObject {
                     let newUserData = UserData(restaurants: [], birthdate: birthdate, image: "")
                     
                     do {
-                        try self.db.collection(self.USER_DATA_COLLECTION).document(authResult.user.uid).setData(from: newUserData)
+//                        try self.db.collection(self.USER_DATA_COLLECTION).document(authResult.user.uid).setData(from: newUserData)
+                        try self.db.collection(self.LILJEHOLMEN_DATA_COLLECTION).getDocuments {(querySnappshot, err) in
+                            if err != nil {
+                                print(err?.localizedDescription)
+                                return
+                            }
+                            
+                            print(" querySnappshot?.documents ", querySnappshot?.documents)
+                            
+                        }
                     } catch {
                         print("Error: \(error.localizedDescription)")
                     }
@@ -200,7 +248,8 @@ class DbConnection: ObservableObject {
                      We go into our collection, and then into the document that has the same name as our current user's id. There we run an updateData method that updates a field. We give it an arrayUnion, which takes a new array and combines it with the existing array in the database (kind of like the spread operator in javascript). In arrayUnion, we send in an array that has one element, which is a dictionary. To convert our Restaurant struct into a dictionary, we use Firestore.Encoder().encode which takes in a type that is Codable and returns a Dictionary with all its variables as key's and their respective values as values.
                      */
                     
-                    try db.collection(USER_DATA_COLLECTION).document(currentUser.uid).updateData(["restaurants": FieldValue.arrayUnion([Firestore.Encoder().encode(restaurant)])])
+//                    try db.collection(USER_DATA_COLLECTION).document(currentUser.uid).updateData(["restaurants": FieldValue.arrayUnion([Firestore.Encoder().encode(restaurant)])])
+                    try db.collection(LILJEHOLMEN_DATA_COLLECTION).document().setData( ["restaurants": FieldValue.arrayUnion([Firestore.Encoder().encode(restaurant)])] )
                     
                 } catch {
                     
@@ -208,6 +257,7 @@ class DbConnection: ObservableObject {
                 }
             }
         }
+    
     }
     
     

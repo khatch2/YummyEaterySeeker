@@ -6,8 +6,15 @@
 //
 
 import SwiftUI
+import SimpleToast
 
 struct RegisterView: View {
+    
+    @State var showToast : Bool = true
+    
+    private let toastOptions = SimpleToastOptions(
+            hideAfter: 3
+    )
     
     @EnvironmentObject var dbConnection: DatabaseConnection
     
@@ -36,6 +43,8 @@ struct RegisterView: View {
                 Button("Register") {
                     dbConnection.RegisterUser(email: email, password: password)
                 }.bold().padding().foregroundColor(.blue).background(.yellow).cornerRadius(9)
+                
+                
                 
 //                Text("Hello, RegisterView")
 

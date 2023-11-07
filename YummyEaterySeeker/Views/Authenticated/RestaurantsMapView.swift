@@ -36,15 +36,25 @@ struct RestaurantsMapView: View {
                     restaurant in
                     
                     
+                    
+                    
                     MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: restaurant.location.latitude, longitude: restaurant.location.longitude), content: {
                         Button(action: {
                             selectedRestaurant = restaurant
                         }, label: {
                             VStack {
                                 
+                                Button(action: {
+                                    print()
+                                    print(type(of: restaurant))
+                                    print("restaurant ", restaurant)
+                                    print()
+                                }, label: {
+                                    Text("Look at console")})
+                                
                                 ZStack {
-                                    Circle().fill(Color.primaryColor).frame(width: 35, height: 35)
-                                    Image(systemName: "carrot").foregroundColor(Color.secondaryColor)
+                                    Circle().fill(Color.red).frame(width: 35, height: 35, alignment: .center)
+                                    Image(systemName: "fork.knife.circle").foregroundColor(Color.blue)
                                 }
 
                                 Text(restaurant.name).bold().foregroundColor(Color.primaryColor)
@@ -62,7 +72,6 @@ struct RestaurantsMapView: View {
                          
                             NavigationLink(destination: RestaurantView(restaurant: selectedRestaurant), label: {
                                 
-//                                RestaurantCard(restaurant: selectedRestaurant, isMini: true).padding()
                                 
                                 RestaurantVoucher(restaurant: selectedRestaurant, isMini: true).padding()
                             })

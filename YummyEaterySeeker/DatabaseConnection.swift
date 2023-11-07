@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
 import FirebaseFirestoreSwift
+import SwiftUI
 
 class DatabaseConnection: ObservableObject {
     
@@ -174,7 +175,9 @@ class DatabaseConnection: ObservableObject {
             
             if let error = error {
                 
-                print("Something went wrong, \(error)")
+                print("<ATTENTION> Something went wrong , \(error)")
+                
+                var lookError = Text(error.localizedDescription)
                 
                 return
             }
