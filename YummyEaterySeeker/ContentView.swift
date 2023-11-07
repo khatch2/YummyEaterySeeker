@@ -11,12 +11,13 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var dbConnection: DatabaseConnection    
+    @StateObject var db = DbConnection()
     
     var body: some View {
 
         if dbConnection.userLoggedIn {
             NavigationStack {
-                RestaurantsListView()
+                RestaurantsListView(db: db)
             }
         } else {
             NavigationStack {

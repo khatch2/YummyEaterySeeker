@@ -6,10 +6,37 @@
 //
 
 import SwiftUI
+import Firebase
+
+func copyDocument(from sourceCollection: String, sourceDocument: String, to targetCollection: String, targetDocument: String) {
+    let sourceRef = Firestore.firestore().collection(sourceCollection).document(sourceDocument)
+    let targetRef = Firestore.firestore().collection(targetCollection).document(targetDocument)
+
+    sourceRef.getDocument { (document, error) in
+        if let error = error {
+            print("Error fetching source document: \(error.localizedDescription)")
+        } else if let document = document, document.exists {
+            targetRef.setData(document.data() ?? [:]) { error in
+                if let error = error {
+                    print("Error copying document: \(error.localizedDescription)")
+                } else {
+                    print("Document copied successfully.")
+                }
+            }
+        } else {
+            print("Source document does not exist.")
+        }
+    }
+}
+
 
 struct RestaurantsListView: View {
     
     @EnvironmentObject var dbConnection: DatabaseConnection
+    
+    @ObservedObject var db: DbConnection
+    
+    @State var restaurants = [Restaurant]()
     
     @State var viewOnMap = false
     
@@ -18,10 +45,22 @@ struct RestaurantsListView: View {
 //        GeometryReader { geometry in
 //            
 //            VStack(spacing: 30) {
+        
+        // Authenticated NavigationStack
+        NavigationStack {
+                    GeometryReader { geometry in
+                        
                 
                 ZStack {
                     
                     ScrollView {
+                        
+                        if let userData = db.currentUser {
+                            
+                            if userData.restaurant.count < 1 {
+                                Text("No restaurants yet!!")
+                            }
+                        }
                         
                         Text("Restaurants").bold().font(.title)
                         
@@ -72,8 +111,8 @@ struct RestaurantsListView: View {
                 }
             }
         }
-//    }
-//}
+    }
+}
 
 #Preview {
     RestaurantsListView()

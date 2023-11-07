@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
 struct Restaurant : Codable, Identifiable {
     
@@ -24,6 +25,27 @@ struct Restaurant : Codable, Identifiable {
     var rating: Int
     
     var reviews: [Review]
+    
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case description
+        
+        case id
+        
+        case image
+
+        case location
+        
+        case name
+        
+        case openingHours = "opening_hours"
+
+        case rating
+        
+        case reviews
+        
+    }
     
 }
 
