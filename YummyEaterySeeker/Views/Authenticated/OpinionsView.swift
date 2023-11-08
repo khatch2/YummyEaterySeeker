@@ -43,30 +43,32 @@ struct OpinionsView: View {
                 
                 Spacer()
                 
-                Text("Write down your opinions, please?").bold().font(.title)
+                Text("Write down your opinions, please?").bold().font(.title).background(.brown)
                 
                 VStack(alignment: .leading) {
                     
-                    Text("Your name?")
+                    Text("Your name?").background(.orange)
                     
                     TextField("", text: $name)
                     
-                    Text("Your opinions?")
+                    Text("Your opinions?").background(.orange)
                     
                     TextField("", text: $opinions)
                     
                 }.padding().textFieldStyle(.roundedBorder)
                 
                 Button(action: conformOpinion, label: {
-                    Text("Conform").padding().background(.black).foregroundColor(.white).cornerRadius(9)
+                    Text("Conform").background(.yellow).foregroundColor(.blue).cornerRadius(9)
                 })
+                
+//                Text("Hello, OpinionsView").background(.cyan)
+
                 
             }
             
             
-        }.frame(width: 300, height: 360).cornerRadius(9).background( .orange )
+        }.frame(width: 300, height: 360).cornerRadius(20).background( .gray ).padding()
         
-        Text("Hello, OpinionsView")
         
     }
 }

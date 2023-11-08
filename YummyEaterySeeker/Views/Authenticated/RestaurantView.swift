@@ -59,20 +59,20 @@ struct RestaurantView: View {
                                     Text(restaurant.description ?? "N/A")
                                     
                                     HStack {
-                                        Text("Reviews").bold().font(.title)
+                                        Text("Evaluations").bold().font(.title).background(.cyan)
                                         Spacer()
                                         Button(action: {
                                             showPopup.toggle()
                                         }, label: {
-                                            Text("Add review").padding().background(.cyan).foregroundColor(.green).cornerRadius(9)
+                                            Text("Add an evaluation").padding().background(.yellow).foregroundColor(.blue).cornerRadius(9)
                                         })
                                     }
                                         
                                     ForEach(restaurant.reviews) { review in
                                             
                                             VStack(alignment: .leading, spacing: 5) {
-                                                Text(review.name).bold()
-                                                Text(review.message).font(.caption).fontDesign(.monospaced)
+                                                Text(review.name).bold().background(.cyan)
+                                                Text(review.message).background(.cyan).font(.caption).fontDesign(.monospaced)
                                             }.padding(.vertical)
                                         }
                                     
@@ -96,7 +96,7 @@ struct RestaurantView: View {
                     
                 }.background(.orange)
                 
-                Text("Hello, RestaurantView")
+//                Text("Hello, RestaurantView")
                 
             }.padding().background(.yellow)
         }
@@ -105,10 +105,7 @@ struct RestaurantView: View {
 
 #Preview {
     
-//    RestaurantView(dbConnection: DatabaseConnection(), restaurant: Restaurant)
-    
-//    RestaurantView()
-    
-    RestaurantView(restaurant: Restaurant(description: "Hej vi är en god pizzeria", id: "11", image: "https://lh3.googleusercontent.com/p/AF1QipNL5LJEubSGhC9mVD_kIJuSpoEgTgQzW0Njm6_9=w600-k", location: Location(latitude: 18.02395798266904, longitude: 59.311150897492475), name: "Pizzeria Valla", openingHours: "10 a.m. - 19:00 p.m.", rating: 7, reviews: [ /* Review(id: "1", name: "Tomas", message: "It's highly recommanded") */ Evaluation(id: "1", name: "Thomas", message: "It has many delicious dishes.")]))
+        
+    RestaurantView(restaurant: Restaurant(description: "Hello it seems like a good restarant afterall.", id: "11", image: "https://lh3.googleusercontent.com/p/AF1QipNL5LJEubSGhC9mVD_kIJuSpoEgTgQzW0Njm6_9=w600-k", location: Location(latitude: 18.02395798266904, longitude: 59.311150897492475), name: "Pizzeria Valla", openingHours: "10 a.m. - 19:00 p.m.", rating: 7, reviews: [ /* Review(id: "1", name: "Tomas", message: "It's highly recommanded") */ Evaluation(id: "1", name: "Thomas", message: "It has many delicious dishes.")]))
     
 }

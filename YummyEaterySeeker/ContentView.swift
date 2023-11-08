@@ -19,7 +19,7 @@ struct ContentView: View {
             }
         } else {
             NavigationStack {
-                LoginView(txtError: .constant("Library"))
+                LoginView()
             }
         }
     }

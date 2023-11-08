@@ -44,48 +44,53 @@ struct RestaurantsListView: View {
             
                     GeometryReader { geometry in
                         
-                        ZStack(alignment: .leading) {
+                        VStack(alignment: .leading) {
                     
-                    ScrollView {
-                        
-                        if let userData = db.currentUser {
-                            
-                            Text("userData \(userData)")
-                            
-                        }
-                        
-                        Text("Restaurants").bold().font(.title)
-                        
-                        Spacer()
-                        
-                        ForEach(db.restaurantsList) { restaurant in
-                            
-                            NavigationLink(destination: RestaurantView(restaurant: restaurant), label: {
-                                    RestaurantDetailView(restaurant: restaurant)
-                            }
-                            )
-                        }
-                        
-                    }.overlay(alignment: .bottom,
-                              content: {
-                        
-                        Button(action: {
-                            
-                            viewItOnTheMap.toggle()
-                            
-                        }, label: {
-                            
-                            Text("View them on map").padding().background(.orange).foregroundColor(.blue).cornerRadius(9)
-                        })
-                        
-                    })
+
                     
                     if viewItOnTheMap {
                         
                         RestaurantsMapView(viewThemOnMap: $viewItOnTheMap)
+                    
                         
-//                        RestaurantsMapView(db: DbConnection(), viewThemOnMap: $viewItOnTheMap).environmentObject(DbConnection())
                         
+                    } else {
+                        
+                        
+                        ScrollView {
+                            
+    //                        if let userData = db.currentUser {
+    //
+    //                            Text("userData \(userData)")
+    //
+    //                        }
+                            
+                            Text("Restaurants").bold().font(.title)
+                            
+                            Spacer()
+                            
+                            ForEach(db.restaurantsList) { restaurant in
+                                
+                                NavigationLink(destination: RestaurantView(restaurant: restaurant), label: {
+                                    Text(restaurant.name)
+    //                                    RestaurantDetailView(restaurant: restaurant)
+                                }
+                                )
+                            }
+                            
+                        }.overlay(alignment: .bottom,
+                                  content: {
+                            
+                            Button(action: {
+                                
+                                viewItOnTheMap.toggle()
+                                
+                            }, label: {
+                                
+                                Text("View them on map").padding().background(.orange).foregroundColor(.blue).cornerRadius(9)
+                            })
+                            
+                        })
                         
                     }
                     

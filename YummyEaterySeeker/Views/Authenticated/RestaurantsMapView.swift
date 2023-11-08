@@ -10,6 +10,8 @@ import MapKit
 
 struct RestaurantsMapView: View {
     
+    @State var showAlert: Bool = false
+    
     @EnvironmentObject var db: DbConnection
     
     @Binding var viewThemOnMap: Bool
@@ -35,12 +37,15 @@ struct RestaurantsMapView: View {
                             VStack {
                                 
                                 Button(action: {
+                                    
                                     print()
                                     print(type(of: restaurant))
-                                    print("restaurant ", restaurant)
+                                    print("restaurant " , restaurant.openingHours)
                                     print()
+                                    showAlert = true
+                                    
                                 }, label: {
-                                    Text("Look at console")})
+                                    Text("⏰")})/*.alert(Text("Look"), isPresented: $showAlert, actions: {Text(restaurant) } )*/
                                 
                                 ZStack {
                                     Circle().fill(Color.red).frame(width: 35, height: 35, alignment: .center)
@@ -48,7 +53,9 @@ struct RestaurantsMapView: View {
                                 }
 
                                 Text(restaurant.name).bold()
-                            }
+                            }.alert(Text("HOURS"), isPresented: $showAlert, actions: {
+                                Text(restaurant.openingHours)
+                            } )
                         })
                     })
                     
@@ -69,7 +76,6 @@ struct RestaurantsMapView: View {
                         Button(action: {
                             viewThemOnMap.toggle()
                             
-//                            viewOnMap.toggle()
                         }, label: {
                             Text("View them on list").padding().background(.cyan).cornerRadius(9)
                         })

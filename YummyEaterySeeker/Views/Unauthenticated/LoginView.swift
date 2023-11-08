@@ -10,8 +10,6 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @Binding var txtError: String 
-    
     @EnvironmentObject var db: DbConnection
     
     @State var email = ""
@@ -38,13 +36,15 @@ struct LoginView: View {
                     SecureField("Password?", text: $password).textFieldStyle(.roundedBorder).font(.custom("times", size: 14))
                 }.background(.yellow).padding()
                 
-                Text(txtError)
+                Text(db.txtError)
                 
                 HStack {
                     
                     Button("Login") {
                         
-                        /* var resultLogation = */ db.LoginUser(email: email, password: password)
+                        var resultLogation =  db.LoginUser(email: email, password: password)
+                        
+                        print(" resultLogation = ", resultLogation)
                     }.bold().padding().foregroundColor(.blue).background(.yellow).cornerRadius(9)
                     
                     NavigationLink(destination: RegisterView(), label: {
@@ -56,9 +56,6 @@ struct LoginView: View {
                             .cornerRadius(9.0)
                     
                 }
-                
-                
-                
                                 
             }.padding().background(.orange)
 
@@ -68,5 +65,5 @@ struct LoginView: View {
 
 #Preview {
 //    @Binding var txtError: String = projectedValue
-    LoginView(txtError: .constant("Biblioteket"))
+    LoginView().environmentObject(DbConnection())
 }

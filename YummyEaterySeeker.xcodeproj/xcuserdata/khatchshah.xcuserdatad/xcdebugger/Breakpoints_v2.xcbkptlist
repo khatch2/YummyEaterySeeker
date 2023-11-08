@@ -90,8 +90,8 @@
             filePath = "YummyEaterySeeker/Views/Unauthenticated/LoginView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73">
+            startingLineNumber = "70"
+            endingLineNumber = "70">
             <Locations>
                <Location
                   uuid = "1834A4CA-DE4B-41E3-A950-5934B15DF6F5 - 9ab7661db7a7188c"
@@ -1107,8 +1107,8 @@
             filePath = "YummyEaterySeeker/Views/Authenticated/RestaurantsMapView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -1239,6 +1239,22 @@
             endingLineNumber = "154"
             landmarkName = "startListeningToDb()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8A4A808C-228B-40B4-886B-07C46D00F096"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YummyEaterySeeker/Views/Unauthenticated/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
