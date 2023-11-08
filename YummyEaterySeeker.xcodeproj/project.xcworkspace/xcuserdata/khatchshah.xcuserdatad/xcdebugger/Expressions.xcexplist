@@ -9,12 +9,9 @@
                value = "db">
             </PersistentString>
             <PersistentString
-               value = "dbConnection">
+               value = "localAndGlobalRestaurantsList">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DbConnection.startListeningToDb():DbConnection.swift">
       </ContextState>
       <ContextState
          contextName = "DbConnection.addEvaluationToRestaurant(restaurantId:evaluation:):DbConnection.swift">
@@ -23,6 +20,9 @@
                value = "Error">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DbConnection.startListeningToDb():DbConnection.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

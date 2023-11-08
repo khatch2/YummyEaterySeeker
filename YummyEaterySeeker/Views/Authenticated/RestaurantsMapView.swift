@@ -77,7 +77,7 @@ struct RestaurantsMapView: View {
             
             VStack (alignment: .leading) {
                 
-                Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.follow),  annotationItems: db.localAndGlobalRestaurantsList) {
+                Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.followWithHeading),  annotationItems: db.localAndGlobalRestaurantsList) {
                     restaurant in
                     
                     MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: restaurant.location.latitude, longitude: restaurant.location.longitude), content: {
@@ -105,11 +105,15 @@ struct RestaurantsMapView: View {
                                     Circle().fill(Color.gray).frame(width: 45, height: 45, alignment: .center)
                                     Image(systemName: "fork.knife.circle").resizable().foregroundColor(Color.red).frame(width: 40, height: 40, alignment: .center)
                                 }
-
+                                
                                 Text(restaurant.name).bold()
                             }
                         })
                     })
+                    
+                    
+                    
+                    
                     
                 }.ignoresSafeArea().onTapGesture {
                     
@@ -120,17 +124,24 @@ struct RestaurantsMapView: View {
                     VStack  {
                         
                         if let selectedRestaurant = selectedRestaurant {
-                         
+                            
                             NavigationLink(destination: RestaurantView(restaurant: selectedRestaurant), label: {
                                 Label("More details", systemImage: "bolt.fill")
                                 /*
-                                                                                                                  RestaurantDetailView(restaurant: selectedRestaurant).padding()
-                                                                                                                  */
+                                 RestaurantDetailView(restaurant: selectedRestaurant).padding()
+                                 */
                             })
                         }
                         
                         Button(action: {
+                            
                             var look130 = populateNearByPlaces(theRegion: region, theCookingChefs: cookingChefsPersons)
+                            print(look130)
+                            
+                            MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: /* theRestaurantStations.first?.location.latitude ?? */ 59.31467147477161, longitude: /* theRestaurantStations.first?.location.longitude ?? */ 18.01789740387893 )  , content: {
+                                Circle().fill(.red).frame(width: 65, height: 65, alignment: .center )
+                                Text("Jesus").bold().font(.title).padding()
+                            } )
                         }, label: {
                             Text("Major resturants in the world").bold().padding().background(.yellow).cornerRadius(9)
                         })
@@ -143,26 +154,36 @@ struct RestaurantsMapView: View {
                         })
                     }
                 })
-                                
+                
                 VStack (spacing: 30) {
-                                        
+                    
                     Button(action: {
                         
-                            do {
-                                
-                                try db.auth.signOut()
-                                
-//                                try dbConnection.SignOut()
-                                
-                            } catch let signOutError as NSError {
-                                print("Error signing out: %@", signOutError)}
-                                                    }, label: {
-                                                        
-                                                        Text("Log me out").bold().foregroundStyle(.blue).background(.yellow).cornerRadius(5)
-                                                    })
+                        do {
+                            
+                            try db.auth.signOut()
+                            
+                            //                                try dbConnection.SignOut()
+                            
+                        } catch let signOutError as NSError {
+                            print("Error signing out: %@", signOutError)}
+                    }, label: {
+                        
+                        Text("Log me out").bold().foregroundStyle(.blue).background(.yellow).cornerRadius(5)
+                    })
                     
                 }.background(.brown)
-
+                
+               Text("Christ")
+                
+                Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.follow), annotationItems: theRestaurantStations) { myRestaurantStation in
+                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: myRestaurantStation.location.latitude, longitude: myRestaurantStation.location.longitude) , content: {
+                        VStack {
+                            Circle().frame(width: 40, height: 40, alignment: .center)
+                        }
+                    })
+                }
+                
             }.padding().background(.orange)
             
         }.background(.yellow)

@@ -191,7 +191,7 @@ class DbConnection: ObservableObject {
                 self.localAndGlobalRestaurantsList.append(contentsOf: self.restaurantsList)
                 
                 print()
-                print(" LINE [194] ", self.localAndGlobalRestaurantsList)
+                print(" localAndGlobalRestaurantList LINE [194] ", self.localAndGlobalRestaurantsList)
                 print()
                     
                     
