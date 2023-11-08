@@ -103,13 +103,14 @@ class DbConnection: ObservableObject {
     
     func addEvaluationToRestaurant(restaurantId: String, evaluation: Evaluation) {
         
+        /// TODO : Fix the right address according to console
         do {
             try db.collection(RESTAURANT_COLLECTION).document(restaurantId).updateData(
-                ["evaluations": FieldValue.arrayUnion(
+                ["reviews": FieldValue.arrayUnion(
                     [Firestore.Encoder().encode(evaluation)] )] )
                         
         } catch {
-            
+            print("112 ", error.localizedDescription)
             print("Error adding review!")
             
         }

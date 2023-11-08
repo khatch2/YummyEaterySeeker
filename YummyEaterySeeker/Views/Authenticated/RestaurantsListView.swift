@@ -82,7 +82,7 @@ struct RestaurantsListView: View {
                                 
                             }, label: {
                                 
-                                Text("View them on map").background(.yellow).foregroundColor(.blue).cornerRadius(9)
+                                Text("View them on map").bold().padding().background(.yellow).foregroundColor(.blue).cornerRadius(9)
                             })
                             
                         }).position(x: geometry.size.width * 0.5, y: geometry.size.height * 0.5)
