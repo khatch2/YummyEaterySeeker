@@ -14,6 +14,10 @@ class DbConnection: ObservableObject {
     
     @Published var restaurantsList : [Restaurant] = []
     
+    @Published var localAndGlobalRestaurantsList : [Restaurant] = []
+    
+
+    
     private var RESTAURANT_COLLECTION = "Restaurants"
     
     var db = Firestore.firestore()
@@ -34,6 +38,8 @@ class DbConnection: ObservableObject {
     
     
     init() {
+        
+//        localAndGlobalRestaurantsList.append(restaurantsList)
             
             // Called automatically every time someone logs in or out.
             auth.addStateDidChangeListener { auth, user in
@@ -181,6 +187,12 @@ class DbConnection: ObservableObject {
                 }
                 
                 self.restaurantsList = fetchedRestaurants
+                
+                self.localAndGlobalRestaurantsList.append(contentsOf: self.restaurantsList)
+                
+                print()
+                print(" LINE [194] ", self.localAndGlobalRestaurantsList)
+                print()
                     
                     
 

@@ -5,10 +5,59 @@
 //  Created by Khatch Shah on 2023-11-03.
 //
 
+import Foundation
 import SwiftUI
 import MapKit
 
+var myDesiedRestaurants : [MKPointOfInterestCategory] = [.restaurant]
+
+/** TODO : Change it here to declare theRestaurantStations globally BUT WITHOUT inititilise it with "Chamsin Grill" */
+var theRestaurantStations: [Restaurant] = []
+
+func populateNearByPlaces(theRegion: MKCoordinateRegion, theCookingChefs: [Restaurant]) -> String {
+
+var wantedRequest = MKLocalSearch.Request()
+
+wantedRequest.naturalLanguageQuery = "Restaurant"
+
+wantedRequest.region = theRegion
+
+var wantedSearch = MKLocalSearch(request: wantedRequest)
+
+//wantedSearch.start(completionHandler: )
+
+wantedSearch.start() { /** MKLocalSerach.CompletionHandler */ (response, error) in
+    guard let response = response else {return}
+    
+    if let error =  error {
+        print(" error = ", error)
+    }
+    
+    for item in response.mapItems {
+        theRestaurantStations.append(Restaurant(description: item.url?.absoluteString ?? "n/a", id: item.phoneNumber ?? "n/a", image: item.url?.absoluteString ?? "n/a", location: Location(latitude: item.placemark.coordinate.latitude, longitude: item.placemark.coordinate.longitude), name: item.name ?? "n/a", openingHours: "n/a", rating: 0, reviews: []))
+        
+        MapMarker(coordinate: item.placemark.coordinate)
+    }
+    
+    print(" theRestaurantStations = ", theRestaurantStations)
+    
+    
+}
+
+return "Done"
+}
+
+
 struct RestaurantsMapView: View {
+    
+    
+    var locationManager = LocationManager()
+    
+    /** Sti yrkeshögskolan = 59.310230470905275, 18.021426935241518 */
+    
+    @State var cookingChefsPersons : [Restaurant] = []
+    
+    @State var mapConfiguration = MKStandardMapConfiguration()
     
     @State var showAlert: Bool = false
     
@@ -23,11 +72,12 @@ struct RestaurantsMapView: View {
     
     var body: some View {
         
+        
         GeometryReader { geometry in
             
             VStack (alignment: .leading) {
                 
-                Map(coordinateRegion: $region, annotationItems: db.restaurantsList) {
+                Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.follow),  annotationItems: db.localAndGlobalRestaurantsList) {
                     restaurant in
                     
                     MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: restaurant.location.latitude, longitude: restaurant.location.longitude), content: {
@@ -78,6 +128,12 @@ struct RestaurantsMapView: View {
                                                                                                                   */
                             })
                         }
+                        
+                        Button(action: {
+                            var look130 = populateNearByPlaces(theRegion: region, theCookingChefs: cookingChefsPersons)
+                        }, label: {
+                            Text("Major resturants in the world").bold().padding().background(.yellow).cornerRadius(9)
+                        })
                         
                         Button(action: {
                             viewThemOnMap.toggle()

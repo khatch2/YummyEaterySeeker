@@ -16,5 +16,13 @@
       <ContextState
          contextName = "DbConnection.startListeningToDb():DbConnection.swift">
       </ContextState>
+      <ContextState
+         contextName = "DbConnection.addEvaluationToRestaurant(restaurantId:evaluation:):DbConnection.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Error">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
