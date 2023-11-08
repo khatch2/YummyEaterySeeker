@@ -177,11 +177,13 @@ struct RestaurantsMapView: View {
                Text("Christ")
                 
                 Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.none), annotationItems: theRestaurantStations) { myRestaurantStation in
-                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: myRestaurantStation.location.latitude, longitude: myRestaurantStation.location.longitude) , content: {
-                        VStack {
-                            Circle().stroke().frame(width: 40, height: 40, alignment: .center)
-                        }
-                    })
+                    MapPin(coordinate: CLLocationCoordinate2D(latitude: myRestaurantStation.location.latitude, longitude: myRestaurantStation.location.longitude), tint: .red)
+                    
+//                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: myRestaurantStation.location.latitude, longitude: myRestaurantStation.location.longitude) , content: {
+//                        VStack {
+//                            Circle().stroke().frame(width: 40, height: 40, alignment: .center)
+//                        }
+//                    })
                 }
                 
             }.padding().background(.orange)
