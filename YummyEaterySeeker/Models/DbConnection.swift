@@ -148,9 +148,8 @@ class DbConnection: ObservableObject {
                         return
                     }
                 
-                print(snapshot?.documents ?? "N/A")
+//                print("Look here", snapshot?.documents ?? "N/A")
                     
-                
                 guard let thisSnapshot = snapshot else { return }
                     
                 var fetchedRestaurants: [Restaurant] = []
@@ -163,10 +162,16 @@ class DbConnection: ObservableObject {
                             
                             switch result {
                                 case .success(let restaurant):
-                                fetchedRestaurants.append(restaurant)
+                                    fetchedRestaurants.append(restaurant)
+//                                    print()
+//                                    print("SUCCESS ")
+//                                    print(doc.data())
+//                                    print()
+                                
                                 case .failure(let error):
                                     print()
-                                    print(">ERROR<")
+                                print(">ERROR< ")
+                                print(doc.data() )
                                     print(error.localizedDescription)
                                 print()
                             }

@@ -10,7 +10,7 @@ import SimpleToast
 
 struct RegisterView: View {
     
-    @State var showToast : Bool = true
+//    @State var showToast : Bool = true
     
     private let toastOptions = SimpleToastOptions(
             hideAfter: 3
@@ -54,9 +54,10 @@ struct RegisterView: View {
 //                Text("Hello, RegisterView")
 
             }.padding().background(.orange)
-        }.background(.yellow).alert(Text("Error"), isPresented: $showToast, actions: {
-            Text("Hello")
-        })
+        }.background(.yellow)
+//            .alert(Text("Error"), isPresented: $showToast, actions: {
+//            Text("Hello")
+//        })
     }
 }
 

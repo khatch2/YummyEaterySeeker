@@ -53,7 +53,7 @@ struct RestaurantsMapView: View {
                                 }
 
                                 Text(restaurant.name).bold()
-                            }.alert(Text("HOURS"), isPresented: $showAlert, actions: {
+                            }.alert(Text("Opening hours"), isPresented: $showAlert, actions: {
                                 Text(restaurant.openingHours)
                             } )
                         })
@@ -77,7 +77,7 @@ struct RestaurantsMapView: View {
                             viewThemOnMap.toggle()
                             
                         }, label: {
-                            Text("View them on list").padding().background(.cyan).cornerRadius(9)
+                            Text("View them on list").background(.yellow).cornerRadius(9)
                         })
                     }
                 })

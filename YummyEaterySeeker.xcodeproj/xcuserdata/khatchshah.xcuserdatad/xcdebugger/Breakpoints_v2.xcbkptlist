@@ -809,8 +809,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "276"
-            endingLineNumber = "276"
+            startingLineNumber = "281"
+            endingLineNumber = "281"
             landmarkName = "addRestaurantToDb(restaurant:)"
             landmarkType = "7">
             <Locations>
@@ -887,8 +887,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "278"
-            endingLineNumber = "278"
+            startingLineNumber = "283"
+            endingLineNumber = "283"
             landmarkName = "addRestaurantToDb(restaurant:)"
             landmarkType = "7">
             <Locations>
@@ -965,8 +965,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "277"
-            endingLineNumber = "277"
+            startingLineNumber = "282"
+            endingLineNumber = "282"
             landmarkName = "addRestaurantToDb(restaurant:)"
             landmarkType = "7">
             <Locations>
@@ -1203,8 +1203,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
             landmarkName = "DbConnection"
             landmarkType = "3">
          </BreakpointContent>
@@ -1235,8 +1235,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "startListeningToDb()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1255,6 +1255,85 @@
             endingLineNumber = "47"
             landmarkName = "body"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9739F7CF-A4C2-4390-A33C-6E8EFD0436BD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YummyEaterySeeker/Models/DbConnection.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "startListeningToDb()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "290B7FA5-9CDD-4A90-8674-5BC74B68A4CE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YummyEaterySeeker/Models/DbConnection.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "startListeningToDb()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "290B7FA5-9CDD-4A90-8674-5BC74B68A4CE - c4fc48b633360482"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in YummyEaterySeeker.DbConnection.startListeningToDb() -&gt; ()"
+                  moduleName = "YummyEaterySeeker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/khatchshah/Desktop/Github_Desktop/YummyEaterySeeker/YummyEaterySeeker/Models/DbConnection.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
+                  offsetFromSymbolStart = "3896">
+               </Location>
+               <Location
+                  uuid = "290B7FA5-9CDD-4A90-8674-5BC74B68A4CE - c4fc48b633360482"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in YummyEaterySeeker.DbConnection.startListeningToDb() -&gt; ()"
+                  moduleName = "YummyEaterySeeker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/khatchshah/Desktop/Github_Desktop/YummyEaterySeeker/YummyEaterySeeker/Models/DbConnection.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
+                  offsetFromSymbolStart = "3360">
+               </Location>
+               <Location
+                  uuid = "290B7FA5-9CDD-4A90-8674-5BC74B68A4CE - c4fc48b633360482"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in YummyEaterySeeker.DbConnection.startListeningToDb() -&gt; ()"
+                  moduleName = "YummyEaterySeeker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/khatchshah/Desktop/Github_Desktop/YummyEaterySeeker/YummyEaterySeeker/Models/DbConnection.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
+                  offsetFromSymbolStart = "2816">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
