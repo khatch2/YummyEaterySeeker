@@ -77,7 +77,7 @@ struct RestaurantsMapView: View {
             
             VStack (alignment: .leading) {
                 
-                Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.followWithHeading),  annotationItems: db.localAndGlobalRestaurantsList) {
+                Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.none),  annotationItems: db.localAndGlobalRestaurantsList) {
                     restaurant in
                     
                     MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: restaurant.location.latitude, longitude: restaurant.location.longitude), content: {
@@ -176,10 +176,10 @@ struct RestaurantsMapView: View {
                 
                Text("Christ")
                 
-                Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.follow), annotationItems: theRestaurantStations) { myRestaurantStation in
+                Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.none), annotationItems: theRestaurantStations) { myRestaurantStation in
                     MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: myRestaurantStation.location.latitude, longitude: myRestaurantStation.location.longitude) , content: {
                         VStack {
-                            Circle().frame(width: 40, height: 40, alignment: .center)
+                            Circle().stroke().frame(width: 40, height: 40, alignment: .center)
                         }
                     })
                 }
