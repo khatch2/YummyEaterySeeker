@@ -809,8 +809,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "281"
-            endingLineNumber = "281"
+            startingLineNumber = "286"
+            endingLineNumber = "286"
             landmarkName = "addRestaurantToDb(restaurant:)"
             landmarkType = "7">
             <Locations>
@@ -887,8 +887,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "283"
-            endingLineNumber = "283"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
             landmarkName = "addRestaurantToDb(restaurant:)"
             landmarkType = "7">
             <Locations>
@@ -965,8 +965,8 @@
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
+            startingLineNumber = "287"
+            endingLineNumber = "287"
             landmarkName = "addRestaurantToDb(restaurant:)"
             landmarkType = "7">
             <Locations>
@@ -1043,8 +1043,8 @@
             filePath = "YummyEaterySeeker/Views/Unauthenticated/RegisterView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -1059,8 +1059,8 @@
             filePath = "YummyEaterySeeker/Views/Unauthenticated/RegisterView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>

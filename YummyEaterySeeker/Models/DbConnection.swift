@@ -216,6 +216,7 @@ class DbConnection: ObservableObject {
                 
                 if let error = error {
                     print(error.localizedDescription)
+                    self.txtError = error.localizedDescription
                     success = false
                 }
                 
@@ -230,6 +231,9 @@ class DbConnection: ObservableObject {
                         try self.db.collection(self.LILJEHOLMEN_DATA_COLLECTION).getDocuments {(querySnappshot, err) in
                             if err != nil {
                                 print(err?.localizedDescription)
+                                
+                                self.txtError = err?.localizedDescription ?? "n/a"
+                                
                                 return
                             }
                             
@@ -237,6 +241,7 @@ class DbConnection: ObservableObject {
                             
                         }
                     } catch {
+                        self.txtError = error.localizedDescription
                         print("Error: \(error.localizedDescription)")
                     }
                     

@@ -16,7 +16,6 @@ struct RegisterView: View {
             hideAfter: 3
     )
     
-//    @EnvironmentObject var dbConnection: DatabaseConnection
     @EnvironmentObject var db: DbConnection
     
     @State var email = ""
@@ -45,14 +44,10 @@ struct RegisterView: View {
                     db.RegisterUser(email: email, password: password)
 //                    dbConnection.RegisterUser(email: email, password: password)
                     
-
-                    
                 }.bold().padding().foregroundColor(.blue).background(.yellow).cornerRadius(9)
                 
+                Text(db.txtError)
                 
-                
-//                Text("Hello, RegisterView")
-
             }.padding().background(.orange)
         }.background(.yellow)
 //            .alert(Text("Error"), isPresented: $showToast, actions: {

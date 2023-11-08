@@ -52,29 +52,24 @@ struct RestaurantsListView: View {
                         
                     } else {
                         
-                        VStack {
+                        ScrollView(.vertical) {
                                                         
                             Text("Restaurants").bold().font(.title)
                             
                             ForEach(db.restaurantsList) { restaurant in
                                 
-                                ZStack {
+                                AsyncImage(url: URL(string: restaurant.image), content: { image in
                                     
-                                    VStack (alignment: .leading, spacing: 30) {
-                                        
-                                        AsyncImage(url: URL(string: restaurant.image), content: { image in
-                                            image.resizable().frame(width: geometry.size.width * 0.8, height: geometry.size.height * 0.3, alignment: .center).cornerRadius(3)
-                                        }, placeholder: {
-                                            Text("Loading ...")
-                                        })
-                                        
+                                    ZStack {
+                                        image.resizable()
                                         VStack {
-                                            Text(restaurant.name).foregroundStyle(.white).background(.purple)
+                                            Text(restaurant.name).bold().foregroundStyle(.white)
                                         }
-                                        
-                                    }.background(.cyan).cornerRadius(10)/*.position(x: geometry.size.width * 0.5, y: geometry.size.height * 0.3)*/
-                                    
-                                }.cornerRadius(9)
+                                    }.frame(width: geometry.size.width * 0.85, height: geometry.size.width * 0.5, alignment: .center).cornerRadius(15)
+ 
+                                }, placeholder: {
+                                    Text("Loading ...")
+                                })
                                 
                             }
                             
@@ -90,7 +85,7 @@ struct RestaurantsListView: View {
                                 Text("View them on map").background(.yellow).foregroundColor(.blue).cornerRadius(9)
                             })
                             
-                        })
+                        }).position(x: geometry.size.width * 0.5, y: geometry.size.height * 0.5)
                         
                     }
                     
