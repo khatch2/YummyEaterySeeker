@@ -85,9 +85,7 @@ struct RestaurantsMapView: View {
                         Button(action: {
                             selectedRestaurant = restaurant
                         }, label: {
-                            
-//                            VStack { }
-                            
+                                                        
                             Button(action: {
                                 
                                 print()
@@ -106,21 +104,27 @@ struct RestaurantsMapView: View {
                                 })
                             
                             ZStack {
-                                Circle().fill(Color.gray).frame(width: 30, height: 30, alignment: .center)
-                                Image(systemName: "fork.knife.circle").resizable().foregroundColor(Color.red).frame(width: 26, height: 26, alignment: .center)
+                                
+                                HStack {
+                                    
+                                    ZStack {
+                                        
+                                        Circle().fill(Color.gray).frame(width: 30, height: 30, alignment: .center)
+                                        
+                                        Image(systemName: "fork.knife.circle").resizable().foregroundColor(Color.red).frame(width: 26, height: 26, alignment: .center)
+                                    }
+                                    
+                                    Text(restaurant.name)
+
+                                }
+                                
                             }
                             
-                            Text(restaurant.name).bold()
                         }
                                
-                            
                             )
                     }
                         )
-                    
-                    
-                    
-                    
                     
                 }.ignoresSafeArea().onTapGesture {
                     
@@ -132,7 +136,7 @@ struct RestaurantsMapView: View {
                         
                         if let selectedRestaurant = selectedRestaurant {
                             
-                            NavigationLink(destination: RestaurantView(restaurant: selectedRestaurant), label: {
+                            NavigationLink(destination: RestaurantView(restaurant:                selectedRestaurant), label: {
                                 
                                 /// TODO : Add button that sets selectedRestaurant only around the round circle with text underneath
                                 Label("More details", systemImage: "bolt.fill")
@@ -152,14 +156,14 @@ struct RestaurantsMapView: View {
                                 Text("Jesus").bold().font(.title).padding()
                             } )
                         }, label: {
-                            Text("Major resturants in the world").bold().padding().background(.yellow).cornerRadius(9)
+                            Text(" Major resturants in the world ").bold().background(.yellow).cornerRadius(9)
                         })
                         
                         Button(action: {
                             viewThemOnMap.toggle()
                             
                         }, label: {
-                            Text("View them on list").bold().padding().background(.yellow).cornerRadius(9)
+                            Text(" View them on list ").bold().background(.yellow).cornerRadius(9)
                         })
                     }
                 })

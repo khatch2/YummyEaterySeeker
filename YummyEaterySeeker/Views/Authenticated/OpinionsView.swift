@@ -30,7 +30,7 @@ struct OpinionsView: View {
         
         let newEvaluation = Evaluation(id: UUID().uuidString.lowercased(), name: name, message: opinions)
                 
-        db.addEvaluationToRestaurant(restaurantId: restaurantId, evaluation: newEvaluation, docId: "55bsCPMGDCcBUF7r9hQU")
+        db.addEvaluationToRestaurant(restaurantId: restaurantId, evaluation: newEvaluation)
         
     }
     

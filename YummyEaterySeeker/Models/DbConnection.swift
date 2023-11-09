@@ -12,6 +12,8 @@ class DbConnection: ObservableObject {
     
     @Published var txtError: String = "N/A"
     
+    @Published var txtInfo : String = "n/a"
+    
     @Published var restaurantsList : [Restaurant] = []
     
     @Published var localAndGlobalRestaurantsList : [Restaurant] = []
@@ -49,6 +51,8 @@ class DbConnection: ObservableObject {
                     // A user has just logged in
                     print("A user has logged in with email: \(user.email ?? "No Email")")
                     
+                    self.txtInfo = "A user has logged in with email: \(user.email ?? "No Email")"
+                    
                     self.userHasLoggedIn = true
                     
                     self.currentUser = user
@@ -65,7 +69,10 @@ class DbConnection: ObservableObject {
                     // A user has just logged out. Clear all data.
                     self.currentUserData = nil
                     self.currentUser = nil
+                    
                     print("User has logged out!")
+                    
+                    self.txtInfo = "User has logged out!"
                     
                 }
             }
@@ -107,47 +114,59 @@ class DbConnection: ObservableObject {
 //            }
 //        }
     
-    func addEvaluationToRestaurant(restaurantId: String, evaluation: Evaluation, docId: String? = nil) {
+    
+    func getAllDocumentIDs(collectionPath: String, completion: @escaping ([String]?, Error?) -> Void) {
+        let db = Firestore.firestore()
+
+        db.collection(collectionPath).getDocuments { (snapshot, error) in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+
+            if let documents = snapshot?.documents {
+                let documentIDs = documents.map { 
+                    $0.documentID
+                }
+                completion(documentIDs, nil)
+            } else {
+                completion(nil, nil)
+            }
+        }
+    }
+    
+    
+    func addEvaluationToRestaurant(restaurantId: String, evaluation: Evaluation) {
         
-        /// TODO : Fix the right address according to console
+        /// DONE : Fix the right address according to console
         do {
-            
-            if let docId = docId {
-                
-                try db.collection(LILJEHOLMEN_DATA_COLLECTION).document(docId).updateData(
+                            
+                try db.collection(LILJEHOLMEN_DATA_COLLECTION).document(restaurantId).updateData(
                     ["reviews" : FieldValue.arrayUnion(
                         [Firestore.Encoder().encode( evaluation )]
                     )]
                 )
                 
-            } else {
-                
-                var docId = try db.collection(LILJEHOLMEN_DATA_COLLECTION).document("55bsCPMGDCcBUF7r9hQU").documentID
-                
-                print()
-                print(" docId = ", docId)
-                print()
-                
-            }
-            
-//            try db.collection(RESTAURANT_COLLECTION).document(restaurantId).updateData(
-//                ["reviews": FieldValue.arrayUnion(
-//                    [Firestore.Encoder().encode(evaluation)] )] )
-                        
+                                        
         } catch {
-            print("112 ", error.localizedDescription)
+            print("145 ", error.localizedDescription)
+            
             print("Error adding review!")
+            
+            txtError = "Error adding review! \(error.localizedDescription) ."
             
         }
         
     }
     
         
-        func getRestaurantImage(completion: @escaping (UIImage?) -> Void) {
+    func getRestaurantImage(completion: @escaping (UIImage?) -> Void) {
             
             guard let currentUserData = currentUserData else {return}
             
             print("Image Path \(currentUserData.image)")
+            
+            txtInfo = "Image Path \(currentUserData.image)"
             
             storageManager.getImageByPath(path: currentUserData.image, completion: { image in
                 
@@ -156,25 +175,35 @@ class DbConnection: ObservableObject {
             })
         }
         
-        /*
+    /**
          We put a listener on our collection "restaurants". At the slightest change in any of the documents in our collection, this function will be called. A copy ("snapshot") is taken of the entire collection after the change and passed as a parameter to the function below. We then have the opportunity to take part in the changes and adapt our app accordingly.
          */
-        func startListeningToDb() {
+    func startListeningToDb() {
 
             guard let user = currentUser else {return}
             
             print("START LISTENING")
             
             var dbCollectionRef = db.collection(self.LILJEHOLMEN_DATA_COLLECTION)
+        
+        print(type(of: dbCollectionRef))
+        print(dbCollectionRef)
+        print()
             
             dbListener =  dbCollectionRef.addSnapshotListener { (snapshot, err) in
                                     
                     if let err = err {
+                        
                         print("Error occurred \(err.localizedDescription)")
+                        
+                        self.txtError = "Error occurred \(err.localizedDescription)"
+                        
                         return
                     }
                 
-//                print("Look here", snapshot?.documents ?? "N/A")
+                print()
+                print("Look here, second document's id = ", snapshot?.documents[1].documentID ?? "N/A")
+                print()
                     
                 guard let thisSnapshot = snapshot else { return }
                     
@@ -189,17 +218,17 @@ class DbConnection: ObservableObject {
                             switch result {
                                 case .success(let restaurant):
                                     fetchedRestaurants.append(restaurant)
-//                                    print()
-//                                    print("SUCCESS ")
-//                                    print(doc.data())
-//                                    print()
+                                    print()
+                                    print("SUCCESS ")
+                                    print(doc.data())
+                                    print()
                                 
                                 case .failure(let error):
                                     print()
-                                print(">ERROR< ")
-                                print(doc.data() )
+                                    print(">ERROR< ")
+                                    print(doc.data() )
                                     print(error.localizedDescription)
-                                print()
+                                    print()
                             }
                             
 
@@ -210,7 +239,7 @@ class DbConnection: ObservableObject {
                 self.localAndGlobalRestaurantsList.append(contentsOf: self.restaurantsList)
                 
                 print()
-                print(" localAndGlobalRestaurantList LINE [194] ", self.localAndGlobalRestaurantsList)
+                print(" localAndGlobalRestaurantList LINE [229] ", self.localAndGlobalRestaurantsList)
                 print()
                     
                     
@@ -234,11 +263,28 @@ class DbConnection: ObservableObject {
                     }
                      */
                 }
+        
+            print(type(of: dbListener))
+            print(dbListener.debugDescription, " ; ", dbListener?.description)
+            print()
+        
+        getAllDocumentIDs(collectionPath: LILJEHOLMEN_DATA_COLLECTION) { (documentIDs, error) in
+            
+            if let error = error {
+                    print("Error getting document IDs: \(error.localizedDescription)")
+                
+                } else if let documentIDs = documentIDs {
+                    print("Document IDs: \(documentIDs)")
+                    
+                } else {
+                    print("No documents found in the collection.")
+                }
+            
+        }
                 
             }
             
             
-//        }
         
         func RegisterUser(email: String, password: String) -> Bool {
             
@@ -247,9 +293,12 @@ class DbConnection: ObservableObject {
             auth.createUser(withEmail: email, password: password) { authResult, error in
                 
                 if let error = error {
+                    
                     print(error.localizedDescription)
                     self.txtError = error.localizedDescription
+                    
                     success = false
+                    
                 }
                 
                 if let authResult = authResult {
@@ -326,6 +375,8 @@ class DbConnection: ObservableObject {
                 } catch {
                     
                     print("Error adding restaurant")
+                    
+                    txtError = "Error adding restaurant"
                 }
             }
         }
