@@ -1,5 +1,5 @@
 //
-//  RestaurantVoucher.swift
+//  RestaurantDetailView.swift
 //  YummyEaterySeeker
 //
 //  Created by Khatch Shah on 2023-11-03.
@@ -10,9 +10,7 @@ import SwiftUI
 struct RestaurantDetailView: View {
     
     var restaurant: Restaurant
-    
-//    var isMini: Bool
-    
+        
     var body: some View {
         
         GeometryReader { geometry in
@@ -23,7 +21,7 @@ struct RestaurantDetailView: View {
                     
                     image.resizable().overlay(alignment: .bottomLeading, content: {
                         VStack {
-                            Text(restaurant.name).bold().font(.system(size: 12)).foregroundColor(.white)
+                            Text(restaurant.name).bold().padding().font(.system(size: 12)).foregroundColor(.white).background(.gray).cornerRadius(12)
                         }.padding()
                     })
 
@@ -41,6 +39,6 @@ struct RestaurantDetailView: View {
 
 #Preview {
     
-    RestaurantDetailView(restaurant: Restaurant(description: "TryingRestaurang", id: "5", image: "https://lh5.googleusercontent.com/p/AF1QipNCq1B7QPIZOpzH6Yu-U33xfzu5W28hYJKd7xXq=w408-h306-k-no", location: Location(latitude: 59.30465856210876, longitude: 18.03055060891921), name: "Eriks pizzeria", openingHours: "10 a.m. - 9 p.m.", rating: 7, reviews: [  ] ))
+    RestaurantDetailView(restaurant: Restaurant(description: "TryingRestaurang", id: "5", image: "https://lh5.googleusercontent.com/p/AF1QipNCq1B7QPIZOpzH6Yu-U33xfzu5W28hYJKd7xXq=w408-h306-k-no", location: Location(latitude: 59.30465856210876, longitude: 18.03055060891921), name: "Eriks pizzeria", openingHours: "10 a.m. - 9 p.m.", rating: 7, reviews: [ Evaluation(id: "tryID", name: "tryName", message: "tryMsg") ] ))
 }
 

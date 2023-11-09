@@ -86,38 +86,37 @@ struct RestaurantsMapView: View {
                             selectedRestaurant = restaurant
                         }, label: {
                             
-                            VStack {
+//                            VStack { }
+                            
+                            Button(action: {
                                 
-                                Button(action: {
+                                print()
+                                print(type(of: restaurant))
+                                print("restaurant's opening hours is: " , restaurant.openingHours)
+                                print()
+                                showAlert.toggle()
+                                
+                            }, label: {
+                                Text("⏰")}).alert(Text("Opening Hours"), isPresented: $showAlert, actions: {
                                     
-                                    print()
-                                    print(type(of: restaurant))
-                                    print("restaurant's opening hours is: " , restaurant.openingHours)
-                                    print()
-                                    showAlert.toggle()
-                                    
-                                }, label: {
-                                    Text("⏰")}).alert(Text("Opening Hours"), isPresented: $showAlert, actions: {
-                                        
-                                       
-                                        
-//                                        Text(restaurant.openingHours)
-                                        
-                                    } ).confirmationDialog("Trying2", isPresented: $showAlert, actions: {
-                                        Text("Showing")
-                                    }, message: {
-                                        Text("Msg")
-                                    })
-                                
-                                ZStack {
-                                    Circle().fill(Color.gray).frame(width: 45, height: 45, alignment: .center)
-                                    Image(systemName: "fork.knife.circle").resizable().foregroundColor(Color.red).frame(width: 40, height: 40, alignment: .center)
-                                }
-                                
-                                Text(restaurant.name).bold()
+                                } ).confirmationDialog("Trying2", isPresented: $showAlert, actions: {
+                                    Text(restaurant.openingHours)
+                                }, message: {
+                                    Text("Opening Hours: \(restaurant.openingHours) ")
+                                })
+                            
+                            ZStack {
+                                Circle().fill(Color.gray).frame(width: 30, height: 30, alignment: .center)
+                                Image(systemName: "fork.knife.circle").resizable().foregroundColor(Color.red).frame(width: 26, height: 26, alignment: .center)
                             }
-                        })
-                    })
+                            
+                            Text(restaurant.name).bold()
+                        }
+                               
+                            
+                            )
+                    }
+                        )
                     
                     
                     
@@ -134,11 +133,13 @@ struct RestaurantsMapView: View {
                         if let selectedRestaurant = selectedRestaurant {
                             
                             NavigationLink(destination: RestaurantView(restaurant: selectedRestaurant), label: {
+                                
+                                /// TODO : Add button that sets selectedRestaurant only around the round circle with text underneath
                                 Label("More details", systemImage: "bolt.fill")
                                 /*
                                  RestaurantDetailView(restaurant: selectedRestaurant).padding()
                                  */
-                            })
+                            }).background(Color.yellow)
                         }
                         
                         Button(action: {
@@ -182,7 +183,7 @@ struct RestaurantsMapView: View {
                     
                 }.background(.brown)
                 
-               Text("Christ")
+               Text("⬇️ The under-map is for other yummies globally ⬇️")
                 
                 Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.none), annotationItems: theRestaurantStations) { myRestaurantStation in
                     MapPin(coordinate: CLLocationCoordinate2D(latitude: myRestaurantStation.location.latitude, longitude: myRestaurantStation.location.longitude), tint: .red)

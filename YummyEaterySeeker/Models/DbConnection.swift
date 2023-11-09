@@ -107,13 +107,32 @@ class DbConnection: ObservableObject {
 //            }
 //        }
     
-    func addEvaluationToRestaurant(restaurantId: String, evaluation: Evaluation) {
+    func addEvaluationToRestaurant(restaurantId: String, evaluation: Evaluation, docId: String? = nil) {
         
         /// TODO : Fix the right address according to console
         do {
-            try db.collection(RESTAURANT_COLLECTION).document(restaurantId).updateData(
-                ["reviews": FieldValue.arrayUnion(
-                    [Firestore.Encoder().encode(evaluation)] )] )
+            
+            if let docId = docId {
+                
+                try db.collection(LILJEHOLMEN_DATA_COLLECTION).document(docId).updateData(
+                    ["reviews" : FieldValue.arrayUnion(
+                        [Firestore.Encoder().encode( evaluation )]
+                    )]
+                )
+                
+            } else {
+                
+                var docId = try db.collection(LILJEHOLMEN_DATA_COLLECTION).document("55bsCPMGDCcBUF7r9hQU").documentID
+                
+                print()
+                print(" docId = ", docId)
+                print()
+                
+            }
+            
+//            try db.collection(RESTAURANT_COLLECTION).document(restaurantId).updateData(
+//                ["reviews": FieldValue.arrayUnion(
+//                    [Firestore.Encoder().encode(evaluation)] )] )
                         
         } catch {
             print("112 ", error.localizedDescription)
