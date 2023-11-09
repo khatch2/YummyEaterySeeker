@@ -98,8 +98,16 @@ struct RestaurantsMapView: View {
                                     
                                 }, label: {
                                     Text("⏰")}).alert(Text("Opening Hours"), isPresented: $showAlert, actions: {
-                                        Text(restaurant.openingHours)
-                                    } )
+                                        
+                                       
+                                        
+//                                        Text(restaurant.openingHours)
+                                        
+                                    } ).confirmationDialog("Trying2", isPresented: $showAlert, actions: {
+                                        Text("Showing")
+                                    }, message: {
+                                        Text("Msg")
+                                    })
                                 
                                 ZStack {
                                     Circle().fill(Color.gray).frame(width: 45, height: 45, alignment: .center)
