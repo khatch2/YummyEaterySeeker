@@ -14,12 +14,19 @@ struct ContentView: View {
     var body: some View {
         
         if db.userHasLoggedIn {
+            
             NavigationStack {
+                
+                /// Here I used _ as a wrapper instead.
                 RestaurantsListView(db: _db)
             }
+            
         } else {
+            
             NavigationStack {
+                
                 LoginView()
+                
             }
         }
     }

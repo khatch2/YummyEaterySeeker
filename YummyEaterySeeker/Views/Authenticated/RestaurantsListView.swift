@@ -59,20 +59,7 @@ struct RestaurantsListView: View {
                             ForEach(db.restaurantsList) { restaurant in
                                 
                                 HStack {
-                                    
-//                                    AsyncImage(url: URL(string: restaurant.image), content: { image in
-//                                        
-//                                        ZStack {
-//                                            image.resizable()
-//                                            VStack {
-//                                                Text(restaurant.name).bold().foregroundStyle(.white)
-//                                            }
-//                                        }.frame(width: geometry.size.width * 0.85, height: geometry.size.width * 0.5, alignment: .center).cornerRadius(15)
-//     
-//                                    }, placeholder: {
-//                                        Text("Loading ...")
-//                                    })
-                                    
+                                                                        
                                     Image(systemName: "fork.knife.circle").resizable().foregroundColor(.red).background(.yellow).frame(width: geometry.size.width * 0.25, height: geometry.size.height * 0.5, alignment: .center)
                                         
                                     NavigationLink(destination: RestaurantView(restaurant: restaurant), label: {
@@ -81,10 +68,7 @@ struct RestaurantsListView: View {
                                         
                                     } )
                                     
-                                    
                                 }
-                                
-                                
                                 
                             }
                             
@@ -97,7 +81,8 @@ struct RestaurantsListView: View {
                                 
                             }, label: {
                                 
-                                Text("View them on map").bold().padding().background(.yellow).foregroundColor(.blue).cornerRadius(9)
+                                Text("View them on map")
+                                    .bold().padding().background(.yellow).foregroundColor(.blue).cornerRadius(9)
                             })
                             
                         }).position(x: geometry.size.width * 0.5, y: geometry.size.height * 0.5)

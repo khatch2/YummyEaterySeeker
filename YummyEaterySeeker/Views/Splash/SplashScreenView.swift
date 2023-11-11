@@ -9,20 +9,17 @@ import SwiftUI
 
 struct SplashScreenView: View {
     
-//    @EnvironmentObject var dbConnection: DatabaseConnection
     @EnvironmentObject var db: DbConnection
     
 //    @ObservedObject var db: DbConnection
-    
     @State var isActive: Bool = false
     
     @State private var size = 0.8
     
     @State private var opacity = 0.5
     
-    // I customised my SplashScreen here
+    /// I customised my SplashScreen here
     var body: some View {
-
         
         if (isActive == true) {
             
@@ -45,7 +42,7 @@ struct SplashScreenView: View {
                         }
                     }.onAppear {
                         
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0 /* 5 seconds */) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0  /** 5 seconds */ ) {
                             withAnimation {
                                 self.isActive = true
                             }

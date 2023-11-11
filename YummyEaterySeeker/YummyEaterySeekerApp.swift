@@ -5,7 +5,7 @@
 //  Created by Khatch Shah on 2023-10-27.
 //
 
-/*
+/**
 Approved:
 • (DONE) Your app must work in accordance with the app idea you decided from the beginning
 • (DONE) Your project is posted on GitHub
@@ -23,7 +23,7 @@ Well Passed:
 • The app uses various native technologies such as maps, camera, calendar, widget, etc
 • At least one third-party API integrated
 • The app supports dark and light themes
-• During the project, Git has been used continuously throughout the project and version history is available
+• (DONE) During the project, Git has been used continuously throughout the project and version history is available
 available in the final submission
 • The project and code are well structured
 • The app is expected to maintain a professional standard when it comes to design and
@@ -48,15 +48,18 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct YummyEaterySeekerApp: App {
     
-    // register app delegate for Firebase setup
+    /// register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
-    @StateObject var db = DbConnection()                    // Create an instance of DbConnection
+    /// Here I created an instance of DbConnection
+    @StateObject var db = DbConnection()
     
     var body: some Scene {
         WindowGroup {
                                 
-                SplashScreenView().environmentObject(db)    // Provide dbConnection as an environment object
+            /// Here i provided dbConnection as an environment object
+            SplashScreenView().environmentObject(db)
+            
         }
     }
 }
