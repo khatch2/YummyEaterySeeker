@@ -11,14 +11,14 @@ import SimpleToast
 struct RegisterView: View {
     
 //    @State var showToast : Bool = true
-    
-    private let toastOptions = SimpleToastOptions(
-            hideAfter: 3
-    )
+//    private let toastOptions = SimpleToastOptions(
+//            hideAfter: 3
+//    )
     
     @EnvironmentObject var db: DbConnection
     
     @State var email = ""
+    
     @State var password = ""
     
     var body: some View {
@@ -32,6 +32,7 @@ struct RegisterView: View {
                 Text("Register an account? ").bold().font(.title)
                 
                 VStack(alignment: .leading) {
+                    
                     Text("Email")
                     TextField("Email?", text: $email).textFieldStyle(.roundedBorder).font(.custom("times", size: 14)).keyboardType(.emailAddress).textInputAutocapitalization(.never)
                     
@@ -41,21 +42,23 @@ struct RegisterView: View {
                 }.background(.yellow).padding()
                 
                 Button("Register") {
-                    db.RegisterUser(email: email, password: password)
-//                    dbConnection.RegisterUser(email: email, password: password)
+                    
+                    var resultRegistering = db.RegisterUser(email: email, password: password)
+                    
+                    print(" resultRegistering = ", resultRegistering)
                     
                 }.bold().padding().foregroundColor(.blue).background(.yellow).cornerRadius(9)
                 
                 Text(db.txtError)
                 
             }.padding().background(.orange)
+            
         }.background(.yellow)
-//            .alert(Text("Error"), isPresented: $showToast, actions: {
-//            Text("Hello")
-//        })
     }
 }
 
 #Preview {
+    
     RegisterView()
+    
 }

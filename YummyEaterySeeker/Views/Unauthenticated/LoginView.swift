@@ -32,7 +32,8 @@ struct LoginView: View {
                     Text("E-post")
                     TextField("Email address?", text: $email).textFieldStyle(.roundedBorder).font(.custom("times", size: 14)).keyboardType(.emailAddress).textInputAutocapitalization(.never)
                     
-                    Text("Open sesame")
+                    /// Watchword, i.e.: password
+                    Text("Watchword")
                     SecureField("Password?", text: $password).textFieldStyle(.roundedBorder).font(.custom("times", size: 14))
                 }.background(.yellow).padding()
                 
@@ -42,12 +43,14 @@ struct LoginView: View {
                     
                     Button("Login") {
                         
-                        var resultLogation =  db.LoginUser(email: email, password: password)
+                        var resultLogingIn =  db.LoginUser(email: email, password: password)
                         
-                        print(" resultLogation = ", resultLogation)
+                        print(" resultLogingIn = ", resultLogingIn)
+                        
                     }.bold().padding().foregroundColor(.blue).background(.yellow).cornerRadius(9)
                     
                     NavigationLink(destination: RegisterView(), label: {
+                        
                         Text("Register an account").bold().foregroundColor(.blue).background(.yellow).cornerRadius(9)
                         }).bold()
                             .padding()
@@ -64,6 +67,8 @@ struct LoginView: View {
 }
 
 #Preview {
+    
 //    @Binding var txtError: String = projectedValue
     LoginView().environmentObject(DbConnection())
+    
 }
