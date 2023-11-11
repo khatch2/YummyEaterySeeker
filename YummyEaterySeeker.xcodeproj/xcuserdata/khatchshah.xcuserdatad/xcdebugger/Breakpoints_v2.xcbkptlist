@@ -1564,7 +1564,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "CFC34922-3FC9-497D-A955-0FABDDFCC326"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"
@@ -1643,7 +1643,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3224FF30-AA3C-424F-B9F2-7A3F8267D38A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YummyEaterySeeker/Models/DbConnection.swift"

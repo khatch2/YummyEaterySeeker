@@ -39,7 +39,7 @@ struct RestaurantsListView: View {
     
     var body: some View {
         
-        // Authenticated NavigationStack
+        /// Authenticated NavigationStack
         NavigationStack {
             
                     GeometryReader { geometry in
@@ -58,18 +58,31 @@ struct RestaurantsListView: View {
                             
                             ForEach(db.restaurantsList) { restaurant in
                                 
-                                AsyncImage(url: URL(string: restaurant.image), content: { image in
+                                HStack {
                                     
-                                    ZStack {
-                                        image.resizable()
-                                        VStack {
-                                            Text(restaurant.name).bold().foregroundStyle(.white)
-                                        }
-                                    }.frame(width: geometry.size.width * 0.85, height: geometry.size.width * 0.5, alignment: .center).cornerRadius(15)
- 
-                                }, placeholder: {
-                                    Text("Loading ...")
-                                })
+                                    AsyncImage(url: URL(string: restaurant.image), content: { image in
+                                        
+                                        ZStack {
+                                            image.resizable()
+                                            VStack {
+                                                Text(restaurant.name).bold().foregroundStyle(.white)
+                                            }
+                                        }.frame(width: geometry.size.width * 0.85, height: geometry.size.width * 0.5, alignment: .center).cornerRadius(15)
+     
+                                    }, placeholder: {
+                                        Text("Loading ...")
+                                    })
+                                    
+                                    NavigationLink(destination: RestaurantView(restaurant: restaurant), label: {
+                                        
+                                            RestaurantDetailView(restaurant: restaurant)
+                                        
+                                    } )
+                                    
+                                    
+                                }
+                                
+                                
                                 
                             }
                             
