@@ -37,13 +37,14 @@ struct LoginView: View {
                     SecureField("Password?", text: $password).textFieldStyle(.roundedBorder).font(.custom("times", size: 14))
                 }.background(.yellow).padding()
                 
+                /// N/A
                 Text(db.txtError)
                 
                 HStack {
                     
                     Button("Login") {
                         
-                        var resultLogingIn =  db.LoginUser(email: email, password: password)
+                        let resultLogingIn =  db.LoginUser(email: email, password: password)
                         
                         print(" resultLogingIn = ", resultLogingIn)
                         
