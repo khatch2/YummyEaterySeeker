@@ -60,19 +60,21 @@ struct RestaurantsListView: View {
                                 
                                 HStack {
                                     
-                                    AsyncImage(url: URL(string: restaurant.image), content: { image in
-                                        
-                                        ZStack {
-                                            image.resizable()
-                                            VStack {
-                                                Text(restaurant.name).bold().foregroundStyle(.white)
-                                            }
-                                        }.frame(width: geometry.size.width * 0.85, height: geometry.size.width * 0.5, alignment: .center).cornerRadius(15)
-     
-                                    }, placeholder: {
-                                        Text("Loading ...")
-                                    })
+//                                    AsyncImage(url: URL(string: restaurant.image), content: { image in
+//                                        
+//                                        ZStack {
+//                                            image.resizable()
+//                                            VStack {
+//                                                Text(restaurant.name).bold().foregroundStyle(.white)
+//                                            }
+//                                        }.frame(width: geometry.size.width * 0.85, height: geometry.size.width * 0.5, alignment: .center).cornerRadius(15)
+//     
+//                                    }, placeholder: {
+//                                        Text("Loading ...")
+//                                    })
                                     
+                                    Image(systemName: "fork.knife.circle").resizable().foregroundColor(.red).background(.yellow).frame(width: geometry.size.width * 0.25, height: geometry.size.height * 0.5, alignment: .center)
+                                        
                                     NavigationLink(destination: RestaurantView(restaurant: restaurant), label: {
                                         
                                             RestaurantDetailView(restaurant: restaurant)
