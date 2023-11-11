@@ -17,7 +17,7 @@ struct AddRestaurantView: View {
     
     @State var restaurantName = ""
     
-    // Debug purpose only, then comment the following line:
+    /// i used this for debug purpose only, then I should to comment the following line:
     @State var restaurantImage = "https://www.svtstatic.se/image/wide/992/41404046/1697528910"
 
     
@@ -43,7 +43,7 @@ struct AddRestaurantView: View {
                 Text ("Add it into Db").bold().font(.custom("Chalkduster", size: 18)).padding().background(Color.yellow).cornerRadius(19)
             } )
             
-            Text("Hello, AddRestaurantView")
+//            Text("Hello, AddRestaurantView")
         
         }.background(.orange).padding()
         
@@ -51,5 +51,7 @@ struct AddRestaurantView: View {
 }
 
 #Preview {
+    
     AddRestaurantView( db: DbConnection())
+    
 }

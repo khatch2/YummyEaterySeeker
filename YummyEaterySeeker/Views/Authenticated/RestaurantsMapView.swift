@@ -11,40 +11,43 @@ import MapKit
 
 var myDesiedRestaurants : [MKPointOfInterestCategory] = [.restaurant]
 
-/** TODO : Change it here to declare theRestaurantStations globally BUT WITHOUT inititilise it with "Chamsin Grill" */
+/** DONE : Change it here to declare theRestaurantStations globally BUT WITHOUT inititilise it with "Chamsin Grill" */
 var theRestaurantStations: [Restaurant] = []
 
-func populateNearByPlaces(theRegion: MKCoordinateRegion, theCookingChefs: [Restaurant]) -> String {
-
-var wantedRequest = MKLocalSearch.Request()
-
-wantedRequest.naturalLanguageQuery = "Restaurant"
-
-wantedRequest.region = theRegion
-
-var wantedSearch = MKLocalSearch(request: wantedRequest)
-
-//wantedSearch.start(completionHandler: )
-
-wantedSearch.start() { /** MKLocalSerach.CompletionHandler */ (response, error) in
-    guard let response = response else {return}
+func populateRestarantsNearByPlaces(theRegion: MKCoordinateRegion, theCookingChefs: [Restaurant]) -> String {
     
-    if let error =  error {
-        print(" error = ", error)
-    }
+    var wantedRequest = MKLocalSearch.Request()
     
-    for item in response.mapItems {
-        theRestaurantStations.append(Restaurant(description: item.url?.absoluteString ?? "n/a", id: item.phoneNumber ?? "n/a", image: item.url?.absoluteString ?? "n/a", location: Location(latitude: item.placemark.coordinate.latitude, longitude: item.placemark.coordinate.longitude), name: item.name ?? "n/a", openingHours: "n/a", rating: 0, reviews: []))
+    wantedRequest.naturalLanguageQuery = "Restaurant"
+    
+    wantedRequest.region = theRegion
+    
+    var wantedSearch = MKLocalSearch(request: wantedRequest)
+    
+    //wantedSearch.start(completionHandler: )
+    
+    wantedSearch.start() { /** MKLocalSerach.CompletionHandler */ (response, error) in
         
-        MapMarker(coordinate: item.placemark.coordinate)
+        guard let response = response else {return}
+    
+        if let error =  error {
+            
+            print(" error = ", error)
+        }
+    
+        for item in response.mapItems {
+            
+            theRestaurantStations.append(Restaurant(description: item.url?.absoluteString ?? "n/a", id: item.phoneNumber ?? "n/a", image: item.url?.absoluteString ?? "n/a", location: Location(latitude: item.placemark.coordinate.latitude, longitude: item.placemark.coordinate.longitude), name: item.name ?? "n/a", openingHours: "n/a", rating: 0, reviews: []))
+        
+            MapMarker(coordinate: item.placemark.coordinate)
+        }
+    
+        print(" theRestaurantStations = ", theRestaurantStations)
+    
     }
-    
-    print(" theRestaurantStations = ", theRestaurantStations)
-    
-    
-}
 
-return "Done"
+    return " Done, populateRestarantsNearByPlaces() "
+    
 }
 
 
@@ -69,9 +72,7 @@ struct RestaurantsMapView: View {
     
     @State var selectedRestaurant: Restaurant?
     
-    
     var body: some View {
-        
         
         GeometryReader { geometry in
             
@@ -92,14 +93,19 @@ struct RestaurantsMapView: View {
                                 print(type(of: restaurant))
                                 print("restaurant's opening hours is: " , restaurant.openingHours)
                                 print()
+                                
                                 showAlert.toggle()
                                 
                             }, label: {
+                                
                                 Text("⏰")}).alert(Text("Opening Hours"), isPresented: $showAlert, actions: {
                                     
-                                } ).confirmationDialog("Trying2", isPresented: $showAlert, actions: {
+                                } ).confirmationDialog("Trying2ConfirmationDialog", isPresented: $showAlert, actions: {
+                                    
                                     Text(restaurant.openingHours)
+                                    
                                 }, message: {
+                                    
                                     Text("Opening Hours: \(restaurant.openingHours) ")
                                 })
                             
@@ -148,21 +154,28 @@ struct RestaurantsMapView: View {
                         
                         Button(action: {
                             
-                            var look130 = populateNearByPlaces(theRegion: region, theCookingChefs: cookingChefsPersons)
-                            print(look130)
+                            var look157 = populateRestarantsNearByPlaces(theRegion: region, theCookingChefs: cookingChefsPersons)
+                            print(look157)
                             
                             MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: /* theRestaurantStations.first?.location.latitude ?? */ 59.31467147477161, longitude: /* theRestaurantStations.first?.location.longitude ?? */ 18.01789740387893 )  , content: {
+                                
                                 Circle().fill(.red).frame(width: 65, height: 65, alignment: .center )
+                                
                                 Text("Jesus").bold().font(.title).padding()
+                                
                             } )
                         }, label: {
+                            
                             Text(" Major resturants in the world ").bold().background(.yellow).cornerRadius(9)
+                            
                         })
                         
                         Button(action: {
+                            
                             viewThemOnMap.toggle()
                             
                         }, label: {
+                            
                             Text(" View them on list ").bold().background(.yellow).cornerRadius(9)
                         })
                     }
@@ -175,11 +188,11 @@ struct RestaurantsMapView: View {
                         do {
                             
                             try db.auth.signOut()
-                            
-                            //                                try dbConnection.SignOut()
-                            
+                                                        
                         } catch let signOutError as NSError {
+                            
                             print("Error signing out: %@", signOutError)}
+                        
                     }, label: {
                         
                         Text("Log me out").bold().foregroundStyle(.blue).background(.yellow).cornerRadius(5)
@@ -190,13 +203,9 @@ struct RestaurantsMapView: View {
                Text("⬇️ The under-map is for other yummies globally ⬇️")
                 
                 Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.none), annotationItems: theRestaurantStations) { myRestaurantStation in
+                    
                     MapPin(coordinate: CLLocationCoordinate2D(latitude: myRestaurantStation.location.latitude, longitude: myRestaurantStation.location.longitude), tint: .red)
                     
-//                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: myRestaurantStation.location.latitude, longitude: myRestaurantStation.location.longitude) , content: {
-//                        VStack {
-//                            Circle().stroke().frame(width: 40, height: 40, alignment: .center)
-//                        }
-//                    })
                 }
                 
             }.padding().background(.orange)
@@ -206,7 +215,9 @@ struct RestaurantsMapView: View {
 }
 
 #Preview {
+    
     RestaurantsMapView( viewThemOnMap: .constant(true)).environmentObject(DbConnection())
 //    RestaurantsMapView(db: , viewThemOnMap: .constant(true))
 //    RestaurantsMapView(db: DbConnection(), viewOnMap: .constant(true)).environmentObject(DatabaseConnection())
+    
 }
