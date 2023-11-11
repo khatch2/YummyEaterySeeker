@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		113902C12B000EE200DB5097 /* TryFirstHere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113902C02B000EE200DB5097 /* TryFirstHere.swift */; };
 		114A699D2AF91F7B008B0ED0 /* AddRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114A699C2AF91F7B008B0ED0 /* AddRestaurantView.swift */; };
 		114A699F2AF92419008B0ED0 /* DbConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114A699E2AF92419008B0ED0 /* DbConnection.swift */; };
 		114A69A12AF924A6008B0ED0 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114A69A02AF924A6008B0ED0 /* StorageManager.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		113902C02B000EE200DB5097 /* TryFirstHere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryFirstHere.swift; sourceTree = "<group>"; };
 		114A699C2AF91F7B008B0ED0 /* AddRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestaurantView.swift; sourceTree = "<group>"; };
 		114A699E2AF92419008B0ED0 /* DbConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbConnection.swift; sourceTree = "<group>"; };
 		114A69A02AF924A6008B0ED0 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		113902BD2B000E3600DB5097 /* HereDotCom */ = {
+			isa = PBXGroup;
+			children = (
+				113902C02B000EE200DB5097 /* TryFirstHere.swift */,
+			);
+			path = HereDotCom;
+			sourceTree = "<group>";
+		};
 		1190DA2D2AEC1E58002CA42E /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +217,7 @@
 		119CC2532AEBD7550088C0D5 /* YummyEaterySeeker */ = {
 			isa = PBXGroup;
 			children = (
+				113902BD2B000E3600DB5097 /* HereDotCom */,
 				119635402AED913100DC7032 /* ViewModels */,
 				1196352E2AED328D00DC7032 /* Models */,
 				1190DA2D2AEC1E58002CA42E /* Views */,
@@ -403,6 +414,7 @@
 				11FBEA2A2AF52EC700C3C5C0 /* LoginView.swift in Sources */,
 				119CC2552AEBD7550088C0D5 /* YummyEaterySeekerApp.swift in Sources */,
 				114A699F2AF92419008B0ED0 /* DbConnection.swift in Sources */,
+				113902C12B000EE200DB5097 /* TryFirstHere.swift in Sources */,
 				11FBEA322AF5408700C3C5C0 /* RestaurantDetailView.swift in Sources */,
 				11FBEA2C2AF530A600C3C5C0 /* Restaurant.swift in Sources */,
 				1196352D2AED322A00DC7032 /* ContentView.swift in Sources */,

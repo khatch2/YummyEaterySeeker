@@ -56,6 +56,13 @@ struct YummyEaterySeekerApp: App {
     
     var body: some Scene {
         WindowGroup {
+            
+            /// App ID
+            /// fNZAq9Mb6yjrP6KQKWIE
+            ///
+            /// App key
+            /// mo39AlmMSwOj7GzZepnO9u_wk0xhgRB2rUYiXtuCdUk
+            /// 
                                 
             /// Here i provided dbConnection as an environment object
             SplashScreenView().environmentObject(db)

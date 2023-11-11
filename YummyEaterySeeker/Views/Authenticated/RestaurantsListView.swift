@@ -75,15 +75,26 @@ struct RestaurantsListView: View {
                         }.overlay(alignment: .bottom,
                                   content: {
                             
-                            Button(action: {
+                            VStack {
                                 
-                                viewItOnTheMap.toggle()
+                                Button(action: {
+                                    
+                                    viewItOnTheMap.toggle()
+                                    
+                                }, label: {
+                                    
+                                    Text("View them on map")
+                                        .bold().padding().background(.mint).foregroundColor(.blue).cornerRadius(9)
+                                })
                                 
-                            }, label: {
+                                NavigationLink(destination: TryFirstHere(), label: {
+                                    Text(" To tryFirsthere() ")
+                                }).background(.white)
                                 
-                                Text("View them on map")
-                                    .bold().padding().background(.mint).foregroundColor(.blue).cornerRadius(9)
-                            })
+                                
+                            }
+                            
+                            
                             
                         }).position(x: geometry.size.width * 0.5, y: geometry.size.height * 0.5)
                         
