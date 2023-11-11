@@ -211,6 +211,9 @@ struct RestaurantsMapView: View {
                 /// I embeded the MapView within your SwiftUI hierarchy
                 MapView()
                     .frame(height: 300) // Adjust the height as needed
+                
+//                MapPin(coordinate: CLLocationCoordinate2D(latitude: theRestaurantStations.first.location.latitude, longitude: theRestaurantStations.first.location.longitude))
+                
             }.padding().background(.orange)
             
         }.background(.yellow)
@@ -220,6 +223,7 @@ struct RestaurantsMapView: View {
 #Preview {
     
     RestaurantsMapView( viewThemOnMap: .constant(true)).environmentObject(DbConnection())
+    
 //    RestaurantsMapView(db: , viewThemOnMap: .constant(true))
 //    RestaurantsMapView(db: DbConnection(), viewOnMap: .constant(true)).environmentObject(DatabaseConnection())
     
