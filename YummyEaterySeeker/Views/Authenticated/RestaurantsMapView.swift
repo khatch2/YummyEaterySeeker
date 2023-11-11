@@ -202,12 +202,15 @@ struct RestaurantsMapView: View {
                 
                Text("⬇️ The under-map is for other yummies globally ⬇️")
                 
-                Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.none), annotationItems: theRestaurantStations) { myRestaurantStation in
-                    
-                    MapPin(coordinate: CLLocationCoordinate2D(latitude: myRestaurantStation.location.latitude, longitude: myRestaurantStation.location.longitude), tint: .red)
-                    
-                }
+//                Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.none), annotationItems: theRestaurantStations) { myRestaurantStation in
+//                    
+//                    MapPin(coordinate: CLLocationCoordinate2D(latitude: myRestaurantStation.location.latitude, longitude: myRestaurantStation.location.longitude), tint: .red)
+//                    
+//                }
                 
+                /// I embeded the MapView within your SwiftUI hierarchy
+                MapView()
+                    .frame(height: 300) // Adjust the height as needed
             }.padding().background(.orange)
             
         }.background(.yellow)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		113902C12B000EE200DB5097 /* TryFirstHere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113902C02B000EE200DB5097 /* TryFirstHere.swift */; };
+		113902C32B00256600DB5097 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113902C22B00256600DB5097 /* MapView.swift */; };
 		114A699D2AF91F7B008B0ED0 /* AddRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114A699C2AF91F7B008B0ED0 /* AddRestaurantView.swift */; };
 		114A699F2AF92419008B0ED0 /* DbConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114A699E2AF92419008B0ED0 /* DbConnection.swift */; };
 		114A69A12AF924A6008B0ED0 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114A69A02AF924A6008B0ED0 /* StorageManager.swift */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		113902C02B000EE200DB5097 /* TryFirstHere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryFirstHere.swift; sourceTree = "<group>"; };
+		113902C22B00256600DB5097 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		114A699C2AF91F7B008B0ED0 /* AddRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestaurantView.swift; sourceTree = "<group>"; };
 		114A699E2AF92419008B0ED0 /* DbConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbConnection.swift; sourceTree = "<group>"; };
 		114A69A02AF924A6008B0ED0 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				114A69A02AF924A6008B0ED0 /* StorageManager.swift */,
 				114A69A22AF93A85008B0ED0 /* UserData.swift */,
 				11F132A42AFA39D200926ABB /* LocationManager.swift */,
+				113902C22B00256600DB5097 /* MapView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				11FBEA282AF52E9700C3C5C0 /* RestaurantsListView.swift in Sources */,
 				11FBEA342AF5414900C3C5C0 /* RestaurantsMapView.swift in Sources */,
 				11FBEA362AF5507600C3C5C0 /* OpinionsView.swift in Sources */,
+				113902C32B00256600DB5097 /* MapView.swift in Sources */,
 				114A699D2AF91F7B008B0ED0 /* AddRestaurantView.swift in Sources */,
 				11F132A52AFA39D200926ABB /* LocationManager.swift in Sources */,
 				1190DA2F2AEC1E88002CA42E /* SplashScreenView.swift in Sources */,
