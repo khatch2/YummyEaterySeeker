@@ -60,7 +60,7 @@ struct ShowMapFromAddressHereDotCom: View {
                     
                     VStack {
                         
-                        Text(" Count: ")
+                        Text(" County: ")
                         
                         Text(countyHereApi)
                         

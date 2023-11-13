@@ -19,7 +19,7 @@ struct RestaurantView: View {
         
         GeometryReader { geometry in
             
-            ScrollView {
+//            ScrollView {
                 
                 VStack(spacing: 30) {
                     
@@ -100,7 +100,7 @@ struct RestaurantView: View {
                 }.padding().background(.yellow)
 
                 
-            }
+//            }
             
         }
     }
