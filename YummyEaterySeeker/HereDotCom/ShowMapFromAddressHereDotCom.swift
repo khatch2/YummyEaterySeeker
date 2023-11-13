@@ -102,37 +102,57 @@ struct ShowMapFromAddressHereDotCom: View {
     
     var body: some View {
         
-        ScrollView {
+        GeometryReader { geometry in
             
-            VStack {
+            ScrollView {
                 
-                Text("Hello, ShowMapFromAddressHereDotCom")
-                
-                Text("Write down any real textual address?")
-
-                TextField("Tjädervägen 11 , Tyresö", text: $txtAddress)
-                    .textFieldStyle(.roundedBorder)
-                    .font(.custom("times", size: 14))
-                    .keyboardType(.default)
-                    .textInputAutocapitalization(.never)
-                    .padding()
-
-                
-                Button(action: {
+                VStack {
                     
-                    /// Min äldsta kvinnliga klasskamrat, eller hur?
-                    geocodeAddress(address: "Tjädervägen 11 , Tyresö", apiKey: apiKey)
-
+                    Text("Hello, ShowMapFromAddressHereDotCom")
                     
-                }, label: {
-                    
-                    Text("Show it on Map by Here.com api").bold().padding().background(.mint).foregroundColor(.blue).cornerRadius(9)
+                    Text("Write down any real textual address?")
 
-                })
+                    TextField("Tjädervägen 11 , Tyresö", text: $txtAddress)
+                        .textFieldStyle(.roundedBorder)
+                        .font(.custom("times", size: 14))
+                        .keyboardType(.default)
+                        .textInputAutocapitalization(.never)
+                        .padding()
+                    
+                    Map().mapStyle(.hybrid).frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.7, alignment: .center)
+                    
+                    Button(action: {
+                        
+                        /// Min äldsta kvinnliga klasskamrat, eller hur?
+                        geocodeAddress(address: "Tjädervägen 11 , Tyresö", apiKey: apiKey)
+
+                        
+                    }, label: {
+                        
+                        Text("Show it on Map by Here.com api").bold().padding().background(.mint).foregroundColor(.blue).cornerRadius(9)
+
+                    })
+                    
+    //                Map()
+                    
+                    /// _____
+    //                Map(coordinateRegion: $regionHereDotCom, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.none), annotationItems: _ ) {_ in
+    //
+    //                            MapAnnotation(coordinate: $regionHereDotCom.center.projectedValue.wrappedValue, content: {
+    //                                    Text("Look123")
+    //                            })
+    //                        }
+    //                            .mapStyle(.hybrid(elevation: .realistic, showsTraffic: true))
+    //                    }
+                    ///  ____
+                    
+                }.background(.orange).padding()
                 
-            }.background(.orange).padding()
+            }.background(.yellow)
+
             
-        }.background(.yellow)
+        }
+        
         
         
     }
