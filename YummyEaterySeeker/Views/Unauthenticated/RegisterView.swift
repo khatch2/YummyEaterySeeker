@@ -25,33 +25,39 @@ struct RegisterView: View {
         
         GeometryReader { geometry in
             
-            VStack (spacing: 30) {
+            ScrollView {
                 
-                Image("restaurant-logo").resizable().frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.28, alignment: .center).padding()
+                VStack (spacing: 30) {
+                    
+                    Image("restaurant-logo").resizable().frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.28, alignment: .center).padding()
+                    
+                    Text("Register an account? ").bold().font(.title)
+                    
+                    VStack(alignment: .leading) {
+                        
+                        Text("Email")
+                        TextField("Email?", text: $email).textFieldStyle(.roundedBorder).font(.custom("times", size: 14)).keyboardType(.emailAddress).textInputAutocapitalization(.never)
+                        
+                        Text("Password")
+                        SecureField("", text: $password).textFieldStyle(.roundedBorder).font(.custom("times", size: 14)).textInputAutocapitalization(.never)
+                        
+                    }.background(.yellow).padding()
+                    
+                    Button("Register") {
+                        
+                        var resultRegistering = db.RegisterUser(email: email, password: password)
+                        
+                        print(" resultRegistering = ", resultRegistering)
+                        
+                    }.bold().padding().foregroundColor(.blue).background(.yellow).cornerRadius(9)
+                    
+                    Text(db.txtError)
+                    
+                }.padding().background(.orange)
+
                 
-                Text("Register an account? ").bold().font(.title)
-                
-                VStack(alignment: .leading) {
-                    
-                    Text("Email")
-                    TextField("Email?", text: $email).textFieldStyle(.roundedBorder).font(.custom("times", size: 14)).keyboardType(.emailAddress).textInputAutocapitalization(.never)
-                    
-                    Text("Password")
-                    SecureField("", text: $password).textFieldStyle(.roundedBorder).font(.custom("times", size: 14)).textInputAutocapitalization(.never)
-                    
-                }.background(.yellow).padding()
-                
-                Button("Register") {
-                    
-                    var resultRegistering = db.RegisterUser(email: email, password: password)
-                    
-                    print(" resultRegistering = ", resultRegistering)
-                    
-                }.bold().padding().foregroundColor(.blue).background(.yellow).cornerRadius(9)
-                
-                Text(db.txtError)
-                
-            }.padding().background(.orange)
+            }
+            
             
         }.background(.yellow)
     }

@@ -15,24 +15,30 @@ struct RestaurantDetailView: View {
         
         GeometryReader { geometry in
             
-            VStack(spacing: 30) {
+            ScrollView {
                 
-                AsyncImage(url: URL(string: restaurant.image), content: { image in
+                VStack(spacing: 30) {
                     
-                    image.resizable().overlay(alignment: .bottomLeading, content: {
-                        VStack {
-                            Text(restaurant.name).bold().padding().font(.system(size: 12)).foregroundColor(.white).background(.gray).cornerRadius(12)
-                        }.padding()
-                    })
+                    AsyncImage(url: URL(string: restaurant.image), content: { image in
+                        
+                        image.resizable().overlay(alignment: .bottomLeading, content: {
+                            VStack {
+                                Text(restaurant.name).bold().padding().font(.system(size: 12)).foregroundColor(.white).background(.gray).cornerRadius(12)
+                            }.padding()
+                        })
 
-                    
-                }, placeholder: {
-                    
-                    Text("Still loading ...").bold().padding().foregroundColor(.white).background(.yellow).cornerRadius(9)
+                        
+                    }, placeholder: {
+                        
+                        Text("Still loading ...").bold().padding().foregroundColor(.white).background(.yellow).cornerRadius(9)
 
-                }).frame(width: 325, height: 210).background(.black).cornerRadius(9)
-                                
-            }.padding().background( .orange )
+                    }).frame(width: 325, height: 210).background(.black).cornerRadius(9)
+                                    
+                }.padding().background( .orange )
+
+                
+            }
+            
         }.background(.yellow)
     }
 }

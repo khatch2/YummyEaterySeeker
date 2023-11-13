@@ -17,85 +17,91 @@ struct RestaurantView: View {
     
     var body: some View {
         
-        GeometryReader { geometry in 
+        GeometryReader { geometry in
             
-            VStack(spacing: 30) {
+            ScrollView {
                 
-                ZStack() {
+                VStack(spacing: 30) {
                     
-                    GeometryReader { geometry in
+                    ZStack() {
+                        
+                        GeometryReader { geometry in
+                                                    
+                            ScrollView {
+                                
+                                VStack(alignment: .leading) {
+                                    
+                                    AsyncImage(url: URL(string: restaurant.image ), content: {
+                                        image in
+                                        
+                                        image.resizable().overlay(alignment: .bottomLeading, content: {
+                                            
+                                            VStack {
                                                 
-                        ScrollView {
-                            
-                            VStack(alignment: .leading) {
-                                
-                                AsyncImage(url: URL(string: restaurant.image ), content: {
-                                    image in
-                                    
-                                    image.resizable().overlay(alignment: .bottomLeading, content: {
-                                        
-                                        VStack {
-                                            
-                                            Text(restaurant.name ).bold().foregroundColor(.white)
-                                            
-                                        }.padding()
-                                    })
-                                    
-                                }, placeholder: {
-                                    Text("Loading...").foregroundColor(.white)
-                                    
-                                }).frame(height: 340)
-                                
-                                VStack(alignment: .leading, spacing: 20) {
-                                    
-                                    Text(restaurant.openingHours ).font(.system(.subheadline, design: .monospaced, weight: .thin))
-                                    
-                                    Text(restaurant.name ).bold().font(.title)
-                                    
-                                    Text(restaurant.description ).background(Color.teal).padding()
-                                    
-                                    HStack {
-                                        
-                                        Text("Evaluations").bold().font(.title).background(Color.mint)
-                                        
-                                        Spacer()
-                                        
-                                        Button(action: {
-                                            showPopup.toggle()
-                                        }, label: {
-                                            Text("Add an evaluation").padding().background(.yellow).foregroundColor(.blue).cornerRadius(9)
+                                                Text(restaurant.name ).bold().foregroundColor(.white)
+                                                
+                                            }.padding()
                                         })
                                         
-                                    }
+                                    }, placeholder: {
+                                        Text("Loading...").foregroundColor(.white)
                                         
-                                    ForEach(restaurant.reviews) { review in
-                                            
-                                            VStack(alignment: .leading, spacing: 5) {
-                                                
-                                                Text(review.name).bold().background(.mint)
-                                                
-                                                Text(review.message).background(.mint).font(.caption).fontDesign(.monospaced)
-                                            }.padding(.vertical)
-                                        }
+                                    }).frame(height: 340)
                                     
-                                }.padding()
-                                
-                            }
-                            
-                        }.ignoresSafeArea().blur(radius: showPopup ? 2 : 0)
-                        
-                    }
-                    
-
-                    if showPopup {
+                                    VStack(alignment: .leading, spacing: 20) {
+                                        
+                                        Text(restaurant.openingHours ).font(.system(.subheadline, design: .monospaced, weight: .thin))
+                                        
+                                        Text(restaurant.name ).bold().font(.title)
+                                        
+                                        Text(restaurant.description ).background(Color.teal).padding()
+                                        
+                                        HStack {
+                                            
+                                            Text("Evaluations").bold().font(.title).background(Color.mint)
+                                            
+                                            Spacer()
+                                            
+                                            Button(action: {
+                                                showPopup.toggle()
+                                            }, label: {
+                                                Text("Add an evaluation").padding().background(.yellow).foregroundColor(.blue).cornerRadius(9)
+                                            })
+                                            
+                                        }
+                                            
+                                        ForEach(restaurant.reviews) { review in
                                                 
-                        OpinionsView( restaurantId: restaurant.id, showPopup: $showPopup)
-                        
-                    }
-                    
-                }.background(.orange)
+                                                VStack(alignment: .leading, spacing: 5) {
+                                                    
+                                                    Text(review.name).bold().background(.mint)
+                                                    
+                                                    Text(review.message).background(.mint).font(.caption).fontDesign(.monospaced)
+                                                }.padding(.vertical)
+                                            }
+                                        
+                                    }.padding()
+                                    
+                                }
                                 
-            }.padding().background(.yellow)
+                            }.ignoresSafeArea().blur(radius: showPopup ? 2 : 0)
+                            
+                        }
+                        
+
+                        if showPopup {
+                                                    
+                            OpinionsView( restaurantId: restaurant.id, showPopup: $showPopup)
+                            
+                        }
+                        
+                    }.background(.orange)
+                                    
+                }.padding().background(.yellow)
+
+                
+            }
+            
         }
     }
 }

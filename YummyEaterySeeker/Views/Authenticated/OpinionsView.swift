@@ -43,31 +43,37 @@ struct OpinionsView: View {
         
         GeometryReader { geometry in
             
-            VStack {
+            ScrollView {
                 
-                Spacer()
-                
-                Text("Write down your opinions, please?").bold().font(.title).background(.brown)
-                
-                VStack(alignment: .leading) {
+                VStack {
                     
-                    Text("Your name?").background(.orange)
+                    Spacer()
                     
-                    TextField("", text: $name)
+                    Text("Write down your opinions, please?").bold().font(.title).background(.brown)
                     
-                    Text("Your opinions?").background(.orange)
+                    VStack(alignment: .leading) {
+                        
+                        Text("Your name?").background(.orange)
+                        
+                        TextField("", text: $name)
+                        
+                        Text("Your opinions?").background(.orange)
+                        
+                        TextField("", text: $opinions)
+                        
+                    }.padding().textFieldStyle(.roundedBorder)
                     
-                    TextField("", text: $opinions)
+                    Button(action: conformOpinion, label: {
+                        
+                        Text("Conform").background(.yellow).foregroundColor(.blue).cornerRadius(9)
+                        
+                    })
                     
-                }.padding().textFieldStyle(.roundedBorder)
-                
-                Button(action: conformOpinion, label: {
-                    
-                    Text("Conform").background(.yellow).foregroundColor(.blue).cornerRadius(9)
-                    
-                })
+                }
+
                 
             }
+            
             
             
         }.frame(width: 300, height: 360).cornerRadius(20).background( .gray ).padding()

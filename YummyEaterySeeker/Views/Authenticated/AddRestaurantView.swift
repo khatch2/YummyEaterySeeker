@@ -26,31 +26,37 @@ struct AddRestaurantView: View {
     
     var body: some View {
         
-        VStack (spacing: 30) {
+        ScrollView {
             
-            Text("Add a new restaurant into database?").background(.yellow).font(.custom("times", size: 20))
-            
-            TextField("Enter the name of the restaurant?", text: $restaurantName).textFieldStyle(.roundedBorder).font(.system(size: 16, design: .serif)).padding()
-            
-            /// N/A
-            Text(db.txtError)
-            
-            Button(action: {
+            VStack (spacing: 30) {
                 
-                if (!restaurantName.isEmpty) {
-                    
-                    let newRestaurant = Restaurant(description: "", id: "", image: restaurantImage, location: Location(latitude: 53.234, longitude: 51.3242), name: restaurantName, openingHours: "", rating: 3, reviews: [])
-                                        
-                    dismiss()
-                    
-                }
-            }, label: {
+                Text("Add a new restaurant into database?").background(.yellow).font(.custom("times", size: 20))
                 
-                Text ("Add it into Db").bold().font(.custom("Chalkduster", size: 18)).padding().background(Color.yellow).cornerRadius(19)
+                TextField("Enter the name of the restaurant?", text: $restaurantName).textFieldStyle(.roundedBorder).font(.system(size: 16, design: .serif)).padding()
                 
-            } )
+                /// N/A
+                Text(db.txtError)
+                
+                Button(action: {
                     
-        }.background(.orange).padding()
+                    if (!restaurantName.isEmpty) {
+                        
+                        let newRestaurant = Restaurant(description: "", id: "", image: restaurantImage, location: Location(latitude: 53.234, longitude: 51.3242), name: restaurantName, openingHours: "", rating: 3, reviews: [])
+                                            
+                        dismiss()
+                        
+                    }
+                }, label: {
+                    
+                    Text ("Add it into Db").bold().font(.custom("Chalkduster", size: 18)).padding().background(Color.yellow).cornerRadius(19)
+                    
+                } )
+                        
+            }.background(.orange).padding()
+
+            
+        }
+        
         
     }
 }

@@ -63,9 +63,9 @@ struct LoginView: View {
                         
                     }
                                     
-                }.padding().background(.orange).frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.7, alignment: .center)
+                }.padding().background(.orange)
                 
-            }
+            }.frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.85, alignment: .center)
 
         }.background(.yellow)
     }

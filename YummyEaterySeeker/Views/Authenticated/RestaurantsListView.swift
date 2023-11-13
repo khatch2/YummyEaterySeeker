@@ -44,63 +44,69 @@ struct RestaurantsListView: View {
             
                     GeometryReader { geometry in
                         
-                        VStack(alignment: .leading) {
-                    
-                    if viewItOnTheMap {
-                        
-                        RestaurantsMapView(viewThemOnMap: $viewItOnTheMap)
-                        
-                    } else {
-                        
-                        ScrollView(.vertical) {
-                                                        
-                            Text("Restaurants").bold().font(.title)
+//                        ScrollView {
                             
-                            ForEach(db.restaurantsList) { restaurant in
+                            VStack(alignment: .leading) {
+                        
+                        if viewItOnTheMap {
+                            
+                            RestaurantsMapView(viewThemOnMap: $viewItOnTheMap)
+                            
+                        } else {
+                            
+                            ScrollView(.vertical) {
+                                                            
+                                Text("Restaurants").bold().font(.title)
                                 
-                                HStack {
-                                                                        
-                                    Image(systemName: "fork.knife.circle").resizable().foregroundColor(.red).background(.regularMaterial).frame(width: geometry.size.width * 0.25, height: geometry.size.height * 0.5, alignment: .center)
+                                ForEach(db.restaurantsList) { restaurant in
+                                    
+                                    HStack {
+                                                                            
+                                        Image(systemName: "fork.knife.circle").resizable().foregroundColor(.red).background(.regularMaterial).frame(width: geometry.size.width * 0.25, height: geometry.size.height * 0.5, alignment: .center)
+                                            
+                                        NavigationLink(destination: RestaurantView(restaurant: restaurant), label: {
+                                            
+                                                RestaurantDetailView(restaurant: restaurant)
+                                            
+                                        } )
                                         
-                                    NavigationLink(destination: RestaurantView(restaurant: restaurant), label: {
-                                        
-                                            RestaurantDetailView(restaurant: restaurant)
-                                        
-                                    } )
+                                    }
                                     
                                 }
                                 
-                            }
-                            
-                        }.overlay(alignment: .bottom,
-                                  content: {
-                            
-                            VStack {
+                            }.overlay(alignment: .bottom,
+                                      content: {
                                 
-                                Button(action: {
+                                VStack {
                                     
-                                    viewItOnTheMap.toggle()
+                                    Button(action: {
+                                        
+                                        viewItOnTheMap.toggle()
+                                        
+                                    }, label: {
+                                        
+                                        Text("View them on map")
+                                            .bold().padding().background(.mint).foregroundColor(.blue).cornerRadius(9)
+                                    })
                                     
-                                }, label: {
+                                    NavigationLink(destination: ShowMapFromAddressHereDotCom(), label: {
+                                        Text("To ShowMapFromAddress")
+                                    }).bold().padding().background(.mint).foregroundColor(.blue).cornerRadius(9)
                                     
-                                    Text("View them on map")
-                                        .bold().padding().background(.mint).foregroundColor(.blue).cornerRadius(9)
-                                })
-                                
-                                NavigationLink(destination: ShowMapFromAddressHereDotCom(), label: {
-                                    Text("To ShowMapFromAddress")
-                                }).bold().padding().background(.mint).foregroundColor(.blue).cornerRadius(9)
+                                    
+                                }
                                 
                                 
-                            }
+                                
+                            }).position(x: geometry.size.width * 0.5, y: geometry.size.height * 0.5)
                             
-                            
-                            
-                        }).position(x: geometry.size.width * 0.5, y: geometry.size.height * 0.5)
+                        }
                         
-                    }
-                    
-                }.background(.orange)
+                    }.background(.orange)
+
+                            
+//                        }
+                        
             }
         }
     }

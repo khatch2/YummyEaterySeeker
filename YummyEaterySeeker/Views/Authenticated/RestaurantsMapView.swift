@@ -76,147 +76,151 @@ struct RestaurantsMapView: View {
         
         GeometryReader { geometry in
             
-            VStack (alignment: .leading) {
+//            ScrollView {
                 
-                Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.none),  annotationItems: db.localAndGlobalRestaurantsList) {
-                    restaurant in
+                VStack (alignment: .leading) {
                     
-                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: restaurant.location.latitude, longitude: restaurant.location.longitude), content: {
+                    Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.none),  annotationItems: db.localAndGlobalRestaurantsList) {
+                        restaurant in
                         
-                        Button(action: {
-                            selectedRestaurant = restaurant
-                        }, label: {
-                                                        
-                            Button(action: {
-                                
-                                print()
-                                print(type(of: restaurant))
-                                print("restaurant's opening hours is: " , restaurant.openingHours)
-                                print()
-                                
-                                showAlert.toggle()
-                                
-                            }, label: {
-                                
-                                Text("⏰")}).alert(Text("Opening Hours"), isPresented: $showAlert, actions: {
-                                    
-                                } ).confirmationDialog("Trying2ConfirmationDialog", isPresented: $showAlert, actions: {
-                                    
-                                    Text(restaurant.openingHours)
-                                    
-                                }, message: {
-                                    
-                                    Text("Opening Hours: \(restaurant.openingHours) ")
-                                })
+                        MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: restaurant.location.latitude, longitude: restaurant.location.longitude), content: {
                             
-                            ZStack {
-                                
-                                HStack {
+                            Button(action: {
+                                selectedRestaurant = restaurant
+                            }, label: {
+                                                            
+                                Button(action: {
                                     
-                                    ZStack {
+                                    print()
+                                    print(type(of: restaurant))
+                                    print("restaurant's opening hours is: " , restaurant.openingHours)
+                                    print()
+                                    
+                                    showAlert.toggle()
+                                    
+                                }, label: {
+                                    
+                                    Text("⏰")}).alert(Text("Opening Hours"), isPresented: $showAlert, actions: {
                                         
-                                        Circle().fill(Color.gray).frame(width: 30, height: 30, alignment: .center)
+                                    } ).confirmationDialog("Trying2ConfirmationDialog", isPresented: $showAlert, actions: {
                                         
-                                        Image(systemName: "fork.knife.circle").resizable().foregroundColor(Color.red).frame(width: 26, height: 26, alignment: .center)
+                                        Text(restaurant.openingHours)
+                                        
+                                    }, message: {
+                                        
+                                        Text("Opening Hours: \(restaurant.openingHours) ")
+                                    })
+                                
+                                ZStack {
+                                    
+                                    HStack {
+                                        
+                                        ZStack {
+                                            
+                                            Circle().fill(Color.gray).frame(width: 30, height: 30, alignment: .center)
+                                            
+                                            Image(systemName: "fork.knife.circle").resizable().foregroundColor(Color.red).frame(width: 26, height: 26, alignment: .center)
+                                        }
+                                        
+                                        Text(restaurant.name)
+
                                     }
                                     
-                                    Text(restaurant.name)
-
                                 }
                                 
                             }
-                            
+                                   
+                                )
                         }
-                               
                             )
-                    }
-                        )
-                    
-                }.ignoresSafeArea().onTapGesture {
-                    
-                    selectedRestaurant = nil
-                    
-                }.overlay(alignment: .bottom, content: {
-                    
-                    VStack  {
                         
-                        if let selectedRestaurant = selectedRestaurant {
+                    }.ignoresSafeArea().onTapGesture {
+                        
+                        selectedRestaurant = nil
+                        
+                    }.overlay(alignment: .bottom, content: {
+                        
+                        VStack  {
                             
-                            NavigationLink(destination: RestaurantView(restaurant:                selectedRestaurant), label: {
+                            if let selectedRestaurant = selectedRestaurant {
                                 
-                                /// TODO : Add button that sets selectedRestaurant only around the round circle with text underneath
-                                Label("More details", systemImage: "bolt.fill")
-                                /*
-                                 RestaurantDetailView(restaurant: selectedRestaurant).padding()
-                                 */
-                            }).background(Color.yellow)
+                                NavigationLink(destination: RestaurantView(restaurant:                selectedRestaurant), label: {
+                                    
+                                    /// TODO : Add button that sets selectedRestaurant only around the round circle with text underneath
+                                    Label("More details", systemImage: "bolt.fill")
+                                    /*
+                                     RestaurantDetailView(restaurant: selectedRestaurant).padding()
+                                     */
+                                }).background(Color.yellow)
+                            }
+                            
+                            Button(action: {
+                                
+                                var look157 = populateRestarantsNearByPlaces(theRegion: region, theCookingChefs: cookingChefsPersons)
+                                print(look157)
+                                
+                                MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: /* theRestaurantStations.first?.location.latitude ?? */ 59.31467147477161, longitude: /* theRestaurantStations.first?.location.longitude ?? */ 18.01789740387893 )  , content: {
+                                    
+                                    Circle().fill(.red).frame(width: 65, height: 65, alignment: .center )
+                                    
+                                    Text("Jesus").bold().font(.title).padding()
+                                    
+                                } )
+                            }, label: {
+                                
+                                Text(" Major resturants in the world ").bold().background(.yellow).cornerRadius(9)
+                                
+                            })
+                            
+                            Button(action: {
+                                
+                                viewThemOnMap.toggle()
+                                
+                            }, label: {
+                                
+                                Text(" View them on list ").bold().background(.yellow).cornerRadius(9)
+                            })
                         }
-                        
-                        Button(action: {
-                            
-                            var look157 = populateRestarantsNearByPlaces(theRegion: region, theCookingChefs: cookingChefsPersons)
-                            print(look157)
-                            
-                            MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: /* theRestaurantStations.first?.location.latitude ?? */ 59.31467147477161, longitude: /* theRestaurantStations.first?.location.longitude ?? */ 18.01789740387893 )  , content: {
-                                
-                                Circle().fill(.red).frame(width: 65, height: 65, alignment: .center )
-                                
-                                Text("Jesus").bold().font(.title).padding()
-                                
-                            } )
-                        }, label: {
-                            
-                            Text(" Major resturants in the world ").bold().background(.yellow).cornerRadius(9)
-                            
-                        })
-                        
-                        Button(action: {
-                            
-                            viewThemOnMap.toggle()
-                            
-                        }, label: {
-                            
-                            Text(" View them on list ").bold().background(.yellow).cornerRadius(9)
-                        })
-                    }
-                })
-                
-                VStack (spacing: 30) {
-                    
-                    Button(action: {
-                        
-                        do {
-                            
-                            try db.auth.signOut()
-                                                        
-                        } catch let signOutError as NSError {
-                            
-                            print("Error signing out: %@", signOutError)}
-                        
-                    }, label: {
-                        
-                        Text("Log me out").bold().foregroundStyle(.blue).background(.yellow).cornerRadius(5)
                     })
                     
-                }.background(.brown)
-                
-               Text("⬇️ The under-map is for other yummies globally ⬇️")
-                
-//                Map().mapStyle(.imagery(elevation: .realistic))
-                
-                Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.none), annotationItems: theRestaurantStations) { myRestaurantStation in
+                    VStack (spacing: 30) {
+                        
+                        Button(action: {
+                            
+                            do {
+                                
+                                try db.auth.signOut()
+                                                            
+                            } catch let signOutError as NSError {
+                                
+                                print("Error signing out: %@", signOutError)}
+                            
+                        }, label: {
+                            
+                            Text("Log me out").bold().foregroundStyle(.blue).background(.yellow).cornerRadius(5)
+                        })
+                        
+                    }.background(.brown)
                     
-                    MapPin(coordinate: CLLocationCoordinate2D(latitude: myRestaurantStation.location.latitude, longitude: myRestaurantStation.location.longitude), tint: .red)
+                   Text("⬇️ The under-map is for other yummies globally ⬇️")
                     
-                }.mapStyle(.imagery(elevation: .realistic))
+    //                Map().mapStyle(.imagery(elevation: .realistic))
+                    
+                    Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.none), annotationItems: theRestaurantStations) { myRestaurantStation in
+                        
+                        MapPin(coordinate: CLLocationCoordinate2D(latitude: myRestaurantStation.location.latitude, longitude: myRestaurantStation.location.longitude), tint: .red)
+                        
+                    }.mapStyle(.imagery(elevation: .realistic))
+                    
+                    /// I embeded the MapView within your SwiftUI hierarchy
+    //                MapView()
+    //                    .frame(height: 300) // Adjust the height as needed
+                    
+    //                MapPin(coordinate: CLLocationCoordinate2D(latitude: theRestaurantStations.first.location.latitude, longitude: theRestaurantStations.first.location.longitude))
+                    
+                }.padding().background(.orange)
                 
-                /// I embeded the MapView within your SwiftUI hierarchy
-//                MapView()
-//                    .frame(height: 300) // Adjust the height as needed
-                
-//                MapPin(coordinate: CLLocationCoordinate2D(latitude: theRestaurantStations.first.location.latitude, longitude: theRestaurantStations.first.location.longitude))
-                
-            }.padding().background(.orange)
+//            }
             
         }.background(.yellow)
     }
