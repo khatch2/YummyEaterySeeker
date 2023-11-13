@@ -102,25 +102,41 @@ struct ShowMapFromAddressHereDotCom: View {
     
     var body: some View {
         
-        Text("Hello, ShowMapFromAddressHereDotCom")
+        ScrollView {
+            
+            VStack {
+                
+                Text("Hello, ShowMapFromAddressHereDotCom")
+                
+                Text("Write down any real textual address?")
+
+                TextField("Tjädervägen 11 , Tyresö", text: $txtAddress)
+                    .textFieldStyle(.roundedBorder)
+                    .font(.custom("times", size: 14))
+                    .keyboardType(.default)
+                    .textInputAutocapitalization(.never)
+                    .padding()
+
+                
+                Button(action: {
+                    
+                    /// Min äldsta kvinnliga klasskamrat, eller hur?
+                    geocodeAddress(address: "Tjädervägen 11 , Tyresö", apiKey: apiKey)
+
+                    
+                }, label: {
+                    
+                    Text("Show it on Map by Here.com api").bold().padding().background(.mint).foregroundColor(.blue).cornerRadius(9)
+
+                })
+                
+            }.background(.orange).padding()
+            
+        }.background(.yellow)
         
-        Text("Write down any real textual address?")
-
-        TextField("Tjädervägen 11 , Tyresö", text: $txtAddress).textFieldStyle(.roundedBorder).font(.custom("times", size: 14)).keyboardType(.default).textInputAutocapitalization(.never)
-
         
-        Button(action: {
-            
-            /// Min äldsta kvinnliga klasskamrat, eller hur?
-            geocodeAddress(address: "Tjädervägen 11 , Tyresö", apiKey: apiKey)
-
-            
-        }, label: {
-            
-            Text("Show it on Map by Here.com api")
-
-        })
     }
+    
 }
 
 #Preview {

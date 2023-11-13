@@ -89,7 +89,7 @@ struct RestaurantsListView: View {
                                 
                                 NavigationLink(destination: ShowMapFromAddressHereDotCom(), label: {
                                     Text("To ShowMapFromAddress")
-                                }).background(.white)
+                                }).bold().padding().background(.mint).foregroundColor(.blue).cornerRadius(9)
                                 
                                 
                             }
