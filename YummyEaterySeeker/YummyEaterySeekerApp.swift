@@ -11,7 +11,7 @@ Approved:
 • (DONE) Your project is posted on GitHub
 • (DONE) The app uses a database to save its data
 • (DONE) User system with user-specific data stored in the database
-• In your presentation, you must justify why your app looks and functions as it does based on one
+• (DONE) In your presentation, you must justify why your app looks and functions as it does based on one
 user perspective
 • The app supports different phone models
 • (DONE) App login and splash screen must be present
@@ -57,6 +57,9 @@ struct YummyEaterySeekerApp: App {
     var body: some Scene {
         WindowGroup {
             
+            /// My account at:
+            /// Here.Com
+            ///
             /// App ID
             /// fNZAq9Mb6yjrP6KQKWIE
             ///

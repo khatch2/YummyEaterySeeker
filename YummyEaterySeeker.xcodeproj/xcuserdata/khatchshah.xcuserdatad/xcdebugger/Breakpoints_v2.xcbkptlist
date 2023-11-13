@@ -90,8 +90,8 @@
             filePath = "YummyEaterySeeker/Views/Unauthenticated/LoginView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76">
+            startingLineNumber = "80"
+            endingLineNumber = "80">
             <Locations>
                <Location
                   uuid = "1834A4CA-DE4B-41E3-A950-5934B15DF6F5 - 9ab7661db7a7188c"
@@ -1244,22 +1244,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8A4A808C-228B-40B4-886B-07C46D00F096"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YummyEaterySeeker/Views/Unauthenticated/LoginView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "9739F7CF-A4C2-4390-A33C-6E8EFD0436BD"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1733,13 +1717,45 @@
             endingLineNumber = "37"
             landmarkName = "conformOpinion()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "769AEF98-09D0-4C23-BAFA-14613D6D2B0F - 3d9e0a5db968ab49"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YummyEaterySeeker.OpinionsView.conformOpinion() -&gt; ()"
+                  moduleName = "YummyEaterySeeker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/khatchshah/Desktop/Github_Desktop/YummyEaterySeeker/YummyEaterySeeker/Views/Authenticated/OpinionsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "1744">
+               </Location>
+               <Location
+                  uuid = "769AEF98-09D0-4C23-BAFA-14613D6D2B0F - 3d9e0a5db968ab49"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YummyEaterySeeker.OpinionsView.conformOpinion() -&gt; ()"
+                  moduleName = "YummyEaterySeeker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/khatchshah/Desktop/Github_Desktop/YummyEaterySeeker/YummyEaterySeeker/Views/Authenticated/OpinionsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "1536">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "559B6CBD-4304-4A9E-BAA7-7DDE1326394C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YummyEaterySeeker/HereDotCom/TryFirstHere.swift"
@@ -1780,6 +1796,21 @@
                   endingLineNumber = "74"
                   offsetFromSymbolStart = "4096">
                </Location>
+               <Location
+                  uuid = "559B6CBD-4304-4A9E-BAA7-7DDE1326394C - 3885859f67912118"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in YummyEaterySeeker.geocodeAddress(address: Swift.String, apiKey: Swift.String) -&gt; ()"
+                  moduleName = "YummyEaterySeeker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/khatchshah/Desktop/Github_Desktop/YummyEaterySeeker/YummyEaterySeeker/HereDotCom/TryFirstHere.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "4116">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1787,7 +1818,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B4A8ACE8-9364-4B02-97A7-08DC8C970571"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YummyEaterySeeker/HereDotCom/TryFirstHere.swift"
@@ -1842,6 +1873,21 @@
                   startingLineNumber = "11"
                   endingLineNumber = "11"
                   offsetFromSymbolStart = "484">
+               </Location>
+               <Location
+                  uuid = "B4A8ACE8-9364-4B02-97A7-08DC8C970571 - 6bae444b62989f2b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YummyEaterySeeker.geocodeAddress(address: Swift.String, apiKey: Swift.String) -&gt; ()"
+                  moduleName = "YummyEaterySeeker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/khatchshah/Desktop/Github_Desktop/YummyEaterySeeker/YummyEaterySeeker/HereDotCom/TryFirstHere.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "652">
                </Location>
             </Locations>
          </BreakpointContent>

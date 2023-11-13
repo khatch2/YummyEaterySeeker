@@ -7,6 +7,10 @@
 
 import SwiftUI
 import Foundation
+import MapKit
+
+var regionHere = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 59.30769909740655, longitude: 18.030594636663807), span: MKCoordinateSpan(latitudeDelta: 0.010, longitudeDelta: 0.010))
+
 
 func geocodeAddress(address: String, apiKey: String) {
     
@@ -28,7 +32,7 @@ func geocodeAddress(address: String, apiKey: String) {
         return
     }
     
-    // Make the request
+    /// Make the request
     URLSession.shared.dataTask(with: url) { (data, response, error) in
         
         if let error = error {
@@ -46,7 +50,7 @@ func geocodeAddress(address: String, apiKey: String) {
         }
         
         do {
-            // Parse the JSON response
+            /// Parse the JSON response
             let json = try JSONSerialization.jsonObject(with: data, options: [])
             
             if let responseDict = json as? [String: Any],
@@ -71,7 +75,13 @@ func geocodeAddress(address: String, apiKey: String) {
                         
                         let longitude = position["lng"] ?? 0.0
                         
+                        /// @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 59.30769909740655, longitude: 18.030594636663807), span: MKCoordinateSpan(latitudeDelta: 0.010, longitudeDelta: 0.010))
+
+                        
                         print("Title: \(title), Latitude: \(latitude), Longitude: \(longitude)")
+                        
+                        regionHere = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+
                     }
                 }
             }
@@ -86,11 +96,18 @@ func geocodeAddress(address: String, apiKey: String) {
 /// My actual HERE API key
 let apiKey = "mo39AlmMSwOj7GzZepnO9u_wk0xhgRB2rUYiXtuCdUk"
 
-struct TryFirstHere: View {
+struct ShowMapFromAddressHereDotCom: View {
+    
+    @State var txtAddress = ""
     
     var body: some View {
         
-        Text("Hello, TryFirstHere")
+        Text("Hello, ShowMapFromAddressHereDotCom")
+        
+        Text("Write down any real textual address?")
+
+        TextField("Tjädervägen 11 , Tyresö", text: $txtAddress).textFieldStyle(.roundedBorder).font(.custom("times", size: 14)).keyboardType(.default).textInputAutocapitalization(.never)
+
         
         Button(action: {
             
@@ -99,11 +116,15 @@ struct TryFirstHere: View {
 
             
         }, label: {
-            Text("Find my geos?")
+            
+            Text("Show it on Map by Here.com api")
+
         })
     }
 }
 
 #Preview {
-    TryFirstHere()
+    
+    ShowMapFromAddressHereDotCom()
+    
 }

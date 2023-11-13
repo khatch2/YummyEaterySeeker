@@ -87,8 +87,8 @@ struct RestaurantsListView: View {
                                         .bold().padding().background(.mint).foregroundColor(.blue).cornerRadius(9)
                                 })
                                 
-                                NavigationLink(destination: TryFirstHere(), label: {
-                                    Text(" To tryFirsthere() ")
+                                NavigationLink(destination: ShowMapFromAddressHereDotCom(), label: {
+                                    Text("To ShowMapFromAddress")
                                 }).background(.white)
                                 
                                 
