@@ -8,11 +8,14 @@
 import Foundation
 import SwiftUI
 import FirebaseFirestore
-//import NMAKit
-//import heresdk
+
+/// import NMAKit /** here.com */
+/// import heresdk /** here.com */
 
 
 struct AddRestaurantView: View {
+    
+    @Environment(\.colorScheme) var colorScheme
     
     @Environment(\.dismiss) private var dismiss
     
@@ -20,10 +23,9 @@ struct AddRestaurantView: View {
     
     @State var restaurantName = ""
     
-    /// i used this for debug purpose only.:
+    /// I used this for debug purpose only.:
     @State var restaurantImage = "https://www.svtstatic.se/image/wide/992/41404046/1697528910"
 
-    
     var body: some View {
         
         ScrollView {
@@ -32,7 +34,7 @@ struct AddRestaurantView: View {
                 
                 Text("Add a new restaurant into database?").background(.yellow).font(.custom("times", size: 20))
                 
-                TextField("Enter the name of the restaurant?", text: $restaurantName).textFieldStyle(.roundedBorder).font(.system(size: 16, design: .serif)).padding()
+                TextField("Enter the name of the restaurant?", text: $restaurantName).textFieldStyle(.roundedBorder).font(.system(size: 16, design: .serif)).padding().background(colorScheme == .dark ? .black : .white).foregroundColor(colorScheme == .dark ? .brown : .indigo)
                 
                 /// N/A
                 Text(db.txtError)
@@ -54,9 +56,7 @@ struct AddRestaurantView: View {
                         
             }.background(.orange).padding()
 
-            
         }
-        
         
     }
 }

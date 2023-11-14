@@ -10,12 +10,10 @@ import SimpleToast
 
 struct RegisterView: View {
     
-//    @State var showToast : Bool = true
-//    private let toastOptions = SimpleToastOptions(
-//            hideAfter: 3
-//    )
     
     @EnvironmentObject var db: DbConnection
+    
+    @Environment(\.colorScheme) var colorScheme
     
     @State var email = ""
     
@@ -31,15 +29,15 @@ struct RegisterView: View {
                     
                     Image("restaurant-logo").resizable().frame(width: geometry.size.width * 0.6, height: geometry.size.height * 0.28, alignment: .center).padding()
                     
-                    Text("Register an account? ").bold().font(.title)
+                    Text("Register an account? ").bold().font(.title).background(colorScheme == .dark ? .black : .white).foregroundColor(colorScheme == .dark ? .brown : .indigo)
                     
                     VStack(alignment: .leading) {
                         
                         Text("Email")
-                        TextField("Email?", text: $email).textFieldStyle(.roundedBorder).font(.custom("times", size: 14)).keyboardType(.emailAddress).textInputAutocapitalization(.never)
+                        TextField("Email?", text: $email).textFieldStyle(.roundedBorder).font(.custom("times", size: 14)).keyboardType(.emailAddress).textInputAutocapitalization(.never).background(colorScheme == .dark ? .black : .white).foregroundColor(colorScheme == .dark ? .brown : .indigo)
                         
                         Text("Password")
-                        SecureField("", text: $password).textFieldStyle(.roundedBorder).font(.custom("times", size: 14)).textInputAutocapitalization(.never)
+                        SecureField("", text: $password).textFieldStyle(.roundedBorder).font(.custom("times", size: 14)).textInputAutocapitalization(.never).background(colorScheme == .dark ? .black : .white).foregroundColor(colorScheme == .dark ? .brown : .indigo)
                         
                     } // .background(.yellow).padding()
                     
@@ -49,15 +47,13 @@ struct RegisterView: View {
                         
                         print(" resultRegistering = ", resultRegistering)
                         
-                    }.bold().padding().foregroundColor(.blue) /* .background(.yellow) */ .cornerRadius(9)
+                    }.bold().foregroundColor(.blue) /* .background(.yellow) */ .cornerRadius(9).background(colorScheme == .dark ? .black : .white).foregroundColor(colorScheme == .dark ? .brown : .indigo)
                     
-                    Text(db.txtError)
+                    Text(db.txtError).background(colorScheme == .dark ? .black : .white).foregroundColor(colorScheme == .dark ? .brown : .indigo)
                     
                 }.padding().background(.orange)
 
-                
             }
-            
             
         } // .background(.yellow)
     }

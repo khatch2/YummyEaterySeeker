@@ -13,9 +13,7 @@ struct UserData: Codable, Identifiable {
     @DocumentID var id: String?
     
     var restaurants: [Restaurant]
-    
-//    var birthdate: Date
-    
+        
     var image: String
     
 }

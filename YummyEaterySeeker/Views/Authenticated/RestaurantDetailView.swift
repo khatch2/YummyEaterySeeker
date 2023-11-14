@@ -22,12 +22,15 @@ struct RestaurantDetailView: View {
                     AsyncImage(url: URL(string: restaurant.image), content: { image in
                         
                         image.resizable().overlay(alignment: .bottomLeading, content: {
+                            
                             VStack {
+                                
                                 Text(restaurant.name).bold().padding().font(.system(size: 12)).foregroundColor(.white).background(.gray).cornerRadius(12)
+                                
                             }.padding()
+                            
                         })
 
-                        
                     }, placeholder: {
                         
                         Text("Still loading ...").bold().padding().foregroundColor(.white) /* .background(.yellow) */ .cornerRadius(9)
@@ -36,7 +39,6 @@ struct RestaurantDetailView: View {
                                     
                 }.padding().background( .orange )
 
-                
             }
             
         }// .background(.yellow)
@@ -46,5 +48,6 @@ struct RestaurantDetailView: View {
 #Preview {
     
     RestaurantDetailView(restaurant: Restaurant(description: "TryingRestaurang", id: "5", image: "https://lh5.googleusercontent.com/p/AF1QipNCq1B7QPIZOpzH6Yu-U33xfzu5W28hYJKd7xXq=w408-h306-k-no", location: Location(latitude: 59.30465856210876, longitude: 18.03055060891921), name: "Eriks pizzeria", openingHours: "10 a.m. - 9 p.m.", rating: 7, reviews: [ Evaluation(id: "tryID", name: "tryName", message: "tryMsg") ] ))
+    
 }
 

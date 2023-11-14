@@ -11,6 +11,8 @@ struct OpinionsView: View {
     
     @Environment(\.dismiss) private var dismiss
     
+    @Environment(\.colorScheme) var colorScheme
+    
     @EnvironmentObject var db: DbConnection
         
     @State var name = ""
@@ -38,7 +40,6 @@ struct OpinionsView: View {
         
     }
     
-    
     var body: some View {
         
         GeometryReader { geometry in
@@ -54,27 +55,26 @@ struct OpinionsView: View {
                     VStack(alignment: .leading) {
                         
                         Text("Your name?").background(.orange)
-                        
-                        TextField("", text: $name)
+                        TextField("", text: $name).background(colorScheme == .dark ? .black : .white).foregroundColor(colorScheme == .dark ? .brown : .indigo)
                         
                         Text("Your opinions?").background(.orange)
-                        
-                        TextField("", text: $opinions)
+                        TextField("", text: $opinions).background(colorScheme == .dark ? .black : .white).foregroundColor(colorScheme == .dark ? .brown : .indigo)
                         
                     }.padding().textFieldStyle(.roundedBorder)
                     
                     Button(action: conformOpinion, label: {
                         
-                        Text("Conform") /* .background(.yellow) */.foregroundColor(.blue).cornerRadius(9)
+                        Text(" Conform ")
+                            .background(.yellow)
+                            .foregroundColor(.blue)
+                            .cornerRadius(9)
+                            .padding()
                         
                     })
                     
                 }
-
                 
             }
-            
-            
             
         }.frame(width: 300, height: 360).cornerRadius(20).background( .gray ).padding()
         

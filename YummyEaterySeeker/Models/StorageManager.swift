@@ -22,11 +22,13 @@ class StorageManager {
         imageRef.putData(data, metadata: nil) { (metadata, error) in
             
             if let error = error {
+                
                 print("Error uploading image, i.e: \(error.localizedDescription)")
                 
                 completion(nil)
                 
                 return
+                
             }
             
             guard let path = metadata?.path else { return }
@@ -34,6 +36,7 @@ class StorageManager {
             completion(path)
             
             print("image successfully uploaded to path: \(path) ")
+            
         }
         
     }
@@ -74,7 +77,4 @@ class StorageManager {
             }
         }
     }
-    
-    
-    
 }

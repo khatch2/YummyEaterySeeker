@@ -22,9 +22,6 @@ struct RestaurantsListView: View {
             
                     GeometryReader { geometry in
                         
-//                        ScrollView {
-                            
-                        
                         if viewItOnTheMap {
                             
                             RestaurantsMapView(viewThemOnMap: $viewItOnTheMap)
@@ -39,20 +36,15 @@ struct RestaurantsListView: View {
 
                                     Text("Restaurants").bold().font(.title)
 
-                                    
                                 }
                                                             
-                                
                                 ForEach(db.restaurantsList) { restaurant in
                                         
-                                            
                                         NavigationLink(destination: RestaurantView(restaurant: restaurant), label: {
                                             
                                                 RestaurantDetailView(restaurant: restaurant)
                                             
                                         } ).frame(width: geometry.size.width, height: geometry.size.width, alignment: .center )
-                                        
-//                                    }
                                     
                                 }
                                 
@@ -71,26 +63,15 @@ struct RestaurantsListView: View {
                                             .bold().padding().background(.mint).foregroundColor(.blue).cornerRadius(9)
                                     })
                                     
-                                    
-                                    
-                                    
                                     NavigationLink(destination: ShowMapFromAddressHereDotCom(), label: {
-                                        Text("ShowMapFromAddress")
+                                            Text("ShowMapFromAddress")
                                     }).bold().padding().background(.mint).foregroundColor(.blue).cornerRadius(9)
                                     
-                                    
-                                    
                                 }
-                                
-                                
                                 
                             }).position(x: geometry.size.width * 0.5, y: geometry.size.height * 0.5)
                             
                         }
-                        
-
-                            
-//                        }
                         
             }
         }

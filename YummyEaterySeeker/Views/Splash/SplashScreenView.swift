@@ -11,7 +11,6 @@ struct SplashScreenView: View {
     
     @EnvironmentObject var db: DbConnection
     
-//    @ObservedObject var db: DbConnection
     @State var isActive: Bool = false
     
     @State private var size = 0.8

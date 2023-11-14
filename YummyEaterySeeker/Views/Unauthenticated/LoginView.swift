@@ -44,21 +44,22 @@ struct LoginView: View {
                     } // .background(.yellow).padding()
                     
                     /// N/A
-                    Text(db.txtError)
+                    Text(db.txtError).background(colorScheme == .dark ? .black : .white).foregroundColor(colorScheme == .dark ? .brown : .indigo)
+                    /* .foregroundStyle(.red).background(.white) */
                     
                     HStack {
                         
-                        Button("Login") {
+                        Button(" Login ") {
                             
                             let resultLogingIn =  db.LoginUser(email: email, password: password)
                             
                             print(" resultLogingIn = ", resultLogingIn)
                             
-                        }.bold().padding().foregroundColor(.blue) /* .background(.yellow) */ .cornerRadius(9)
+                        }.bold().foregroundColor(.blue) .background(.yellow)  .cornerRadius(9).padding()
                         
                         NavigationLink(destination: RegisterView(), label: {
                             
-                            Text("Register an account").bold().foregroundColor(.blue) /* .background(.yellow) */ .cornerRadius(9)
+                            Text(" Register an account ").bold().foregroundColor(.blue)  .background(.yellow)  .cornerRadius(9).padding()
                             }).bold()
                                 .padding()
                                 .foregroundColor(.blue)
@@ -77,7 +78,6 @@ struct LoginView: View {
 
 #Preview {
     
-//    @Binding var txtError: String = projectedValue
     LoginView().environmentObject(DbConnection())
     
 }

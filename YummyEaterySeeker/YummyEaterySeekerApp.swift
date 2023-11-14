@@ -11,20 +11,18 @@ Approved:
 • (DONE) Your project is posted on GitHub
 • (DONE) The app uses a database to save its data
 • (DONE) User system with user-specific data stored in the database
-• (DONE) In your presentation, you must justify why your app looks and functions as it does based on one
-user perspective
+• (DONE) In your presentation, you must justify why your app looks and functions as it does based on one user perspective
 • (DONE) The app supports different phone models
 • (DONE) App login and splash screen must be present
  */
 
-/*
+/**
 Well Passed:
 • (DONE) All criteria for passing must be met
 • (DONE) The app uses various native technologies such as maps, camera, calendar, widget, etc
-• (Done) At least one third-party API integrated
-• The app supports dark and light themes
-• (DONE) During the project, Git has been used continuously throughout the project and version history is available
-available in the final submission
+• (DONE) At least one third-party API integrated
+• (DONE) The app supports dark and light themes
+• (DONE) During the project, Git has been used continuously throughout the project and version history is available in the final submission
 • (DONE) The project and code are well structured
 • The app is expected to maintain a professional standard when it comes to design and
 user experience

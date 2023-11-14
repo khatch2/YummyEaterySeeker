@@ -12,12 +12,12 @@ import MapKit
 
 struct RestaurantsMapView: View {
     
+    /** Sti yrkeshögskolan = 59.310230470905275, 18.021426935241518 */
+    
     @State var viewTheGolobalSateliteMap = false
     
     var locationManager = LocationManager()
-    
-    /** Sti yrkeshögskolan = 59.310230470905275, 18.021426935241518 */
-    
+        
     @State var cookingChefsPersons : [Restaurant] = []
     
     @State var mapConfiguration = MKStandardMapConfiguration()
@@ -34,7 +34,7 @@ struct RestaurantsMapView: View {
     
     @State var myDesiedRestaurants : [MKPointOfInterestCategory] = [.restaurant]
     
-    /** DONE : Change it here to declare theRestaurantStations globally BUT WITHOUT inititilise it with "Chamsin Grill" */
+    /** DONE : Changed it here to declare theRestaurantStations globally BUT WITHOUT inititilise it with "Chamsin Grill" */
     @State var theRestaurantStations: [Restaurant] = []
     
     func populateRestarantsNearByPlaces(theRegion: MKCoordinateRegion, theCookingChefs: [Restaurant]) -> String {
@@ -46,9 +46,7 @@ struct RestaurantsMapView: View {
         wantedRequest.region = theRegion
         
         var wantedSearch = MKLocalSearch(request: wantedRequest)
-        
-        //wantedSearch.start(completionHandler: )
-        
+                
         wantedSearch.start() { /** MKLocalSerach.CompletionHandler */ (response, error) in
             
             guard let response = response else {return}
@@ -73,25 +71,20 @@ struct RestaurantsMapView: View {
         
     }
     
-    
     var body: some View {
         
         GeometryReader { geometry in
-            
-            //            ScrollView {
-            
+                        
             VStack (alignment: .leading) {
                 
                 Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.none), annotationItems: viewTheGolobalSateliteMap ? theRestaurantStations : db.localAndGlobalRestaurantsList) {
                     restaurant in
-                    
                     
                     MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: restaurant.location.latitude, longitude: restaurant.location.longitude), content: {
                         
                         Button(action: {
                             selectedRestaurant = restaurant
                         }, label: {
-                            
                             
                             if !viewTheGolobalSateliteMap {
                             
@@ -119,8 +112,6 @@ struct RestaurantsMapView: View {
                             
                             }
                             
-                            
-                            
                             ZStack {
                                 
                                 HStack {
@@ -143,7 +134,6 @@ struct RestaurantsMapView: View {
                         )
                     })
                     
-                    
                 }.mapStyle({viewTheGolobalSateliteMap ? .imagery(elevation: .realistic) : .standard}())
                     .ignoresSafeArea().onTapGesture {
                         
@@ -157,7 +147,7 @@ struct RestaurantsMapView: View {
                                 
                                 NavigationLink(destination: RestaurantView(restaurant:                selectedRestaurant), label: {
                                     
-                                    /// TODO : Add button that sets selectedRestaurant only around the round circle with text underneath
+                                    /// DONE : Added button that sets selectedRestaurant only around the round circle with text underneath
                                     Label("More details", systemImage: "bolt.fill")
                                     /*
                                      RestaurantDetailView(restaurant: selectedRestaurant).padding()
@@ -167,23 +157,16 @@ struct RestaurantsMapView: View {
                             
                             Button(action: {
                                 
-                                var look157 = populateRestarantsNearByPlaces(theRegion: region, theCookingChefs: cookingChefsPersons)
-                                print(look157)
+                                var look160 = populateRestarantsNearByPlaces(theRegion: region, theCookingChefs: cookingChefsPersons)
+                                print(" look160 =   ", look160)
                                 
                                 self.viewTheGolobalSateliteMap = true
-                                
                                 
                             }, label: {
                                 
                                 Text(" Major resturants globally ").bold().background(.yellow).cornerRadius(9)
                                 
                             })
-                            
-                            
-                            
-                            
-                            
-                            
                             
                             Button(action: {
                                 
@@ -192,6 +175,7 @@ struct RestaurantsMapView: View {
                             }, label: {
                                 
                                 Text(" View them on list ").bold().background(.yellow).cornerRadius(9)
+                                
                             })
                         }
                     })
@@ -224,8 +208,5 @@ struct RestaurantsMapView: View {
 #Preview {
     
     RestaurantsMapView( viewThemOnMap: .constant(true)).environmentObject(DbConnection())
-    
-    //    RestaurantsMapView(db: , viewThemOnMap: .constant(true))
-    //    RestaurantsMapView(db: DbConnection(), viewOnMap: .constant(true)).environmentObject(DatabaseConnection())
-    
+        
 }

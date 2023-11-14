@@ -18,9 +18,7 @@ struct RestaurantView: View {
     var body: some View {
         
         GeometryReader { geometry in
-            
-//            ScrollView {
-                
+                            
                 VStack(spacing: 30) {
                     
                     ZStack() {
@@ -63,9 +61,13 @@ struct RestaurantView: View {
                                             Spacer()
                                             
                                             Button(action: {
+                                                
                                                 showPopup.toggle()
+                                                
                                             }, label: {
+                                                
                                                 Text("Add an evaluation").padding().background(.yellow).foregroundColor(.blue).cornerRadius(9)
+                                                
                                             })
                                             
                                         }
@@ -88,7 +90,6 @@ struct RestaurantView: View {
                             
                         }
                         
-
                         if showPopup {
                                                     
                             OpinionsView( restaurantId: restaurant.id, showPopup: $showPopup)
@@ -99,9 +100,6 @@ struct RestaurantView: View {
                                     
                 }.padding().background(.yellow)
 
-                
-//            }
-            
         }
     }
 }

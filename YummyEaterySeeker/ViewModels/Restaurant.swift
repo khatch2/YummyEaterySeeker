@@ -13,8 +13,6 @@ struct Restaurant : Codable, Identifiable {
     
     var description: String
     
-    // OR var id = UUID()
-    // OR @DocumentID var id: String?
     var id: String
     
     var image: String
@@ -61,7 +59,7 @@ struct Location: Codable /* , Identifiable */ {
 }
 
 
-/* From the teacher, begin */
+/** From the teacher, begin */
 
 // Sti coordinates: 59,30972667974045, 18,021641515542505
 
@@ -87,7 +85,4 @@ struct Location: Codable /* , Identifiable */ {
 //    
 //}
 
-
-
-
-/* From the teacher, end */
+/** From the teacher, end */
