@@ -32,7 +32,7 @@ struct RestaurantsListView: View {
                                 
                                 HStack {
                                     
-                                    Image(systemName: "fork.knife.circle").resizable().foregroundColor(.red).background(.regularMaterial).frame(width: geometry.size.width * 0.045, height: geometry.size.height * 0.045, alignment: .center)
+                                    Image(systemName: "fork.knife.circle").resizable().foregroundColor(.red).background(.regularMaterial).frame(width: geometry.size.width * 0.1, height: geometry.size.height * 0.09, alignment: .center)
 
                                     Text("Restaurants").bold().font(.title)
 

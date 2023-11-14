@@ -123,7 +123,7 @@ struct RestaurantsMapView: View {
                                         Image(systemName: "fork.knife.circle").resizable().foregroundColor(Color.red).frame(width: 26, height: 26, alignment: .center)
                                     }
                                     
-                                    Text(restaurant.name)
+                                    Text(restaurant.name).padding().background(.yellow).cornerRadius(9)
                                     
                                 }
                                 
@@ -149,9 +149,9 @@ struct RestaurantsMapView: View {
                                     
                                     /// DONE : Added button that sets selectedRestaurant only around the round circle with text underneath
                                     Label("More details", systemImage: "bolt.fill")
-                                    /*
+                                    
                                      RestaurantDetailView(restaurant: selectedRestaurant).padding()
-                                     */
+                                     
                                 }).background(Color.yellow)
                             }
                             
