@@ -48,7 +48,7 @@ struct SplashScreenView: View {
                             }
                         }
                     }
-                }.position(x: geometry.size.width * 0.5, y: geometry.size.height * 0.5).background(Color.yellow)
+                }.position(x: geometry.size.width * 0.5, y: geometry.size.height * 0.5) .background(Color.yellow)
                 
             }
         }

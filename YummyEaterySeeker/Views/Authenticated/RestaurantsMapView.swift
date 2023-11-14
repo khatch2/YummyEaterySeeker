@@ -168,9 +168,15 @@ struct RestaurantsMapView: View {
                                 } )
                             }, label: {
                                 
-                                Text(" Major resturants in the world ").bold().background(.yellow).cornerRadius(9)
+                                Text(" Major resturants globally ").bold().background(.yellow).cornerRadius(9)
                                 
                             })
+                            
+                            
+                            
+                            
+                            
+                            
                             
                             Button(action: {
                                 

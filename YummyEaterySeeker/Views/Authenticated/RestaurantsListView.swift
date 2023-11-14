@@ -8,33 +8,11 @@
 import SwiftUI
 import Firebase
 
-//func copyDocument(from sourceCollection: String, sourceDocument: String, to targetCollection: String, targetDocument: String) {
-//    let sourceRef = Firestore.firestore().collection(sourceCollection).document(sourceDocument)
-//    let targetRef = Firestore.firestore().collection(targetCollection).document(targetDocument)
-//
-//    sourceRef.getDocument { (document, error) in
-//        if let error = error {
-//            print("Error fetching source document: \(error.localizedDescription)")
-//        } else if let document = document, document.exists {
-//            targetRef.setData(document.data() ?? [:]) { error in
-//                if let error = error {
-//                    print("Error copying document: \(error.localizedDescription)")
-//                } else {
-//                    print("Document copied successfully.")
-//                }
-//            }
-//        } else {
-//            print("Source document does not exist.")
-//        }
-//    }
-//}
 
 struct RestaurantsListView: View {
     
     @EnvironmentObject var db: DbConnection
-        
-//    @State var restaurants = [Restaurant]()
-    
+            
     @State var viewItOnTheMap = false
     
     var body: some View {
@@ -46,7 +24,6 @@ struct RestaurantsListView: View {
                         
 //                        ScrollView {
                             
-                            VStack(alignment: .leading) {
                         
                         if viewItOnTheMap {
                             
@@ -55,26 +32,31 @@ struct RestaurantsListView: View {
                         } else {
                             
                             ScrollView(.vertical) {
+                                
+                                HStack {
+                                    
+                                    Image(systemName: "fork.knife.circle").resizable().foregroundColor(.red).background(.regularMaterial).frame(width: geometry.size.width * 0.045, height: geometry.size.height * 0.045, alignment: .center)
+
+                                    Text("Restaurants").bold().font(.title)
+
+                                    
+                                }
                                                             
-                                Text("Restaurants").bold().font(.title)
                                 
                                 ForEach(db.restaurantsList) { restaurant in
-                                    
-                                    HStack {
-                                                                            
-                                        Image(systemName: "fork.knife.circle").resizable().foregroundColor(.red).background(.regularMaterial).frame(width: geometry.size.width * 0.25, height: geometry.size.height * 0.5, alignment: .center)
+                                        
                                             
                                         NavigationLink(destination: RestaurantView(restaurant: restaurant), label: {
                                             
                                                 RestaurantDetailView(restaurant: restaurant)
                                             
-                                        } )
+                                        } ).frame(width: geometry.size.width, height: geometry.size.width, alignment: .center )
                                         
-                                    }
+//                                    }
                                     
                                 }
                                 
-                            }.overlay(alignment: .bottom,
+                            }.background(.orange).overlay(alignment: .bottom,
                                       content: {
                                 
                                 VStack {
@@ -106,7 +88,6 @@ struct RestaurantsListView: View {
                             
                         }
                         
-                    }.background(.orange)
 
                             
 //                        }

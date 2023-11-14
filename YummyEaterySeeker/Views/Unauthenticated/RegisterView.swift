@@ -41,7 +41,7 @@ struct RegisterView: View {
                         Text("Password")
                         SecureField("", text: $password).textFieldStyle(.roundedBorder).font(.custom("times", size: 14)).textInputAutocapitalization(.never)
                         
-                    }.background(.yellow).padding()
+                    } // .background(.yellow).padding()
                     
                     Button("Register") {
                         
@@ -49,7 +49,7 @@ struct RegisterView: View {
                         
                         print(" resultRegistering = ", resultRegistering)
                         
-                    }.bold().padding().foregroundColor(.blue).background(.yellow).cornerRadius(9)
+                    }.bold().padding().foregroundColor(.blue) /* .background(.yellow) */ .cornerRadius(9)
                     
                     Text(db.txtError)
                     
@@ -59,7 +59,7 @@ struct RegisterView: View {
             }
             
             
-        }.background(.yellow)
+        } // .background(.yellow)
     }
 }
 

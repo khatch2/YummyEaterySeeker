@@ -30,7 +30,7 @@ struct RestaurantDetailView: View {
                         
                     }, placeholder: {
                         
-                        Text("Still loading ...").bold().padding().foregroundColor(.white).background(.yellow).cornerRadius(9)
+                        Text("Still loading ...").bold().padding().foregroundColor(.white) /* .background(.yellow) */ .cornerRadius(9)
 
                     }).frame(width: 325, height: 210).background(.black).cornerRadius(9)
                                     
@@ -39,7 +39,7 @@ struct RestaurantDetailView: View {
                 
             }
             
-        }.background(.yellow)
+        }// .background(.yellow)
     }
 }
 

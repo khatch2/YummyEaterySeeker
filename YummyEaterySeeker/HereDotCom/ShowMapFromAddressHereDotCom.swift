@@ -42,7 +42,7 @@ struct ShowMapFromAddressHereDotCom: View {
 //            span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05) )
 //    
 //    @State private var annotation = MKPointAnnotation()
-//    
+
     var body: some View {
         
         GeometryReader { geometry in
@@ -88,16 +88,17 @@ struct ShowMapFromAddressHereDotCom: View {
                         
                         
                     }, label: {
-                        /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+                        Text(" Red map-pin ").background(.yellow).cornerRadius(9).padding()
                     })
 
                     Map(coordinateRegion: $region, showsUserLocation: true, userTrackingMode: .constant(.follow), annotationItems: [annotation]) { place in
+                        
                                     MapPin(coordinate: place.coordinate, tint: .red)
                     }.mapStyle(.hybrid(elevation: .automatic, pointsOfInterest: PointOfInterestCategories.including([MKPointOfInterestCategory.restaurant]), showsTraffic: true))
                                 /* .mapType(.satellite) // Set the map type to satellite */
                     .frame(width: 250, height: 250, alignment: .center)
                     
-                    Text("Hello, ShowMapFromAddressHereDotCom")
+//                    Text("Hello, ShowMapFromAddressHereDotCom")
                     
 //                    Text("Write down any real textual address?")
                     
@@ -133,7 +134,7 @@ struct ShowMapFromAddressHereDotCom: View {
                     /// _____
                     ///  ____
                     
-                }.background(.orange).padding()
+                }.background(.orange).cornerRadius(9).padding()
                 
             }.background(.yellow)
 

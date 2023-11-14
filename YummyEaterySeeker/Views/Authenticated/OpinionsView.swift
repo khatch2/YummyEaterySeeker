@@ -65,7 +65,7 @@ struct OpinionsView: View {
                     
                     Button(action: conformOpinion, label: {
                         
-                        Text("Conform").background(.yellow).foregroundColor(.blue).cornerRadius(9)
+                        Text("Conform") /* .background(.yellow) */.foregroundColor(.blue).cornerRadius(9)
                         
                     })
                     
