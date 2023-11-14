@@ -9,50 +9,10 @@ import Foundation
 import SwiftUI
 import MapKit
 
-var myDesiedRestaurants : [MKPointOfInterestCategory] = [.restaurant]
-
-/** DONE : Change it here to declare theRestaurantStations globally BUT WITHOUT inititilise it with "Chamsin Grill" */
-var theRestaurantStations: [Restaurant] = []
-
-func populateRestarantsNearByPlaces(theRegion: MKCoordinateRegion, theCookingChefs: [Restaurant]) -> String {
-    
-    var wantedRequest = MKLocalSearch.Request()
-    
-    wantedRequest.naturalLanguageQuery = "Restaurant"
-    
-    wantedRequest.region = theRegion
-    
-    var wantedSearch = MKLocalSearch(request: wantedRequest)
-    
-    //wantedSearch.start(completionHandler: )
-    
-    wantedSearch.start() { /** MKLocalSerach.CompletionHandler */ (response, error) in
-        
-        guard let response = response else {return}
-    
-        if let error =  error {
-            
-            print(" error = ", error)
-        }
-    
-        for item in response.mapItems {
-            
-            theRestaurantStations.append(Restaurant(description: item.url?.absoluteString ?? "n/a", id: item.phoneNumber ?? "n/a", image: item.url?.absoluteString ?? "n/a", location: Location(latitude: item.placemark.coordinate.latitude, longitude: item.placemark.coordinate.longitude), name: item.name ?? "n/a", openingHours: "n/a", rating: 0, reviews: []))
-        
-            MapMarker(coordinate: item.placemark.coordinate)
-        }
-    
-        print(" theRestaurantStations = ", theRestaurantStations)
-    
-    }
-
-    return " Done, populateRestarantsNearByPlaces() "
-    
-}
-
 
 struct RestaurantsMapView: View {
     
+    @State var viewTheGolobalSateliteMap = false
     
     var locationManager = LocationManager()
     
@@ -62,7 +22,7 @@ struct RestaurantsMapView: View {
     
     @State var mapConfiguration = MKStandardMapConfiguration()
     
-    @State var showAlert: Bool = false
+    @State var showAlert: Bool = true
     
     @EnvironmentObject var db: DbConnection
     
@@ -72,69 +32,120 @@ struct RestaurantsMapView: View {
     
     @State var selectedRestaurant: Restaurant?
     
+    @State var myDesiedRestaurants : [MKPointOfInterestCategory] = [.restaurant]
+    
+    /** DONE : Change it here to declare theRestaurantStations globally BUT WITHOUT inititilise it with "Chamsin Grill" */
+    @State var theRestaurantStations: [Restaurant] = []
+    
+    func populateRestarantsNearByPlaces(theRegion: MKCoordinateRegion, theCookingChefs: [Restaurant]) -> String {
+        
+        var wantedRequest = MKLocalSearch.Request()
+        
+        wantedRequest.naturalLanguageQuery = "Restaurant"
+        
+        wantedRequest.region = theRegion
+        
+        var wantedSearch = MKLocalSearch(request: wantedRequest)
+        
+        //wantedSearch.start(completionHandler: )
+        
+        wantedSearch.start() { /** MKLocalSerach.CompletionHandler */ (response, error) in
+            
+            guard let response = response else {return}
+            
+            if let error =  error {
+                
+                print(" error = ", error)
+            }
+            
+            for item in response.mapItems {
+                
+                theRestaurantStations.append(Restaurant(description: item.url?.absoluteString ?? "n/a", id: item.phoneNumber ?? "n/a", image: item.url?.absoluteString ?? "n/a", location: Location(latitude: item.placemark.coordinate.latitude, longitude: item.placemark.coordinate.longitude), name: item.name ?? "n/a", openingHours: "n/a", rating: 0, reviews: []))
+                
+                MapMarker(coordinate: item.placemark.coordinate)
+            }
+            
+            print(" theRestaurantStations = ", theRestaurantStations)
+            
+        }
+        
+        return " Done, populateRestarantsNearByPlaces() "
+        
+    }
+    
+    
     var body: some View {
         
         GeometryReader { geometry in
             
-//            ScrollView {
+            //            ScrollView {
+            
+            VStack (alignment: .leading) {
                 
-                VStack (alignment: .leading) {
+                Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.none), annotationItems: viewTheGolobalSateliteMap ? theRestaurantStations : db.localAndGlobalRestaurantsList) {
+                    restaurant in
                     
-                    Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.none),  annotationItems: db.localAndGlobalRestaurantsList) {
-                        restaurant in
+                    
+                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: restaurant.location.latitude, longitude: restaurant.location.longitude), content: {
                         
-                        MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: restaurant.location.latitude, longitude: restaurant.location.longitude), content: {
+                        Button(action: {
+                            selectedRestaurant = restaurant
+                        }, label: {
+                            
+                            
+                            if !viewTheGolobalSateliteMap {
                             
                             Button(action: {
-                                selectedRestaurant = restaurant
-                            }, label: {
-                                                            
-                                Button(action: {
-                                    
-                                    print()
-                                    print(type(of: restaurant))
-                                    print("restaurant's opening hours is: " , restaurant.openingHours)
-                                    print()
-                                    
-                                    showAlert.toggle()
-                                    
-                                }, label: {
-                                    
-                                    Text("⏰")}).alert(Text("Opening Hours"), isPresented: $showAlert, actions: {
-                                        
-                                    } ).confirmationDialog("Trying2ConfirmationDialog", isPresented: $showAlert, actions: {
-                                        
-                                        Text(restaurant.openingHours)
-                                        
-                                    }, message: {
-                                        
-                                        Text("Opening Hours: \(restaurant.openingHours) ")
-                                    })
                                 
-                                ZStack {
+                                print()
+                                print(type(of: restaurant))
+                                print("restaurant's opening hours is: " , restaurant.openingHours)
+                                print()
+                                
+                                showAlert.toggle()
+                                
+                            }, label: {
+                                
+                                Text("⏰")}).alert(Text("Opening Hours"), isPresented: $showAlert, actions: {
                                     
-                                    HStack {
+                                } ).confirmationDialog("Trying2ConfirmationDialog", isPresented: $showAlert, actions: {
+                                    
+                                    Text(restaurant.openingHours)
+                                    
+                                }, message: {
+                                    
+                                    Text("Opening Hours: \(restaurant.openingHours) ")
+                                })
+                            
+                            }
+                            
+                            
+                            
+                            ZStack {
+                                
+                                HStack {
+                                    
+                                    ZStack {
                                         
-                                        ZStack {
-                                            
-                                            Circle().fill(Color.gray).frame(width: 30, height: 30, alignment: .center)
-                                            
-                                            Image(systemName: "fork.knife.circle").resizable().foregroundColor(Color.red).frame(width: 26, height: 26, alignment: .center)
-                                        }
+                                        Circle().fill(Color.gray).frame(width: 30, height: 30, alignment: .center)
                                         
-                                        Text(restaurant.name)
-
+                                        Image(systemName: "fork.knife.circle").resizable().foregroundColor(Color.red).frame(width: 26, height: 26, alignment: .center)
                                     }
+                                    
+                                    Text(restaurant.name)
                                     
                                 }
                                 
                             }
-                                   
-                                )
+                            
                         }
-                            )
-                        
-                    }.ignoresSafeArea().onTapGesture {
+                               
+                        )
+                    })
+                    
+                    
+                }.mapStyle({viewTheGolobalSateliteMap ? .imagery(elevation: .realistic) : .standard}())
+                    .ignoresSafeArea().onTapGesture {
                         
                         selectedRestaurant = nil
                         
@@ -159,13 +170,9 @@ struct RestaurantsMapView: View {
                                 var look157 = populateRestarantsNearByPlaces(theRegion: region, theCookingChefs: cookingChefsPersons)
                                 print(look157)
                                 
-                                MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: /* theRestaurantStations.first?.location.latitude ?? */ 59.31467147477161, longitude: /* theRestaurantStations.first?.location.longitude ?? */ 18.01789740387893 )  , content: {
-                                    
-                                    Circle().fill(.red).frame(width: 65, height: 65, alignment: .center )
-                                    
-                                    Text("Jesus").bold().font(.title).padding()
-                                    
-                                } )
+                                self.viewTheGolobalSateliteMap = true
+                                
+                                
                             }, label: {
                                 
                                 Text(" Major resturants globally ").bold().background(.yellow).cornerRadius(9)
@@ -188,45 +195,27 @@ struct RestaurantsMapView: View {
                             })
                         }
                     })
-                    
-                    VStack (spacing: 30) {
-                        
-                        Button(action: {
-                            
-                            do {
-                                
-                                try db.auth.signOut()
-                                                            
-                            } catch let signOutError as NSError {
-                                
-                                print("Error signing out: %@", signOutError)}
-                            
-                        }, label: {
-                            
-                            Text("Log me out").bold().foregroundStyle(.blue).background(.yellow).cornerRadius(5)
-                        })
-                        
-                    }.background(.brown)
-                    
-                   Text("⬇️ The under-map is for other yummies globally ⬇️")
-                    
-    //                Map().mapStyle(.imagery(elevation: .realistic))
-                    
-                    Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.none), annotationItems: theRestaurantStations) { myRestaurantStation in
-                        
-                        MapPin(coordinate: CLLocationCoordinate2D(latitude: myRestaurantStation.location.latitude, longitude: myRestaurantStation.location.longitude), tint: .red)
-                        
-                    }.mapStyle(.imagery(elevation: .realistic))
-                    
-                    /// I embeded the MapView within your SwiftUI hierarchy
-    //                MapView()
-    //                    .frame(height: 300) // Adjust the height as needed
-                    
-    //                MapPin(coordinate: CLLocationCoordinate2D(latitude: theRestaurantStations.first.location.latitude, longitude: theRestaurantStations.first.location.longitude))
-                    
-                }.padding().background(.orange)
                 
-//            }
+                VStack (spacing: 30) {
+                    
+                    Button(action: {
+                        
+                        do {
+                            
+                            try db.auth.signOut()
+                            
+                        } catch let signOutError as NSError {
+                            
+                            print("Error signing out: %@", signOutError)}
+                        
+                    }, label: {
+                        
+                        Text("Log me out").bold().foregroundStyle(.blue).background(.yellow).cornerRadius(5)
+                    })
+                    
+                }.background(.brown)
+                
+            }.padding().background(.orange)
             
         }.background(.yellow)
     }
@@ -236,7 +225,7 @@ struct RestaurantsMapView: View {
     
     RestaurantsMapView( viewThemOnMap: .constant(true)).environmentObject(DbConnection())
     
-//    RestaurantsMapView(db: , viewThemOnMap: .constant(true))
-//    RestaurantsMapView(db: DbConnection(), viewOnMap: .constant(true)).environmentObject(DatabaseConnection())
+    //    RestaurantsMapView(db: , viewThemOnMap: .constant(true))
+    //    RestaurantsMapView(db: DbConnection(), viewOnMap: .constant(true)).environmentObject(DatabaseConnection())
     
 }
