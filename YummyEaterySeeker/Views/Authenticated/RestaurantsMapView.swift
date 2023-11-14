@@ -150,7 +150,7 @@ struct RestaurantsMapView: View {
                                     /// DONE : Added button that sets selectedRestaurant only around the round circle with text underneath
                                     Label("More details", systemImage: "bolt.fill")
                                     
-                                     RestaurantDetailView(restaurant: selectedRestaurant).padding()
+//                                     RestaurantDetailView(restaurant: selectedRestaurant).padding()
                                      
                                 }).background(Color.yellow)
                             }
